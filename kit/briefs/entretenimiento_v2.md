@@ -53,7 +53,7 @@ Reglas de diseño: ropa y colores neutros, sin logos, siglas ni colores de ning�
 - El Brigadista y las 300 playeras que no son de la talla.
 - La Asesora convierte tres hojas de propuestas en una frase clara.
 - Aguacero en pleno evento: el Brigadista y las 40 lonas.
-- Calenda de Domo: los tres personajes y Domito en una comparsa.
+- Calenda de Domo: los tres personajes y El Estratega en una comparsa.
 
 ## Cuidados obligatorios
 - El chiste nunca es el candidato, la política, los partidos ni los votantes.
@@ -71,7 +71,7 @@ No usar remixes ni canciones con derechos. Usar la biblioteca de audio de Instag
 
 ## Producción y costo
 - La generación de imagen y video con IA (ElevenLabs) gasta créditos.
-- El agente de producción del domingo genera el episodio solo si la imagen de referencia de Domito ya está aprobada.
+- El agente de producción del domingo genera el episodio solo si la pose que necesita de El Estratega ya existe o se puede generar a partir de las aprobadas.
 - Cualquier cosa que el agente no pueda resolver solo (aprobar un personaje nuevo, elegir música, un dato o material del Mtro. Joab) se marca en el Excel como "⚠ NECESITO DE TI" para que llegue a más tardar el domingo.
 - Idioma: español de México, tono ligero y cercano.
 
