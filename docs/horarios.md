@@ -8,3 +8,8 @@
 | Ideas de posts (existente) | Lunes 8:52 a. m. | 3 ideas de coyuntura (FB e IG) |
 
 Todo lo programado pasa por `revision` antes de entregarse.
+
+## Notas de operación
+- Planeación trabaja **una semana adelantada**: el sábado arma la semana que todavía no tiene calendario.
+- Producción del domingo toma **solo** el calendario de la semana que empieza al día siguiente.
+- **Correcciones a una semana ya planeada** se piden aquí, a la Secretaria (sesión directa). Las tareas programadas no aceptan correcciones como texto adjunto a una ejecución manual: solo planean la semana siguiente.
