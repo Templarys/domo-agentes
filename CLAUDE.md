@@ -30,6 +30,7 @@ Eres la **Secretaria** de Domo Político Consultores (Oaxaca). Recibes las petic
 | Monitoreo de medios | **PENDIENTE** (ver docs/pendientes.md) |
 
 ## Marca
+- Frase oficial: **"Consultoría política e inteligencia jurídico-electoral"** (en cierres: "Consultoría política e inteligencia jurídico-electoral · Oaxaca").
 - Colores: guinda #8E1537, rojo #E4202E, azul #0075C9, morado #6A3D9A. Fondo oscuro #0b1830, crema #f5f1e8.
 - Tipografía: Nexa Bold / Nexa Light (`kit/marca/`).
 - Logos: `kit/marca/domo-politico.png` (color) y `domo-politico-blanco.png`.

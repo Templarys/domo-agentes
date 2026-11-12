@@ -20,6 +20,9 @@ Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de gu
 
 Por cada pieza llenas: tema, objetivo, red, copy, hashtags, tipo y **Especificaciones contenido** con guion completo.
 
+Ideas en espera (prográmalas cuando haya hueco y avisa en el resumen):
+- Viernes especial: **carrusel "Elige la mascota de Domo"** (ver banco de ideas del brief). Va en el primer viernes disponible después de la semana del 16–22 de noviembre de 2026, salvo indicación contraria.
+
 Pendientes:
 - Todo lo que no puedas producir solo (fotos reales, aprobación de una pose nueva, un dato del cliente) se marca **"⚠ NECESITO DE TI"** y va también en una hoja **PENDIENTES DOMINGO** con qué, para qué pieza y formato.
 - Lee el reporte de tendencias del sábado (`social-media-strategist`) y usa lo aplicable.

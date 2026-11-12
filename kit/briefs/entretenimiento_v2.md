@@ -49,6 +49,7 @@ Reglas de diseño: ropa y colores neutros, sin logos, siglas ni colores de ning�
 **Prompt de video IA (base):** "Tres personajes ficticios: un hombre de traje gris con un gafete grande y un megáfono, una mujer con lentes y tablet, un hombre con chaleco y gorra neutra; caminan por una calle empedrada de Oaxaca de Juárez, cámara a ras de suelo mirando hacia arriba, cielo azul, luz de tarde, estilo realista cinematográfico, sin logos, sin texto, sin banderas ni símbolos patrios, sin parecido a personas reales."
 
 ## Banco de ideas
+- **Carrusel "Elige la mascota de Domo"** (viernes, post tipo carrusel, no video): una lámina por candidato —caballo de ajedrez (estratega), búho (sabio/legal), zorro (astuto), jaguar (oaxaqueño) y el androide El Estratega— con una frase de personalidad cada uno; última lámina: "¿Cuál nos representa? Vota en comentarios". Se publica un viernes en lugar del episodio animado. Los diseños de animales se generan como ilustraciones originales (sin parecido a mascotas existentes).
 - "Cuando el cliente dice 'solo un cambio chiquito' a las 11 pm" (la Asesora y su café frío).
 - El Brigadista y las 300 playeras que no son de la talla.
 - La Asesora convierte tres hojas de propuestas en una frase clara.
