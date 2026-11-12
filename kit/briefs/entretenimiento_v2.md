@@ -1,4 +1,6 @@
-# Domo Político — Brief de entretenimiento de los viernes (v2, para el agente creador)
+# Domo Político — Brief de entretenimiento de los viernes (v3, para el agente creador)
+
+> v3: la mascota de los videos es **El Estratega** (androide con casco geodésico). Domito queda descartado.
 
 ## Objetivo
 Contenido de entretenimiento corto (videos con IA y memes) para **Facebook e Instagram** (Reels e historias). Sirve de atracción: que la gente conozca a Domo Político como una marca cercana y con humor. Los videos serios de servicios van de lunes a jueves; este contenido va **solo los viernes**.
@@ -10,14 +12,14 @@ Contenido de entretenimiento corto (videos con IA y memes) para **Facebook e Ins
 2. Reel de personajes filmados desde abajo contra el cielo, con texto de serie recurrente. Se toma: contraste serio contra absurdo, personajes que regresan, encuadre épico.
 No copiar personajes, estética, marcas ni diseños de esas cuentas ni de videojuegos. Todo es original.
 
-## Mascota principal: Domito (original)
-- **Cuerpo:** cúpula de barro verde, como el de Atzompa, con brillo cerámico. Facetas triangulares sutiles en la cúpula que recuerdan el domo geodésico del logo de Domo. Pequeñas grecas oaxaqueñas blancas en la base.
-- **Cara:** dos ojos redondos grandes color crema con pupila oscura, muy expresivos. Sin boca. Cejas simples que se levantan o se aplastan.
-- **Detalles:** pequeña flor de cempasúchil naranja en la punta, que se mueve como antena; cuatro patitas cortas de alebrije.
-- **Personalidad:** terco, optimista y algo torpe. Siempre termina la tarea, aunque tarde.
-- **No debe parecerse a:** robots con pantalla negra, ojos de rayas, antena con esfera, ni a ninguna mascota existente.
-- **Prompt base de personaje:** "Personaje 3D ficticio, mascota con cuerpo de cúpula de barro verde brillante con facetas triangulares sutiles como un domo geodésico, grecas oaxaqueñas blancas en la base, dos ojos redondos grandes color crema con pupilas oscuras, sin boca, una pequeña flor de cempasúchil naranja en la punta, cuatro patas cortas, estilo animación 3D cálida, fondo de calle empedrada de Oaxaca con casas de colores, luz de tarde, sin logos ni texto."
-- **Consistencia:** se genera una sola imagen de referencia, el Mtro. Joab la aprueba, y esa imagen es la base de todos los episodios. Sin imagen aprobada no se produce ningún episodio de Domito.
+## Mascota principal: El Estratega (original)
+- **Diseño:** androide de cuerpo blanco brillante, casco en forma de **domo geodésico** con marco blanco triangular, paneles guinda y morados y franjas roja y azul cruzadas (los colores del logo). Visor negro donde se ven los ojos.
+- **Ojos (visor):** azul claro brillante. Expresiones: redondos y tranquilos (base), arcos felices, redondos grandes (sorpresa/idea), cansado (párpado). **Nunca ceño de villano.** Sin boca.
+- **Pecho:** sin logo (el logo real se pone en la edición si hace falta).
+- **Personalidad:** seguro, amable, estratégico; siempre tiene el plan B.
+- **Referencias y poses aprobadas:** `kit/marca/estratega/` (estratega_ref = brazos cruzados, pose_saludo, pose_idea, pose_cintura).
+- **Pose nueva:** edición de imagen en ElevenLabs a partir de `estratega_ref.png`, mismo fondo, escala y posición (~1,800 créditos). Si una pose nueva no se parece, no se usa.
+- **Formato base:** animación por poses (`kit/video/plantilla_poses.html`): cambio de pose con destello y "rebote", textos abajo y cierre con logo + WhatsApp. Video con movimiento real (~14,000 créditos) solo con autorización.
 
 ## Personajes secundarios (fijos, genéricos, ficticios)
 1. **El Candidato.** Traje gris, gafete grande que dice "CANDIDATO", megáfono. Entusiasta, saluda a todos, confía en su equipo. Simpático, nunca ridículo ni incompetente. **Sin banda tricolor ni símbolos patrios.**
@@ -27,23 +29,15 @@ No copiar personajes, estética, marcas ni diseños de esas cuentas ni de videoj
 Reglas de diseño: ropa y colores neutros, sin logos, siglas ni colores de ningún partido, sin parecido con personas reales.
 
 ## Formatos
-- **D. "Viernes de Domito"** (10 a 15 s), **formato base**: cortometraje 3D de Domito haciendo una tarea absurda en una calle de Oaxaca. Sin diálogo; se expresa con los ojos y el cuerpo. Título fijo: "X cosas, Y obstáculos y un Domito".
-  - Se toma de la referencia del robot repartidor solo el concepto (personaje sin boca, reto claro, título con fórmula), no el diseño.
-  - Episodios: "Doce tlayudas, tres calendas y un Domito", "Cinco globos, dos topes y un Domito", "Siete sillas, un aguacero y un Domito", "Cuarenta lonas, un ventarrón y un Domito", "Cien volantes, una subida y un Domito".
+- **D. "Viernes de El Estratega"** (10 a 15 s), **formato base**: El Estratega por poses en una situación de trabajo de campaña, con remate. Sin diálogo hablado (texto en pantalla); opcionalmente voz en off.
+  - Ideas: "El cambio chiquito" (11 pm), "Discurso en 9 minutos", "El plan B del plan B", "Aguacero en pleno evento", "Las 300 playeras".
 - **B. Serie de personajes** (15 a 20 s), **ocasional** (una vez al mes o cuando el Mtro. Joab lo pida): los tres personajes, cámara baja, fondo de Oaxaca (Zócalo, Monte Albán, calenda, mercado). Título repetible: "Gira por los municipios, cap. N".
 - **A. Meme de texto sobre clip** (7 a 12 s) y **C. "Lo que dice vs. lo que quiso decir"** (frases genéricas del trabajo de campaña, sin nombrar a nadie real): **solo como historias o extras**, nunca en los espacios de lunes a jueves.
 
 ## Calendario
 - Viernes: un episodio por semana, en Reel (9:16) y en feed (1:1).
-- Base: formato D. El formato B sustituye a D una vez al mes como máximo.
+- Base: formato D (El Estratega). El formato B sustituye a D una vez al mes como máximo.
 - A y C: opcionales, como historias del viernes o del fin de semana.
-
-## Primer guion de Domito (formato D, 12 s)
-**Título:** "Doce tlayudas, tres calendas y un Domito"
-- 0–2 s: Cámara baja. Domito sale de un mercado con una torre de doce tlayudas sobre la cúpula. Texto: "Misión: llevar la comida al equipo".
-- 2–7 s: Se topa con tres calendas seguidas. Esquiva una marmota, se mete entre las chinas oaxaqueñas, la flor de cempasúchil gira como hélice. Las tlayudas se tambalean y no caen.
-- 7–10 s: Llega a una puerta con letrero "Cuarto de guerra". Cejas aplastadas de cansancio, ojos felices.
-- 10–12 s: Cierre: logo de Domo y WhatsApp 951 440 2226.
 
 ## Guion corregido de personajes (formato B, 15 s)
 **Título:** "Gira por los municipios, cap. 1: el discurso"
