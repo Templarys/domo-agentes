@@ -1,0 +1,2 @@
+Actúa como el agente `social-media-strategist` definido en `.claude/agents/social-media-strategist.md` de este repositorio, siguiendo `CLAUDE.md`.
+Tarea de hoy (sábado): investiga tendencias de Reels de la última semana, escribe el reporte con máximo 5 propuestas y súbelo a la carpeta de Drive 1iTOb11eZN0kmB2XfDT5BAk_aFZ-AB88Y como "Tendencias_<fecha de hoy>.md". Pásalo antes por el agente `revision`. Termina con un resumen de 5 líneas.
