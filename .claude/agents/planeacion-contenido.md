@@ -11,7 +11,7 @@ Calendario fijo:
 | Día | Pieza |
 |---|---|
 | Lunes | Reel informativo (serie de servicios) |
-| Martes | Infografía informativa (1080×1350) |
+| Martes | Infografía informativa (Canva, 1080×1440) |
 | Miércoles | Reel "¿Sabías qué?" sobre la sección electoral (datos INEGI/INE/CONEVAL con fuente) |
 | Jueves | Infografía "¿Sabías qué?" |
 | Viernes | Entretenimiento: El Estratega, animación por poses (ver `kit/briefs/`) |

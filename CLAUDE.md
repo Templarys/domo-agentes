@@ -33,6 +33,7 @@ Eres la **Secretaria** de Domo Político Consultores (Oaxaca). Recibes las petic
 - Colores: guinda #8E1537, rojo #E4202E, azul #0075C9, morado #6A3D9A. Fondo oscuro #0b1830, crema #f5f1e8.
 - Tipografía: Nexa Bold / Nexa Light (`kit/marca/`).
 - Logos: `kit/marca/domo-politico.png` (color) y `domo-politico-blanco.png`.
+- Plantilla de infografía en Canva: "PLANTILLA · Infografía Domo (no editar)" (`DAHav_lBhdY`, carpeta DOMO). Siempre se trabaja sobre una copia.
 - Mascotas: **El Estratega** (androide con casco geodésico) para videos — referencias en `kit/marca/estratega/`. El caballo de ajedrez (estilo vectorial minimalista) es solo para piezas estáticas.
 
 ## Entregas
