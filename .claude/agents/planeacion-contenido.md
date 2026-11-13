@@ -21,7 +21,7 @@ Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de gu
 **Regla de datos: nunca repitas un dato ya publicado.** Antes de elegir datos para miércoles y jueves, revisa las hojas FUENTES de todos los Calendario_Domo_ anteriores en Drive y usa datos nuevos. Cada calendario lleva en FUENTES la lista de los datos que usa.
 
 **Serie de miércoles y jueves: "Oaxaca por distritos"** (desde diciembre de 2026):
-- Una semana por distrito electoral local (25 en total), empezando por los que concentran más de los **municipios que eligen por partidos políticos** (en ellos nos enfocamos, no en los 570).
+- Una semana por distrito electoral local (25 en total). **Orden aprobado por el Mtro. Joab (13-nov-2026):** de más a menos municipios por partidos políticos según `kit/datos/distritos_oaxaca.md`: DL 6 Huajuapan (24), DL 22 Pinotepa Nacional (19), DL 11 Matías Romero (11), DL 4 Teotitlán de Flores Magón (10), DL 3 Loma Bonita (9), y así sucesivamente. Nos enfocamos en los 152 municipios de partidos, no en los 570.
 - **Miércoles (Reel animado):** el distrito: cabecera distrital, municipios de partidos políticos que lo conforman y un **distintivo regional o artesanía** que lo ilustre (con respeto, sin estereotipos). Datos: lista nominal del distrito y uno o dos datos llamativos.
 - **Jueves (infografía o tarjetas "Dato electoral"):** datos por sección o municipio del distrito, en el estilo de las tarjetas que genera el programa Mapeo Electoral (lista nominal, participación por sección, rezago social CONEVAL por AGEB, actividad económica DENUE, acceso a internet del Censo por sección). Ver ejemplos en `kit/datos/ejemplos_tarjetas/`.
 - Tabla base de distritos, cabeceras, municipios y distintivos: `kit/datos/distritos_oaxaca.md`.
