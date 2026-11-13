@@ -22,7 +22,7 @@ Preparado por el agente de Investigación y datos, 13 de noviembre de 2026. Solo
 - Hay 6 municipios repartidos entre dos o tres distritos: Tuxtepec, Ojitlán, Santiago Tlazoyaltepec, Matías Romero, Guichicovi y Oaxaca de Juárez. Además hay **homónimos**: San Juan Mixtepec (DL 7 y DL 24) y San Pedro Mixtepec (DL 23 = Puerto Escondido, por partidos; DL 24 = el de Miahuatlán, por SNI) son municipios distintos.
 - Según el Anexo 3B, los 25 distritos son indígenas (40% o más de población indígena o afromexicana).
 
-**Lista nominal por distrito local: INCLUIDA (corte 29-oct-2026).** La suma estatal de las 2,566 secciones con datos da 3,175,705 de lista nominal y 3,210,302 de padrón, igual al estadístico oficial. 23 secciones creadas después de 2022 (40,177 en lista nominal, 1.3 %) no vienen en el catálogo de 2022 y están en municipios repartidos entre distritos (San Juan Bautista Tuxtepec: DL 1, 2 o 3; Oaxaca de Juárez: DL 12 o 13), así que no se asignaron; en esos 5 distritos la cifra es un mínimo. Para el reparto exacto, usar la cartografía 2026 del INE en Mapeo Electoral. Antes: El INE no publica la lista nominal sumada por distrito local. Se obtiene sumando el archivo por sección de Datos Abiertos DERFE (`DatosAbiertos-derfe-pdln_edms_re_AAAAMMDD`, https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral) con el catálogo de distritos. El último corte de las estadísticas del INE es del **29 de octubre de 2026** (https://ine.mx/credencial/estadisticas-lista-nominal-padron-electoral/). Esa descarga necesita autorización del Mtro. Joab. Se puede hacer en Mapeo Electoral, que ya suma la lista por distrito local.
+**Lista nominal por distrito local: INCLUIDA (corte 29-oct-2026).** La suma estatal de las 2,566 secciones con datos da 3,175,705 de lista nominal y 3,210,302 de padrón, igual al estadístico oficial. 23 secciones creadas después de 2022 (40,177 en lista nominal, 1.3 %) no vienen en el catálogo de 2022 y están en municipios repartidos entre distritos (San Juan Bautista Tuxtepec: DL 1, 2 o 3; Oaxaca de Juárez: DL 12 o 13), así que no se asignaron; en esos 5 distritos la cifra es un mínimo. Para el reparto exacto, usar la cartografía 2026 del INE en Mapeo Electoral.
 
 **Regiones:** se asignó la región del distrito rentístico de la cabecera, entre las 8 regiones de Oaxaca (COPLADE Oaxaca, p. ej. Diagnóstico Regional Sierra Sur, que agrupa los distritos de Putla, Sola de Vega, Miahuatlán y Yautepec: https://www.oaxaca.gob.mx/coplade/wp-content/uploads/sites/29/2021/04/DR-Sierra-Sur.pdf). Varios distritos electorales cruzan regiones; se indica entre paréntesis.
 
@@ -30,35 +30,37 @@ Preparado por el agente de Investigación y datos, 13 de noviembre de 2026. Solo
 
 ## 3. Resumen
 
-| DL | Cabecera | Región | Municipios | Por partidos | Distintivo propuesto | Confianza del distintivo |
-|---|---|---|---|---|---|---|
-| 1 | San Felipe Jalapa de Diaz | Papaloapan | 8 | 8 | Huipil mazateco bordado de San Felipe Jalapa de Díaz | Media |
-| 2 | San Juan Bautista Tuxtepec | Papaloapan | 2 | 2 | Huipiles de la danza Flor de Piña | Media |
-| 3 | Loma Bonita | Papaloapan | 10 | 9 | La piña de Loma Bonita | Media |
-| 4 | Teotitlan de Flores Magon | Cañada | 42 | 10 | Huipil mazateco de Huautla de Jiménez | Buena (acervo museográfico) |
-| 5 | Asuncion Nochixtlan | Mixteca | 72 | 7 | Conventos dominicos del siglo XVI de la Mixteca Alta: Yanhuitlán, Teposcolula | Buena |
-| 6 | Heroica Ciudad de Huajuapan de Leon | Mixteca | 44 | 24 | Tejido de palma de la Mixteca | Media |
-| 7 | Putla Villa de Guerrero | Sierra Sur | 17 | 6 | Huipil triqui de telar de cintura | Media |
-| 8 | Heroica Ciudad de Tlaxiaco | Mixteca | 43 | 4 | Tianguis de los sábados de Tlaxiaco, plaza tradicional de la Mixteca Alta | Media |
-| 9 | Ixtlan de Juarez | Sierra Norte | 63 | 0 | Capulálpam de Méndez, Pueblo Mágico de la Sierra Juárez | Buena (Capulálpam, fuente oficial estatal) |
-| 10 | San Pedro y San Pablo Ayutla | Sierra Norte | 21 | 2 | Blusa mixe | Buena |
-| 11 | Matias Romero (Matias Romero Avendaño) | Istmo | 13 | 11 | Selva de los Chimalapas | Buena |
-| 12 | Santa Lucia del Camino | Valles Centrales | 5 | 3 | SIN PROPUESTA VERIFICADA | Pendiente |
-| 13 | Oaxaca de Juarez | Valles Centrales | 2 | 1 | Centro Histórico de Oaxaca y zona arqueológica de Monte Albán, Patrimonio Mundial | Muy buena (fuente oficial) |
-| 14 | Villa de Etla | Valles Centrales | 15 | 5 | Barro verde vidriado de Santa María Atzompa | Buena |
-| 15 | Santa Cruz Xoxocotlan | Valles Centrales | 6 | 3 | Alebrijes | Buena |
-| 16 | Zimatlan de Alvarez | Valles Centrales | 33 | 6 | Mezcal destilado en olla de barro de Villa Sola de Vega | Débil |
-| 17 | Tlacolula de Matamoros | Valles Centrales | 28 | 2 | Tapetes de lana de Teotitlán del Valle | Muy buena (fuente oficial) |
-| 18 | Santo Domingo Tehuantepec | Istmo | 22 | 8 | Traje de tehuana | Buena |
-| 19 | Ciudad Ixtepec | Istmo | 7 | 7 | Alfarería de Asunción Ixtaltepec | Débil (fuente no oficial) |
-| 20 | Juchitan de Zaragoza (Heroica Ciudad de Juchitan de Zaragoza) | Istmo | 7 | 6 | Las Velas istmeñas de Juchitán | Buena (fuente oficial estatal) |
-| 21 | Ocotlan de Morelos | Valles Centrales | 33 | 7 | Barro negro de San Bartolo Coyotepec | Media (fuente no oficial; dato muy conocido) |
-| 22 | Santiago Pinotepa Nacional | Costa | 23 | 19 | Tinte de caracol púrpura y pozahuanco | Buena |
-| 23 | Puerto Escondido (San Pedro Mixtepec) | Costa | 12 | 3 | Playa Zicatela de Puerto Escondido, ola de surf de talla mundial | Media (fuente turística) |
-| 24 | Miahuatlan de Porfirio Diaz | Sierra Sur | 40 | 2 | Mezcal de la región miahuateca | Media (académica) |
-| 25 | San Pedro Pochutla | Costa | 9 | 3 | Café Pluma | Buena |
+| DL | Cabecera | Región | Municipios | Por partidos | Lista nominal 29-oct-2026 | Padrón 29-oct-2026 | Distintivo propuesto | Confianza del distintivo |
+|---|---|---|---|---|---|---|---|---|
+| 1 | San Felipe Jalapa de Diaz | Papaloapan | 8 | 8 | 114,347 (mín.) | 115,727 (mín.) | Huipil mazateco bordado de San Felipe Jalapa de Díaz | Media |
+| 2 | San Juan Bautista Tuxtepec | Papaloapan | 2 | 2 | 103,877 (mín.) | 104,599 (mín.) | Huipiles de la danza Flor de Piña | Media |
+| 3 | Loma Bonita | Papaloapan | 10 | 9 | 108,146 (mín.) | 109,299 (mín.) | La piña de Loma Bonita | Media |
+| 4 | Teotitlan de Flores Magon | Cañada | 42 | 10 | 128,694 | 130,357 | Huipil mazateco de Huautla de Jiménez | Buena (acervo museográfico) |
+| 5 | Asuncion Nochixtlan | Mixteca | 72 | 7 | 110,782 | 112,188 | Conventos dominicos del siglo XVI de la Mixteca Alta: Yanhuitlán, Teposcolula | Buena |
+| 6 | Heroica Ciudad de Huajuapan de Leon | Mixteca | 44 | 24 | 143,617 | 145,364 | Tejido de palma de la Mixteca | Media |
+| 7 | Putla Villa de Guerrero | Sierra Sur | 17 | 6 | 121,707 | 123,136 | Huipil triqui de telar de cintura | Media |
+| 8 | Heroica Ciudad de Tlaxiaco | Mixteca | 43 | 4 | 123,479 | 124,715 | Tianguis de los sábados de Tlaxiaco, plaza tradicional de la Mixteca Alta | Media |
+| 9 | Ixtlan de Juarez | Sierra Norte | 63 | 0 | 114,764 | 116,182 | Capulálpam de Méndez, Pueblo Mágico de la Sierra Juárez | Buena (Capulálpam, fuente oficial estatal) |
+| 10 | San Pedro y San Pablo Ayutla | Sierra Norte | 21 | 2 | 112,269 | 113,826 | Blusa mixe | Buena |
+| 11 | Matias Romero (Matias Romero Avendaño) | Istmo | 13 | 11 | 114,455 | 115,563 | Selva de los Chimalapas | Buena |
+| 12 | Santa Lucia del Camino | Valles Centrales | 5 | 3 | 153,439 (mín.) | 155,072 (mín.) | SIN PROPUESTA VERIFICADA | Pendiente |
+| 13 | Oaxaca de Juarez | Valles Centrales | 2 | 1 | 122,235 (mín.) | 123,427 (mín.) | Centro Histórico de Oaxaca y zona arqueológica de Monte Albán, Patrimonio Mundial | Muy buena (fuente oficial) |
+| 14 | Villa de Etla | Valles Centrales | 15 | 5 | 120,541 | 122,173 | Barro verde vidriado de Santa María Atzompa | Buena |
+| 15 | Santa Cruz Xoxocotlan | Valles Centrales | 6 | 3 | 146,769 | 148,415 | Alebrijes | Buena |
+| 16 | Zimatlan de Alvarez | Valles Centrales | 33 | 6 | 109,557 | 111,070 | Mezcal destilado en olla de barro de Villa Sola de Vega | Débil |
+| 17 | Tlacolula de Matamoros | Valles Centrales | 28 | 2 | 115,395 | 116,799 | Tapetes de lana de Teotitlán del Valle | Muy buena (fuente oficial) |
+| 18 | Santo Domingo Tehuantepec | Istmo | 22 | 8 | 118,793 | 120,280 | Traje de tehuana | Buena |
+| 19 | Ciudad Ixtepec | Istmo | 7 | 7 | 134,099 | 135,300 | Alfarería de Asunción Ixtaltepec | Débil (fuente no oficial) |
+| 20 | Juchitan de Zaragoza (Heroica Ciudad de Juchitan de Zaragoza) | Istmo | 7 | 6 | 130,393 | 131,199 | Las Velas istmeñas de Juchitán | Buena (fuente oficial estatal) |
+| 21 | Ocotlan de Morelos | Valles Centrales | 33 | 7 | 132,382 | 133,826 | Barro negro de San Bartolo Coyotepec | Media (fuente no oficial; dato muy conocido) |
+| 22 | Santiago Pinotepa Nacional | Costa | 23 | 19 | 137,196 | 138,334 | Tinte de caracol púrpura y pozahuanco | Buena |
+| 23 | Puerto Escondido (San Pedro Mixtepec) | Costa | 12 | 3 | 132,279 | 133,455 | Playa Zicatela de Puerto Escondido, ola de surf de talla mundial | Media (fuente turística) |
+| 24 | Miahuatlan de Porfirio Diaz | Sierra Sur | 40 | 2 | 139,729 | 141,051 | Mezcal de la región miahuateca | Media (académica) |
+| 25 | San Pedro Pochutla | Costa | 9 | 3 | 146,584 | 148,368 | Café Pluma | Buena |
 
 Total de municipios por partidos que se encontraron en el catálogo: 152 (cada uno contado una vez aunque esté en varios distritos).
+
+Lista nominal y padrón: INE, Datos Abiertos DERFE, archivo `DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx`, corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx). Suma por sección con el catálogo del Anexo 3B del IEEPCO (cálculo de Domo). 75 secciones nuevas (posteriores a 2022) se asignaron por municipio porque su municipio está completo en un solo distrito (DL 8, 9, 14, 15, 20, 22, 23 y 25). «(mín.)»: faltan 23 secciones nuevas sin asignar (Tuxtepec 5 secciones, 11,363 en lista; Oaxaca de Juárez 18 secciones, 28,814 en lista). Suma de los 25 distritos: 3,135,528 de lista y 3,169,725 de padrón; con las 23 sin asignar: 3,175,705 y 3,210,302, igual al estadístico estatal del INE al 29-oct-2026 (residentes en México).
 
 ## 4. Fichas por distrito
 
@@ -71,7 +73,7 @@ Total de municipios por partidos que se encontraron en el catálogo: 152 (cada u
 | Municipios | 8 (8 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 107 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 71.7% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 114,347 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 115,727 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 114,347 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 115,727 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Huipil mazateco bordado de San Felipe Jalapa de Díaz (aves y flores; de uso diario y de fiesta) | Mexican Textiles (sitio especializado), Mazateca – Jalapa de Díaz: https://mexicantextiles.com/grouppages/groups/mazateca/jalapa1/index.htm |
 | Notas | Media: fuente especializada no oficial. | |
 
@@ -88,7 +90,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 2 (2 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 74 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 52.0% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 103,877 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 104,599 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 103,877 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 104,599 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Huipiles de la danza Flor de Piña (creada en 1958 por la maestra tuxtepecana Paulina Solís Ocampo para la Guelaguetza) | México Desconocido, «Paulina Solís, Flor de Piña»: https://www.mexicodesconocido.com.mx/paulina-solis-flor-de-pina.html ; El Universal, «Where huipiles are born»: https://www.eluniversal.com.mx/english/where-huipiles-born/ |
 | Notas | Media. Es danza de toda la región del Papaloapan; no presentarla como solo de Tuxtepec. | |
 
@@ -105,7 +107,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 10 (9 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 91 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 69.9% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 108,146 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 109,299 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 108,146 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 109,299 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | La piña de Loma Bonita (conocida históricamente como «capital de la piña») | Revista de Geografía Agrícola (Chapingo), estudio sobre la piña en Loma Bonita: https://revistas.chapingo.mx/geografia/article/download/r.rga.2019.64.11/rga.2019.64.11/226 |
 | Notas | Media. El propio estudio dice que el título es histórico y que hoy pesa menos frente a Veracruz; evitar decir «primer productor». | |
 
@@ -122,7 +124,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 42 (10 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 136 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 86.1% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 128,694 · padrón 130,357 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 128,694 · padrón 130,357 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Huipil mazateco de Huautla de Jiménez (tres lienzos de manta, bordado de aves y flores, listones) | Fundación Alfredo Harp Helú Oaxaca, repositorio, «Antiguo huipil de Huautla de Jiménez»: https://repositorio.fahho.mx/handle/123456789/36355 |
 | Notas | Buena (acervo museográfico). Evitar asociar Huautla con hongos/turismo místico: estereotipo. | |
 
@@ -139,7 +141,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 72 (7 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 161 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 75.1% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 110,782 · padrón 112,188 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 110,782 · padrón 112,188 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Conventos dominicos del siglo XVI de la Mixteca Alta: Yanhuitlán, Teposcolula (capilla abierta) y Coixtlahuaca | INAH, Boletín de Monumentos Históricos: https://revistas.inah.gob.mx/index.php/boletinmonumentos/article/download/2034/1963/3543 ; Archivo Dominicano (2012): https://archivodominicano.dominicos.org/ojs/article/download/290/capilla-Teposcolula-Mixteca-Mexico/41 |
 | Notas | Buena. Es patrimonio arquitectónico, no artesanía; los tres municipios están en este distrito. | |
 
@@ -156,7 +158,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 44 (24 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 175 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 59.9% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 143,617 · padrón 145,364 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 143,617 · padrón 145,364 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Tejido de palma de la Mixteca (sombrero, tenate, petate; palma soyate) | México Desconocido, «Palma mixteca o soyate»: https://www.mexicodesconocido.com.mx/palma-mixteca-o-soyate.html |
 | Notas | Media. Tradición regional de la Mixteca Baja; Huajuapan es centro de acopio y venta. | |
 
@@ -173,7 +175,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 17 (6 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 108 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 74.5% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 121,707 · padrón 123,136 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 121,707 · padrón 123,136 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Huipil triqui de telar de cintura (San Martín Itunyoso y comunidades triquis del distrito) | AILLA, Universidad de Texas, «The process of making a traditional blouse» (San Martín Itunyoso, 2014): https://islandora-ailla.lib.utexas.edu/islandora/object/ailla%3A246702 |
 | Notas | Media. Alternativa: huipil amuzgo de San Pedro Amuzgos (también en el distrito; sin fuente verificada aquí). | |
 
@@ -190,7 +192,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 43 (4 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 121 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 85.2% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 123,479 · padrón 124,715 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 123,479 · padrón 124,715 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Tianguis de los sábados de Tlaxiaco, plaza tradicional de la Mixteca Alta | México Desconocido, «Oaxaca y sus mercados»: https://www.mexicodesconocido.com.mx/oaxaca-y-sus-mercados-el-encuentro-de-lo-diverso.html |
 | Notas | Media. No es artesanía en sí; si se prefiere artesanía, usar palma o textil mixteco (sin fuente específica de Tlaxiaco). | |
 
@@ -207,7 +209,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 63 (0 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 121 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 73.1% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 114,764 · padrón 116,182 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 114,764 · padrón 116,182 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Capulálpam de Méndez, Pueblo Mágico de la Sierra Juárez; alternativa: huipil de Villa Hidalgo Yalálag | Sectur Oaxaca, Plan de Marketing Capulálpam de Méndez: https://www.oaxaca.gob.mx/sectur/wp-content/uploads/sites/65/2020/12/Plan-de-Marketing-Capulalpam-de-Mendez.pdf ; Redalyc, estudio sobre el huipil de Yalálag: https://www.redalyc.org/journal/6077/607764906004/607764906004.pdf |
 | Notas | Buena (Capulálpam, fuente oficial estatal). | |
 
@@ -224,7 +226,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 21 (2 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 94 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 88.5% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 112,269 · padrón 113,826 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 112,269 · padrón 113,826 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Blusa mixe (xaam nïxuy) de Santa María Tlahuitoltepec | Milenio, «Mixes denuncian el plagio de sus diseños ancestrales» (2015): https://www.milenio.com/cultura/mixes-denuncian-el-plagio-de-sus-disenos-ancestrales |
 | Notas | Buena. Si se menciona el caso de plagio (Isabel Marant, 2015), hacerlo con respeto a la autoría comunitaria. | |
 
@@ -241,7 +243,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 13 (11 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 105 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 59.2% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 114,455 · padrón 115,563 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 114,455 · padrón 115,563 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Selva de los Chimalapas (territorio zoque de San Miguel y Santa María Chimalapa, de alta biodiversidad) | SEMARNAT, presentación «Chimalapas» (2024): https://eventos.semarnat.gob.mx/files/uploads/rodolfo/2024/06/12/chimalapas.pdf |
 | Notas | Buena. Distintivo natural, no artesanía. Ojo: hay conflicto de límites con Chiapas; no tocarlo en la pieza. | |
 
@@ -258,7 +260,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 5 (3 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 108 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 41.9% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 153,439 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 155,072 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 153,439 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 155,072 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | SIN PROPUESTA VERIFICADA | No se encontró una artesanía documentada propia de Santa Lucía del Camino ni de los otros 4 municipios. |
 | Notas | Pendiente: decide el Mtro. Joab. La única referencia hallada es la fiesta patronal del 13 de diciembre (EcuRed, no oficial). | |
 
@@ -275,7 +277,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 2 (1 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 91 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 45.2% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 122,235 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 123,427 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 122,235 (mínimo: hay secciones nuevas de 2023-2026 sin asignar en su municipio) · padrón 123,427 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Centro Histórico de Oaxaca y zona arqueológica de Monte Albán, Patrimonio Mundial (UNESCO, 1987); la cantera verde del centro | UNESCO, Lista del Patrimonio Mundial, sitio 415: https://whc.unesco.org/es/list/415 |
 | Notas | Muy buena (fuente oficial). Monte Albán abarca territorio de varios municipios conurbados. | |
 
@@ -292,7 +294,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 15 (5 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 53 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 46.6% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 120,541 · padrón 122,173 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 120,541 · padrón 122,173 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Barro verde vidriado de Santa María Atzompa | México Desconocido, «Santa María Atzompa, pueblo que da vida al barro»: https://www.mexicodesconocido.com.mx/santa-maria-atzompa.html |
 | Notas | Buena. Atzompa está en este distrito según el Anexo 3B. | |
 
@@ -309,7 +311,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 6 (3 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 40 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 48.5% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 146,769 · padrón 148,415 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 146,769 · padrón 148,415 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Alebrijes (tallas de copal) de San Antonio Arrazola, comunidad de Santa Cruz Xoxocotlán | México Desconocido, «Manuel Jiménez Ramírez, el pionero de las tallas de madera en Oaxaca»: https://www.mexicodesconocido.com.mx/manuel-jimenez-tallas-madera-oaxaca.html |
 | Notas | Buena. San Martín Tilcajete (otro centro de alebrijes) está en el DL 21. | |
 
@@ -326,7 +328,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 33 (6 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 91 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 67.7% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 109,557 · padrón 111,070 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 109,557 · padrón 111,070 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Mezcal destilado en olla de barro de Villa Sola de Vega | Mezcalistas (sitio especializado): https://www.mezcalistas.com/?p=75734 |
 | Notas | Débil: solo fuentes de productores y blogs. Se repite el mezcal en el DL 24; conviene elegir otro distintivo para uno de los dos. | |
 
@@ -343,7 +345,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 28 (2 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 80 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 80.7% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 115,395 · padrón 116,799 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 115,395 · padrón 116,799 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Tapetes de lana de Teotitlán del Valle (teñidos con grana cochinilla); Indicación Geográfica del IMPI | IMPI, Declaratoria de la Indicación Geográfica «Tapetes de Teotitlán, Santa Ana y San Miguel del Valle» (2022): https://www.gob.mx/cms/uploads/attachment/file/749823/IMPI.Declaracio_n_Tapetes_T._02.03.22.pdf |
 | Notas | Muy buena (fuente oficial). Santa Ana del Valle también está en el distrito. | |
 
@@ -360,7 +362,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 22 (8 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 106 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 72.9% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 118,793 · padrón 120,280 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 118,793 · padrón 120,280 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Traje de tehuana (huipil bordado y enagua) de las mujeres zapotecas del Istmo | The Americas (Cambridge University Press), «The Traje de Tehuana as National Icon»: https://cambridge.org/core/journals/americas/article/traje-de-tehuana-as-national-icon-gender-ethnicity-and-fashion-in-mexico/E490131BB38CD003A59A36E87DA2C35B |
 | Notas | Buena. Es de todo el Istmo zapoteco; no reducirlo a disfraz. | |
 
@@ -377,7 +379,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 7 (7 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 90 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 62.7% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 134,099 · padrón 135,300 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 134,099 · padrón 135,300 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Alfarería de Asunción Ixtaltepec (macetas, platos y hornos de barro para cocer totopos) | Wikipedia, «Asunción Ixtaltepec»: https://en.wikipedia.org/wiki/Asunci%C3%B3n_Ixtaltepec |
 | Notas | Débil (fuente no oficial). Alternativa: Salina Cruz como puerto del Pacífico (distintivo no artesanal, sin fuente revisada aquí). | |
 
@@ -394,7 +396,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 7 (6 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 91 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 85.3% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 130,393 · padrón 131,199 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 130,393 · padrón 131,199 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Las Velas istmeñas de Juchitán (fiestas zapotecas con sones en zapoteco y trajes bordados) | Sectur Oaxaca, Guía Ruta Istmo (2024): https://www.oaxaca.gob.mx/sectur/wp-content/uploads/sites/65/2024/08/Guia-Ruta-Istmo.pdf |
 | Notas | Buena (fuente oficial estatal). No hay declaratoria de patrimonio inmaterial; no decir que la hay. | |
 
@@ -411,7 +413,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 33 (7 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 98 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 56.6% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 132,382 · padrón 133,826 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 132,382 · padrón 133,826 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Barro negro de San Bartolo Coyotepec (sede del Museo Estatal de Arte Popular de Oaxaca) | Wikipedia, «San Bartolo Coyotepec» y «Museo Estatal de Arte Popular de Oaxaca»: https://en.wikipedia.org/wiki/San_Bartolo_Coyotepec |
 | Notas | Media (fuente no oficial; dato muy conocido). Ojo: el acuerdo INE/CG33/2025 modificó límites entre Zaachila, Coyotepec, Quiané y Tilcajete. | |
 
@@ -428,7 +430,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 23 (19 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 104 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 82.5% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 137,196 · padrón 138,334 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 137,196 · padrón 138,334 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Tinte de caracol púrpura y pozahuanco (enredo) de los tintoreros mixtecos de Pinotepa de Don Luis | Mongabay Latam (junio de 2025), «Indígenas de Oaxaca buscan salvar al caracol púrpura»: https://es.mongabay.com/2025/06/mexico-indigenas-oaxaca-salvar-caracol-purpura/ |
 | Notas | Buena. Especie protegida: la pieza no debe sugerir comprar o extraer caracol. | |
 
@@ -445,7 +447,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 12 (3 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 63 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 75.6% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 132,279 · padrón 133,455 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 132,279 · padrón 133,455 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Playa Zicatela de Puerto Escondido, ola de surf de talla mundial | Lonely Planet, «Playa Zicatela»: https://www.lonelyplanet.com/mexico/puerto-escondido/attractions/playa-zicatela/a/poi-sig/496894/361610 |
 | Notas | Media (fuente turística). Distintivo natural y deportivo, no artesanía. | |
 
@@ -462,7 +464,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 40 (2 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 121 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 72.1% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 139,729 · padrón 141,051 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 139,729 · padrón 141,051 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Mezcal de la región miahuateca | Redalyc, estudio sobre la región miahuateca y la producción de mezcal: https://www.redalyc.org/journal/280/28069360007/28069360007.epub |
 | Notas | Media (académica). Se repite el mezcal con el DL 16. | |
 
@@ -479,7 +481,7 @@ Mapa oficial del distrito (IEEPCO): https://www.ieepco.org.mx/archivos/documento
 | Municipios | 9 (3 por partidos políticos) | IEEPCO, Anexo 3B; régimen: IEEPCO-CG-SNI-17/2025 y lista de 152 |
 | Secciones (2022) | 79 | IEEPCO, Anexo 3B (puede haber cambiado con el marco 2026) |
 | Población indígena o afromexicana | 54.9% (distrito indígena) | IEEPCO, Anexo 3B |
-| Lista nominal | 146,584 · padrón 148,368 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
+| Lista nominal | 146,584 · padrón 148,368 | INE, Datos Abiertos DERFE, pdln_edms_re corte 29-oct-2026 (https://ine.mx/wp-content/uploads/2026/01/DatosAbiertos-derfe-pdln_edms_re_20261029.xlsx; portal: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral); suma por sección con el catálogo del Anexo 3B (cálculo de Domo) |
 | Distintivo propuesto | Café Pluma (Denominación de Origen; Pluma Hidalgo) | El Universal, «Café Pluma de Oaxaca obtiene denominación de origen»: https://www.eluniversal.com.mx/estados/cafe-pluma-de-oaxaca-obtiene-denominacion-de-origen/ ; WIPO Lex, declaratoria: https://www.wipo.int/wipolex/es/legislation/details/19620 |
 | Notas | Buena. La DO cubre 30 municipios; Pluma Hidalgo está en este distrito. | |
 
