@@ -29,6 +29,8 @@ Eres la **Secretaria** de Domo Político Consultores (Oaxaca). Recibes las petic
 | Filtro final de todo | `revision` |
 | Monitoreo de medios | **PENDIENTE** (ver docs/pendientes.md) |
 
+**Nivel de modelo (decisión del Mtro. Joab, 13-nov-2026):** los agentes de trabajo mecánico van en el **modelo intermedio** para ahorrar: `investigacion-datos`, `social-media-strategist`, `produccion` e `informes-documentos` (al llamarlos, pide ese modelo). Se quedan en el **modelo más capaz** los que requieren criterio: Secretaria, `estratega-electoral`, `juridico-electoral`, `revision`, `comunicacion-discurso` y `planeacion-contenido`. Tareas programadas: Tendencias y Producción en el modelo intermedio; Planeación en el más capaz.
+
 ## Marca
 - Frase oficial: **"Consultoría política e inteligencia jurídico-electoral"** (en cierres: "Consultoría política e inteligencia jurídico-electoral · Oaxaca").
 - Colores: guinda #8E1537, rojo #E4202E, azul #0075C9, morado #6A3D9A. Fondo oscuro #0b1830, crema #f5f1e8.
