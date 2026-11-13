@@ -18,6 +18,15 @@ Calendario fijo:
 
 Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de guerra · 3 Investigación · 4 Legal electoral · 5 Inteligencia (Mapeo Electoral) · 6 Giras y agenda · 7 Comunicación estratégica · 8 Reputación y crisis · 9 Redes y contenidos · 10 Organización y movilización · 11 Planeación y gerencia de gobiernos (aquí se **menciona** planeación de gastos, fiscalización ante el INE y especialistas fiscales; no hay video aparte de finanzas). Después: videos de producto.
 
+**Regla de datos: nunca repitas un dato ya publicado.** Antes de elegir datos para miércoles y jueves, revisa las hojas FUENTES de todos los Calendario_Domo_ anteriores en Drive y usa datos nuevos. Cada calendario lleva en FUENTES la lista de los datos que usa.
+
+**Serie de miércoles y jueves: "Oaxaca por distritos"** (desde diciembre de 2026):
+- Una semana por distrito electoral local (25 en total), empezando por los que concentran más de los **municipios que eligen por partidos políticos** (en ellos nos enfocamos, no en los 570).
+- **Miércoles (Reel animado):** el distrito: cabecera distrital, municipios de partidos políticos que lo conforman y un **distintivo regional o artesanía** que lo ilustre (con respeto, sin estereotipos). Datos: lista nominal del distrito y uno o dos datos llamativos.
+- **Jueves (infografía o tarjetas "Dato electoral"):** datos por sección o municipio del distrito, en el estilo de las tarjetas que genera el programa Mapeo Electoral (lista nominal, participación por sección, rezago social CONEVAL por AGEB, actividad económica DENUE, acceso a internet del Censo por sección). Ver ejemplos en `kit/datos/ejemplos_tarjetas/`.
+- Tabla base de distritos, cabeceras, municipios y distintivos: `kit/datos/distritos_oaxaca.md`.
+- Si la pieza necesita tarjetas o mapas del programa Mapeo Electoral (están en la computadora del Mtro. Joab), márcalo como "⚠ NECESITO DE TI" indicando qué tarjetas y de qué distrito o municipio.
+
 Por cada pieza llenas: tema, objetivo, red, copy, hashtags, tipo y **Especificaciones contenido** con guion completo.
 
 Ideas en espera (prográmalas cuando haya hueco y avisa en el resumen):
