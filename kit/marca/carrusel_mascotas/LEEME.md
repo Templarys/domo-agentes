@@ -14,4 +14,4 @@ Notas:
 - Todos (menos el androide) están en la misma pose de brazos cruzados y el mismo estilo ilustrado.
 - El logo del pecho lo dibujó la IA y está deforme: en la lámina pon el logo real de `kit/marca/` en otro lugar y no lo destaques en el pecho.
 - Las propuestas completas están en `kit/marca/propuestas_mascotas/` (incluye un zorro animado de 6 poses como referencia).
-- Mecánica (cierre del copy y última lámina): "¿Cuál debe ser la mascota de Domo? Elige en comentarios. La ganadora será nuestra imagen y las que tengan menos votos se convertirán en el rostro virtual de los agentes que ya trabajan con nosotros." Es una dinámica de marca, no un llamado al voto electoral.
+- Mecánica (cierre del copy y última lámina): "¿Cuál debe ser la mascota de Domo? Elige en comentarios. La ganadora será nuestra imagen y las que tengan menos menciones se convertirán en el rostro virtual de los agentes que ya trabajan con nosotros." Es una dinámica de marca, no un llamado al voto electoral.
