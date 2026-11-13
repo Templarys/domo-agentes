@@ -4,7 +4,7 @@ Recortes listos para las láminas (de las propuestas que hizo el Mtro. Joab con 
 
 | Lámina | Archivo | Frase sugerida |
 |---|---|---|
-| Caballo de ajedrez | caballo.png | Planea varias jugadas adelante. |
+| Caballo de ajedrez ("A. El Caballo Estratega") | caballo.png | Planea varias jugadas adelante. |
 | Búho | buho.png | Ve lo que otros no ven. |
 | Zorro | zorro.png | Encuentra la ruta más inteligente. |
 | Jaguar | jaguar.png | Fuerza y territorio: 100 % Oaxaca. |
