@@ -18,7 +18,7 @@ No copiar personajes, estética, marcas ni diseños de esas cuentas ni de videoj
 - **Pecho:** sin logo (el logo real se pone en la edición si hace falta).
 - **Personalidad:** seguro, amable, estratégico; siempre tiene el plan B.
 - **Referencias y poses aprobadas:** `kit/marca/estratega/` (estratega_ref = brazos cruzados, pose_saludo, pose_idea, pose_cintura).
-- **Pose nueva:** edición de imagen en ElevenLabs a partir de `estratega_ref.png`, mismo fondo, escala y posición (~1,800 créditos). Si una pose nueva no se parece, no se usa.
+- **Pose nueva:** la genera el Mtro. Joab en ChatGPT con el prompt que deja Planeación (adjuntando `estratega_ref.png`; mismo fondo, escala y posición) y la sube a Drive como `MATERIAL_…`. Ningún agente genera imágenes. Si una pose nueva no se parece, no se usa.
 - **Formato base:** animación por poses (`kit/video/plantilla_poses.html`): cambio de pose con destello y "rebote", textos abajo y cierre con logo + WhatsApp. Video con movimiento real (~14,000 créditos) solo con autorización.
 
 ## Personajes secundarios (fijos, genéricos, ficticios)
@@ -71,7 +71,7 @@ Reglas de diseño: ropa y colores neutros, sin logos, siglas ni colores de ning�
 No usar remixes ni canciones con derechos. Usar la biblioteca de audio de Instagram y Facebook al publicar, o música libre de derechos. El video se entrega sin música o con música libre, e indica qué tipo de audio buscar.
 
 ## Producción y costo
-- La generación de imagen y video con IA (ElevenLabs) gasta créditos.
+- Las imágenes nuevas las genera el Mtro. Joab en ChatGPT con el prompt del calendario. El video con IA (ElevenLabs) gasta créditos.
 - El agente de producción del domingo genera el episodio solo si la pose que necesita de El Estratega ya existe o se puede generar a partir de las aprobadas.
 - Cualquier cosa que el agente no pueda resolver solo (aprobar un personaje nuevo, elegir música, un dato o material del Mtro. Joab) se marca en el Excel como "⚠ NECESITO DE TI" para que llegue a más tardar el domingo.
 - Idioma: español de México, tono ligero y cercano.

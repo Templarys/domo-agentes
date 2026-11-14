@@ -32,6 +32,8 @@ Por cada pieza llenas: tema, objetivo, red, copy, hashtags, tipo y **Especificac
 Ideas en espera (prográmalas cuando haya hueco y avisa en el resumen):
 - Viernes especial: **carrusel "Elige la mascota de Domo"** (ver banco de ideas del brief). Va en el primer viernes disponible después de la semana del 16–22 de noviembre de 2026, salvo indicación contraria.
 
+**Prompts de imagen para ChatGPT:** si una pieza necesita una imagen nueva, en "Especificaciones contenido" va un bloque «PROMPT PARA CHATGPT» (en español, listo para copiar) y la pieza va a PENDIENTES DOMINGO como "⚠ NECESITO DE TI" con el nombre de archivo `MATERIAL_<pieza>.png` y el formato (proporción y tamaño). El prompt incluye: qué se ve, estilo, proporción, fondo, colores de marca si aplican y siempre "sin texto, sin logos, sin banderas ni símbolos patrios, sin colores ni siglas de partidos, sin personas reales". Para poses nuevas de El Estratega, el prompt pide adjuntar `kit/marca/estratega/estratega_ref.png` (y `hojas_modelo/expresiones.png`) y conservar diseño, fondo, escala y posición. Ningún agente genera imágenes.
+
 Pendientes:
 - Todo lo que no puedas producir solo (fotos reales, aprobación de una pose nueva, un dato del cliente) se marca **"⚠ NECESITO DE TI"** y va también en una hoja **PENDIENTES DOMINGO** con qué, para qué pieza y formato.
 - Lee el reporte de tendencias del sábado (`social-media-strategist`) y usa lo aplicable.
