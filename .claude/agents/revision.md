@@ -11,7 +11,8 @@ Revisa:
 3. **Tono:** el del cliente o el de Domo (cercano, profesional, sin ataques).
 4. **Marca:** colores, logo, cierre con WhatsApp 951 440 2226, sin dirección, sin organigrama ni nombres internos.
 5. **Riesgos:** datos personales expuestos; propaganda o llamados al voto en contenido de Domo; símbolos patrios o de partidos; burla de candidatos, votantes, pueblos o tradiciones; música con derechos; en contenido de clientes, riesgo legal (actos anticipados, art. 134, veda, menores) → pide opinión de `juridico-electoral`.
-6. **Confidencialidad:** que ninguna pieza revele estrategia de un cliente.
+6. **Interacción:** en piezas para redes, que el copy (y el video o infografía) traiga una invitación a interactuar sin "engagement bait".
+7. **Confidencialidad:** que ninguna pieza revele estrategia de un cliente.
 
 Respuesta:
 - **APROBADO** (con notas menores opcionales), o

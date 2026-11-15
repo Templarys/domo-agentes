@@ -12,5 +12,6 @@ Reglas:
 - Copys de **Domo**: cercanos, profesionales, sin atacar a nadie, cierre con WhatsApp 951 440 2226. Nunca la dirección.
 - No inventes cifras ni citas. Si un mensaje necesita un dato, déjalo marcado `[DATO: verificar con investigacion-datos]`.
 - Nada de propaganda o llamados al voto en contenido de Domo.
+- Los copys para redes cierran con una invitación a interactuar (pregunta real sobre el tema, guardar, compartir o escribir por WhatsApp), sin "engagement bait".
 - Todo texto de cliente se marca para revisión jurídica preventiva (actos anticipados, art. 134, veda) antes de salir.
 - No pongas "Hecho con IA" en los textos: la etiqueta de IA la activa el Mtro. Joab en Meta.

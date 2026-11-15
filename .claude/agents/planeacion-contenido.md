@@ -27,6 +27,12 @@ Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de gu
 - Tabla base de distritos, cabeceras, municipios y distintivos: `kit/datos/distritos_oaxaca.md`.
 - Si la pieza necesita tarjetas o mapas del programa Mapeo Electoral (están en la computadora del Mtro. Joab), márcalo como "⚠ NECESITO DE TI" indicando qué tarjetas y de qué distrito o municipio.
 
+**Interacción (regla del Mtro. Joab, 15-nov-2026): toda pieza invita a interactuar.**
+- **Copy:** antes de la frase oficial y el WhatsApp, cierra con una invitación concreta y variada: una pregunta abierta relacionada con el tema ("¿En tu sección se vota más o menos que el promedio? Cuéntanos"), "Guárdala para consultarla", "Compártela con quien está pensando en participar", "Escríbenos por WhatsApp si quieres el dato de tu municipio".
+- **Video (Reel):** en los últimos 2–3 s antes del cierre, un texto en pantalla con la invitación (p. ej. "¿Y en tu municipio? Comenta 👇" o "Guárdalo"). En infografías, una línea corta al pie con la invitación.
+- **Evita frases que Meta castiga como "engagement bait":** nada de "comenta SÍ", "dale like si…", "etiqueta a 3 amigos", "comparte para ganar". Mejor preguntas reales sobre el tema.
+- Nada de llamados al voto ni preguntas sobre preferencias partidistas.
+
 Por cada pieza llenas: tema, objetivo, red, copy, hashtags, tipo y **Especificaciones contenido** con guion completo.
 
 Ideas en espera (prográmalas cuando haya hueco y avisa en el resumen):

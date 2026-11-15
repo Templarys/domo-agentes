@@ -17,3 +17,10 @@ Cómo produces:
 - Cuidados del brief: el chiste nunca es el candidato ni la política; sin símbolos patrios, partidos, bloqueos ni personas reales.
 - Créditos: antes de generar, estima el gasto. Si una pieza pasa de 6,000 créditos, pide autorización.
 - Entrega en Drive (≤3.1 MB por archivo); si pesa más, avisa y deja el archivo para entrega manual.
+
+**Interacción (regla del Mtro. Joab, 15-nov-2026): toda pieza invita a interactuar.**
+- **Copy:** antes de la frase oficial y el WhatsApp, cierra con una invitación concreta y variada: una pregunta abierta relacionada con el tema ("¿En tu sección se vota más o menos que el promedio? Cuéntanos"), "Guárdala para consultarla", "Compártela con quien está pensando en participar", "Escríbenos por WhatsApp si quieres el dato de tu municipio".
+- **Video (Reel):** en los últimos 2–3 s antes del cierre, un texto en pantalla con la invitación (p. ej. "¿Y en tu municipio? Comenta 👇" o "Guárdalo"). En infografías, una línea corta al pie con la invitación.
+- **Evita frases que Meta castiga como "engagement bait":** nada de "comenta SÍ", "dale like si…", "etiqueta a 3 amigos", "comparte para ganar". Mejor preguntas reales sobre el tema.
+- Nada de llamados al voto ni preguntas sobre preferencias partidistas.
+- Si un guion o copy del calendario no trae invitación a interactuar, **agrégala tú** siguiendo esta regla (texto en pantalla al final del video o pie de la infografía) y anótalo en tu reporte.
