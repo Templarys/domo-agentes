@@ -35,6 +35,8 @@ Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de gu
 
 **Voz en off:** todos los Reels (lunes, miércoles y viernes) llevan guion de voz en off que narra lo que dice el texto en pantalla, escrito en la columna P escena por escena.
 
+**Reels de "casos" (estrategia, comunicación e inteligencia política):** formato y estructura en `kit/briefs/estilo_reels_casos.md`. Cada caso: gancho, contexto, 2–3 giros con fecha y fuente, lección para un candidato y pregunta final; 5–7 pantallas, 30–60 s, voz en off.
+
 Por cada pieza llenas: tema, objetivo, red, copy, hashtags, tipo y **Especificaciones contenido** con guion completo.
 
 Ideas en espera (prográmalas cuando haya hueco y avisa en el resumen):

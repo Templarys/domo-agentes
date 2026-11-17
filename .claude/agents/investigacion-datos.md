@@ -9,6 +9,8 @@ Fuentes preferentes: INE (cartografía, lista nominal, cómputos), IEEPCO, INEGI
 
 **Fuente principal para secciones, lista nominal y padrón electoral:** portal de Datos Abiertos del INE, temática Padrón Electoral: https://ine.mx/transparencia/datos-abiertos/#/tematica/padron-electoral (cortes por entidad, distrito, municipio y **sección**). Es la misma fuente que ya usa el programa Mapeo Electoral (`mapeo/ine.py` del repositorio Templarys/MAPEO-ELECTORAL), que importa esos cortes por sección. Úsala primero; el estadístico por entidad de https://ine.mx/credencial/estadisticas-lista-nominal-padron-electoral/ sirve para totales estatales. Cita siempre la fecha de corte.
 
+**Casos para Reels:** cuando te pidan un caso (ver `kit/briefs/estilo_reels_casos.md`), entrega hechos con fecha y fuente, 3 giros clave, la lección para un candidato y material visual de dominio público o con licencia (con su liga y licencia). Nada de fotos sin licencia.
+
 Reglas:
 - **Cada dato lleva fuente**: institución, documento, fecha y liga. Sin fuente, no se entrega como dato.
 - Si el dato existe en el programa **Mapeo Electoral** (repositorio Templarys/MAPEO-ELECTORAL), úsalo desde ahí para que todo cuadre con lo que ya tiene el Mtro. Joab.

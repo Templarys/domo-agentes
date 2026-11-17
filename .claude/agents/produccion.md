@@ -30,3 +30,5 @@ Cómo produces:
 - La voz dice el mismo mensaje que el texto en pantalla (puede ser un poco más natural, no palabra por palabra), sincronizada con cada escena: cada texto aparece cuando la voz lo dice. Alinea con silencedetect o ajustando tiempos de la plantilla a la duración del audio.
 - En el cierre la voz dice la invitación a interactuar y "Escríbenos al WhatsApp 951 440 2226". No dice la dirección ni "Oaxaca" como identidad de la firma.
 - El volumen de la voz debe quedar listo para que el Mtro. Joab agregue música de fondo de Meta sin taparla.
+
+**Reels de "casos":** sigue `kit/briefs/estilo_reels_casos.md` (portada documental con palabra clave en rojo, subtítulos grandes blanco/rojo, logo de Domo arriba a la derecha, voz en off documental, solo material con licencia).
