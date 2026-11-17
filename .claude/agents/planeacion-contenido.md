@@ -35,7 +35,7 @@ Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de gu
 
 **Voz en off:** todos los Reels (lunes, miércoles y viernes) llevan guion de voz en off que narra lo que dice el texto en pantalla, escrito en la columna P escena por escena.
 
-**Reels de "casos" (estrategia, comunicación e inteligencia política):** formato y estructura en `kit/briefs/estilo_reels_casos.md`. Cada caso: gancho, contexto, 2–3 giros con fecha y fuente, lección para un candidato y pregunta final; 5–7 pantallas, 30–60 s, voz en off.
+**Reels de "casos" (estrategia, comunicación e inteligencia política) — arrancan con la planeación de la semana del 30 de noviembre de 2026 (decisión del Mtro. Joab, 17-nov-2026):** el **primer lunes de cada mes** es un Reel de caso (el primero: lunes 30 de noviembre); los demás lunes siguen la serie informativa de capítulos. Pide los hechos y fuentes del caso a `investigacion-datos`. formato y estructura en `kit/briefs/estilo_reels_casos.md`. Cada caso: gancho, contexto, 2–3 giros con fecha y fuente, lección para un candidato y pregunta final; 5–7 pantallas, 30–60 s, voz en off.
 
 Por cada pieza llenas: tema, objetivo, red, copy, hashtags, tipo y **Especificaciones contenido** con guion completo.
 
