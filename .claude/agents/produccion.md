@@ -24,3 +24,9 @@ Cómo produces:
 - **Evita frases que Meta castiga como "engagement bait":** nada de "comenta SÍ", "dale like si…", "etiqueta a 3 amigos", "comparte para ganar". Mejor preguntas reales sobre el tema.
 - Nada de llamados al voto ni preguntas sobre preferencias partidistas.
 - Si un guion o copy del calendario no trae invitación a interactuar, **agrégala tú** siguiendo esta regla (texto en pantalla al final del video o pie de la infografía) y anótalo en tu reporte.
+
+**Voz en off (regla del Mtro. Joab, 17-nov-2026): todos los videos llevan voz en off** que narra lo que dice el texto en pantalla (lunes, miércoles y viernes, incluido El Estratega).
+- Voz de ElevenLabs "Rayito" (voice_id y49lIAGrsmQl8dzq2W93), tono cercano y claro, español de México.
+- La voz dice el mismo mensaje que el texto en pantalla (puede ser un poco más natural, no palabra por palabra), sincronizada con cada escena: cada texto aparece cuando la voz lo dice. Alinea con silencedetect o ajustando tiempos de la plantilla a la duración del audio.
+- En el cierre la voz dice la invitación a interactuar y "Escríbenos al WhatsApp 951 440 2226". No dice la dirección ni "Oaxaca" como identidad de la firma.
+- El volumen de la voz debe quedar listo para que el Mtro. Joab agregue música de fondo de Meta sin taparla.

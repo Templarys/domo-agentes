@@ -33,6 +33,8 @@ Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de gu
 - **Evita frases que Meta castiga como "engagement bait":** nada de "comenta SÍ", "dale like si…", "etiqueta a 3 amigos", "comparte para ganar". Mejor preguntas reales sobre el tema.
 - Nada de llamados al voto ni preguntas sobre preferencias partidistas.
 
+**Voz en off:** todos los Reels (lunes, miércoles y viernes) llevan guion de voz en off que narra lo que dice el texto en pantalla, escrito en la columna P escena por escena.
+
 Por cada pieza llenas: tema, objetivo, red, copy, hashtags, tipo y **Especificaciones contenido** con guion completo.
 
 Ideas en espera (prográmalas cuando haya hueco y avisa en el resumen):
