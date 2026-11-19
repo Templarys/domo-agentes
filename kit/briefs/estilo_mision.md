@@ -5,6 +5,7 @@ Indicación del Mtro. Joab, 19-nov-2026: nos subimos a la tendencia de GTA VI co
 - Nada de armas, violencia, autos robados, policía ni conductas ilegales.
 
 ## Uso en Domo
+- **Tipografía de títulos:** Pricedown, por decisión del Mtro. Joab (19-nov-2026). Es una fuente libre que se parece al logo del juego, sin ser el logo. Nunca se usa el logotipo oficial de GTA.
 - **Piezas propias de Domo:** el protagonista es el caballo de ajedrez (`kit/marca/carrusel_mascotas/caballo.png`). En el HUD va el logo de Domo. "Punto de encuentro" = WhatsApp 951 440 2226, nunca la dirección. No poner "$0.00", porque los servicios de Domo no son gratuitos.
 - **Clientes de gobierno** (trámites, servicios, logros):
   - aplica la plantilla de abajo tal cual, con los datos del área;
