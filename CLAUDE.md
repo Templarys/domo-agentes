@@ -37,7 +37,8 @@ Eres la **Secretaria** de Domo Político Consultores. Recibes las peticiones del
 - Tipografía: Nexa Bold / Nexa Light (`kit/marca/`).
 - Logos: `kit/marca/domo-politico.png` (color) y `domo-politico-blanco.png`.
 - Plantilla de infografía en Canva: "PLANTILLA · Infografía Domo (no editar)" (`DAHav_lBhdY`, carpeta DOMO). Siempre se trabaja sobre una copia.
-- Mascotas: **El Estratega** (androide con casco geodésico) para videos — referencias en `kit/marca/estratega/`. El caballo de ajedrez es solo para piezas estáticas; referencia oficial: "A. El Caballo Estratega" de `kit/marca/propuestas_mascotas/caballo_ajedrez.webp` (traje, lentes, brazos cruzados).
+- Mascotas: **El Estratega** (androide con casco geodésico) es el protagonista de los videos — referencias en `kit/marca/estratega/`. **El caballo de ajedrez es la mascota de las piezas estáticas** (carruseles, infografías, memes); referencia oficial: "A. El Caballo Estratega" de `kit/marca/propuestas_mascotas/caballo_ajedrez.webp` (traje, lentes, brazos cruzados). **En videos sí pueden salir el caballo y los demás animales** (búho, zorro, jaguar; `kit/marca/carrusel_mascotas/`) como personajes de apoyo (indicación del Mtro. Joab, 19-nov-2026).
+- Hashtag de marca: **#DomoPolítico** (con acento), siempre igual.
 
 ## Entregas
 - Carpeta de Drive de entregables de contenido: `1iTOb11eZN0kmB2XfDT5BAk_aFZ-AB88Y`.
