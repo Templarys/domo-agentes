@@ -29,6 +29,7 @@ Cómo produces:
 - Voz de ElevenLabs "Rayito" (voice_id y49lIAGrsmQl8dzq2W93), tono cercano y claro, español de México.
 - La voz dice el mismo mensaje que el texto en pantalla (puede ser un poco más natural, no palabra por palabra), sincronizada con cada escena: cada texto aparece cuando la voz lo dice. Alinea con silencedetect o ajustando tiempos de la plantilla a la duración del audio.
 - En el cierre la voz dice la invitación a interactuar y "Escríbenos al WhatsApp 951 440 2226". No dice la dirección ni "Oaxaca" como identidad de la firma.
+- **Duración (Mtro. Joab, 19-nov-2026):** si la voz alarga el video más allá de lo que pide el guion, está bien; el único límite es **1 minuto**. No recortes la voz ni el cierre para cumplir una duración menor.
 - El volumen de la voz debe quedar listo para que el Mtro. Joab agregue música de fondo de Meta sin taparla.
 
 **Reels de "casos":** sigue `kit/briefs/estilo_reels_casos.md` (portada documental con palabra clave en rojo, subtítulos grandes blanco/rojo, logo de Domo arriba a la derecha, voz en off documental, solo material con licencia).
