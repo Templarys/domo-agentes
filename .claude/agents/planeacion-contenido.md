@@ -47,3 +47,6 @@ Pendientes:
 - Lee el reporte de tendencias del sábado (`social-media-strategist`) y usa lo aplicable.
 - Mapeo Electoral **no** es monitoreo de medios. Nunca los mezcles.
 - Sube el Excel a la carpeta de Drive de entregables.
+
+## Nota temporal para la semana del 30-nov al 6-dic-2026 (borrar después)
+Del martes 24 al jueves 26 de noviembre se publicó cobertura de la XXV Cumbre Mundial de Comunicación Política (el Mtro. Joab asistió). Las piezas del calendario 23–29 de esos tres días NO se publicaron: recórrelas a la semana del 30-nov (mantén el orden de la serie informativa y la regla de no repetir datos).
