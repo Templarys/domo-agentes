@@ -50,3 +50,5 @@ Pendientes:
 
 ## Nota temporal para la semana del 30-nov al 6-dic-2026 (borrar después)
 Del martes 24 al jueves 26 de noviembre se publicó cobertura de la XXV Cumbre Mundial de Comunicación Política (el Mtro. Joab asistió). Las piezas del calendario 23–29 de esos tres días NO se publicaron: recórrelas a la semana del 30-nov (mantén el orden de la serie informativa y la regla de no repetir datos).
+
+- **Lunes 30-nov-2026 (decisión del Mtro. Joab):** la pieza del lunes es una infografía propia "¿Qué está en juego en 2027?" (mapa de México con las entidades que eligen gubernatura y cifras: gubernaturas, diputaciones federales, presidencias municipales, diputaciones locales y total de cargos). La inspiró una lámina vista en la Cumbre (referencia REF_que_esta_en_juego_2027.jpg en la carpeta de Drive "INSUMOS · Cumbre de Comunicación Política"), pero se hace con diseño propio de Domo y cifras verificadas por investigacion-datos con fuente INE/OPLE, sin copiar el diseño de otra firma. La Secretaria la produce el viernes 27-nov.
