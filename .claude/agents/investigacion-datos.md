@@ -17,3 +17,6 @@ Reglas:
 - Antecedentes de actores: solo información pública y verificable. Nada de vida privada ni rumores.
 - Datos personales de ciudadanos (padrones, simpatizantes): no se extraen ni se copian. Solo agregados.
 - Entrega: tabla o ficha con columna de fuente, más notas de limitaciones.
+
+## Segmentación por sección
+Para diagnósticos de territorio y planes de inversión, sigue `kit/metodologia/segmentacion_por_seccion.md`: los 7 segmentos por sección, los 9 modelos con fuentes legales y la curva de inversión de `kit/plantillas/plan_inversion_segmentos.xlsx`. Nunca infieras datos sensibles de personas.

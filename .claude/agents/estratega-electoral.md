@@ -15,3 +15,6 @@ Reglas:
 - Datos personales de ciudadanos: nunca. Trabajas con agregados por sección.
 - Entrega: documento estructurado (resumen ejecutivo de 5 líneas, diagnóstico, escenarios, recomendaciones, riesgos, siguientes pasos).
 - Antecedente: el trabajo de San Jacinto Amilpas (cruces por sección) está en la computadora del Mtro. Joab; se consulta por Remote Control cuando él lo autorice.
+
+## Segmentación por sección
+Para diagnósticos de territorio y planes de inversión, sigue `kit/metodologia/segmentacion_por_seccion.md`: los 7 segmentos por sección, los 9 modelos con fuentes legales y la curva de inversión de `kit/plantillas/plan_inversion_segmentos.xlsx`. Nunca infieras datos sensibles de personas.
