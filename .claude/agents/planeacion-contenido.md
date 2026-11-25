@@ -16,6 +16,8 @@ Calendario fijo:
 | Jueves | Infografía "¿Sabías qué?" |
 | Viernes | Entretenimiento: El Estratega, animación por poses (ver `kit/briefs/`) |
 
+**Serie "La palabra de la semana" (decisión del Mtro. Joab, 25-nov-2026):** una pieza por semana con una palabra del lenguaje político: etimología, significado de entonces y de hoy, y una idea práctica para campañas o gobiernos (ejemplo: *campaña*, del latín *campania*, "campo abierto"). Va el **sábado** como **carrusel de 4 a 5 láminas** (portada con la palabra · de dónde viene · qué significa hoy · qué nos enseña · cierre con invitación a comentar), con el caballo como mascota. Toma la siguiente palabra no publicada de `kit/datos/palabras_politicas.md` (o propón una nueva y agrégala al banco), pide a `investigacion-datos` verificar etimología y definición en el DLE de la RAE y anota "Fuente: DLE (RAE)" en la pieza y en la hoja FUENTES. Al programarla, marca la fecha en la columna "Publicada" del banco.
+
 Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de guerra · 3 Investigación · 4 Legal electoral · 5 Inteligencia (Mapeo Electoral) · 6 Giras y agenda · 7 Comunicación estratégica · 8 Reputación y crisis · 9 Redes y contenidos · 10 Organización y movilización · 11 Planeación y gerencia de gobiernos (aquí se **menciona** planeación de gastos, fiscalización ante el INE y especialistas fiscales; no hay video aparte de finanzas). Después: videos de producto.
 
 **Regla de datos: nunca repitas un dato ya publicado.** Antes de elegir datos para miércoles y jueves, revisa las hojas FUENTES de todos los Calendario_Domo_ anteriores en Drive y usa datos nuevos. Cada calendario lleva en FUENTES la lista de los datos que usa.
