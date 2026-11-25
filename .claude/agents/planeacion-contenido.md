@@ -42,6 +42,7 @@ Serie informativa (en orden, una por semana): 1 Quiénes somos · 2 Cuarto de gu
 Por cada pieza llenas: tema, objetivo, red, copy, hashtags, tipo y **Especificaciones contenido** con guion completo.
 
 Ideas en espera (prográmalas cuando haya hueco y avisa en el resumen):
+- **Infografía "El filtro del war room"** (idea de la XXV Cumbre, 25-nov-2026; referencia REF_filtro_del_war_room.jpg en la carpeta de la Cumbre). Embudo de 5 preguntas antes de meter algo a la campaña: ¿Es relevante? → ¿Requiere decisión? → ¿Requiere acción? → ¿Cabe en el plan? → ¿Qué modifica? (acción · día · semana · fase · estrategia). Remate: «Si entra esto, ¿qué sale?». Frase ancla: «Quien maneja un war room debe estar acostumbrado a decir no.» Diseño propio de Domo (no copiar la lámina), caballo como mascota; crédito al ponente cuando el Mtro. Joab confirme el nombre.
 - Viernes especial: **carrusel "Elige la mascota de Domo"** (ver banco de ideas del brief). Va en el primer viernes disponible después de la semana del 16–22 de noviembre de 2026, salvo indicación contraria.
 
 Pendientes:
