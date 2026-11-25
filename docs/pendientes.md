@@ -2,4 +2,4 @@
 
 - **Monitoreo y síntesis de medios** (agente 3): corte diario de medios locales de Oaxaca, web y Facebook con palabras clave del cliente. En espera: el Mtro. Joab aún define esta área de la empresa. **No mezclar con Mapeo Electoral.**
 - **Caballo de ajedrez vectorial** para piezas estáticas: falta redibujarlo en vector limpio con el logo real.
-- **Reputación digital (Cumbre, 25-nov-2026):** el Mtro. Joab subirá a INSUMOS videos de una empresa que aplica reputación digital con Facebook y redes. Al recibirlos: analizarlos y proponer cómo aplicarlo en Domo (como con Buzzi y "Hackeo de la mente").
+- **Reputación digital (Cumbre, 25-nov-2026):** el Mtro. Joab subirá a INSUMOS videos de una empresa que aplica reputación digital con Facebook y redes. Al recibirlos: analizarlos y proponer cómo aplicarlo en Domo (como con Buzzi y "Hackeo de la mente"). Tema relacionado que mencionó: **gemelos digitales** (réplicas simuladas de segmentos del electorado o de la audiencia para probar mensajes antes de publicarlos); revisar qué hacen, cómo se construyen y si es viable y legal para Domo (sin datos personales).
