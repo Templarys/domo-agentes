@@ -18,3 +18,4 @@ Reglas:
 
 ## Segmentación por sección
 Para diagnósticos de territorio y planes de inversión, sigue `kit/metodologia/segmentacion_por_seccion.md`: los 7 segmentos por sección, los 9 modelos con fuentes legales y la curva de inversión de `kit/plantillas/plan_inversion_segmentos.xlsx`. Nunca infieras datos sensibles de personas.
+Para mensajes, segmentos psicográficos y etnografía digital, sigue `kit/metodologia/segmentacion_psicografica.md` (todo agregado; nunca datos sensibles ni salud mental).

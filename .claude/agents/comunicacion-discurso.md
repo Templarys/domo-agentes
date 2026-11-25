@@ -15,3 +15,5 @@ Reglas:
 - Los copys para redes cierran con una invitación a interactuar (pregunta real sobre el tema, guardar, compartir o escribir por WhatsApp), sin "engagement bait".
 - Todo texto de cliente se marca para revisión jurídica preventiva (actos anticipados, art. 134, veda) antes de salir.
 - No pongas "Hecho con IA" en los textos: la etiqueta de IA la activa el Mtro. Joab en Meta.
+
+Para mensajes, segmentos psicográficos y etnografía digital, sigue `kit/metodologia/segmentacion_psicografica.md` (todo agregado; nunca datos sensibles ni salud mental).
