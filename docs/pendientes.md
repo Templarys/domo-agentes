@@ -54,3 +54,11 @@
     - nada de reconocimiento facial ni de inferir salud, origen étnico u orientación;
     - nada de juicios sobre el físico;
     - con mujeres, cuidar estereotipos de género (violencia política de género si se publica sobre una rival).
+
+- **Notas del panel de Pulso 360° en la Cumbre (26-nov-2026)**, sobre las fotos de Debate Coach, Imagen del Candidato y Campo en Vivo. Lo útil para Domo:
+  - **Debate:** analiza debates en los que ya participó el candidato y simula en vivo a partir del contexto (estado, municipio o distrito). Su mensaje: "un debate puede definir una elección"; hay que contestar lo que se pregunta, llevar los temas propios y diferenciarse.
+  - **Imagen:** con una foto analiza lenguaje no verbal, vestimenta y estilo, y **arquetipo político y su "match" con la comunidad**. Ejemplo que dieron: un candidato rural de corbata, incongruente con su distrito. Permite comparar muchas fotos del candidato.
+  - **Campo:** rutas asignadas a brigadistas, puntualidad, gestiones, fotos de baches y de propaganda ilegal como **evidencia para quejas o impugnaciones**, y todo centralizado, no en el celular. Mencionaron nombrar representantes de casilla.
+  - **Mercado al que apuntan:** candidatos de **distrito local y regidurías**, que no pueden pagar varios consultores. Venden "varios consultores 24/7". Ofrecen **convenios a consultoras para revender** su herramienta (decisión del Mtro. Joab: ¿aliado o competencia?).
+  - **Ojo, dato legal a verificar:** el ponente dijo que el art. 242 LGIPE obliga a los brigadistas a reportar violaciones al informe del candidato. El art. 242 define campaña y propaganda; no encontramos esa obligación. Lo correcto: las evidencias sirven para presentar quejas (procedimiento especial sancionador). Validar con `juridico-electoral` antes de usarlo en material de Domo.
+  - **Para Domo:** cerraron con un QR para agendar demo. Domo ya tiene su página de demo (artifact "Plataforma Domo"); falta hacer su QR cuando el Mtro. Joab la comparta en público.
