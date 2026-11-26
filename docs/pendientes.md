@@ -45,3 +45,12 @@
     2. **Simulacro en vivo:** un agente de voz de ElevenLabs hace de rival, alimentado con el expediente público del adversario (sus declaraciones, posturas y flancos), más un moderador con tiempos.
   - **Falta:** la rúbrica y el formato de entrenamiento del Mtro. Joab; probar costos del agente de voz; reglas (el rival simulado no inventa hechos ni usa datos personales).
   - **Producto vendible** a candidatos rumbo a 2027, junto con DOMO Electoral, Listening y Studio.
+
+- **DOMO Imagen · análisis de imagen del candidato con IA (idea del Mtro. Joab, 26-nov-2026).** Referencia: módulo "Imagen del Candidato" de Pulso 360°, visto en la Cumbre (`kit/metodologia/referencias/imagen_candidato_ia_cumbre.jpg`). Analiza una foto y devuelve un informe de comunicación no verbal: postura, gesto, mirada, vestimenta, encuadre, fondo, símbolos y coherencia con el arquetipo político.
+  - **Ya es posible hoy sin costo extra:** Claude lee imágenes. Falta definir la rúbrica de Domo y el formato del informe (PDF con marca, vía `informes-documentos`).
+  - **Se une con DOMO Debate:** el mismo análisis, pero sobre video del ensayo (gestos, manos, mirada a cámara, ritmo).
+  - **Candados:**
+    - solo fotos del cliente con su autorización, o fotos públicas de actores públicos;
+    - nada de reconocimiento facial ni de inferir salud, origen étnico u orientación;
+    - nada de juicios sobre el físico;
+    - con mujeres, cuidar estereotipos de género (violencia política de género si se publica sobre una rival).
