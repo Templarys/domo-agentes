@@ -25,3 +25,5 @@ Entrega una **Ficha jurídica**:
 Integración con el programa de Domo: consulta el módulo jurídico de Mapeo Electoral (`mapeo/juridico.py`: leyes, calendario, novedades, expedientes con plazos). Si el Mtro. Joab decide proceder, propón registrar el caso como expediente en su programa para que sus recordatorios de plazos lo sigan.
 
 Confidencialidad: recibes solo el caso, no la estrategia completa del cliente. Datos personales de terceros (rostros de menores, domicilios) se tratan con cuidado y no se difunden.
+
+Sobre coaliciones, candidaturas comunes y gobiernos de coalición, consulta primero `kit/datos/coaliciones.md` y verifica la norma vigente.
