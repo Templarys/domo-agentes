@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#cifra{position:absolute;left:0;right:0;top:1380px;text-align:center;font-weight:800;font-size:120px;color:var(--guinda);opacity:0}
+#cifra small{display:block;font-size:42px;color:var(--oscuro);font-weight:300;margin-top:6px}
+.paso{position:absolute;left:70px;top:520px;font-weight:800;font-size:44px;color:#fff;background:var(--guinda);padding:12px 24px;border-radius:40px;opacity:0}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<img class="logo" src="/assets/marca/domo-politico.png">
+<div class="capa titulo" id="t">Así se vota<br><span>en una casilla</span></div>
+<div class="paso" id="p1">1 · Te identificas</div><div class="paso" id="p2">2 · Marcas en secreto</div><div class="paso" id="p3">3 · Depositas tu boleta</div>
+<div id="cifra"><span id="n">0</span><small>boletas en la urna · ejemplo</small></div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave, rebote, lim, semilla } from '/motor/estudio.js';
+import { crearPersona, animarPersona, colorear } from '/motor/personas.js';
+const { renderer, escena, cam } = crearEstudio({ radio: 9.5 });
+const M = (c, o = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: .8, ...o });
+const caja = (w, h, d, c, x, y, z, o) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), M(c, o)); m.position.set(x, y, z); m.castShadow = m.receiveShadow = true; escena.add(m); return m; };
+// Mesa directiva con mantel y funcionarios
+caja(3.4, .08, 1.2, '#f7f3ea', -.5, .82, -1.2); caja(3.42, .5, .02, '#0075C9', -.5, .55, -.6);
+for (const x of [-2, 1]) for (const z of [-1.7, -.7]) caja(.08, .8, .08, '#7a6a58', x, .4, z);
+const r = semilla(11);
+for (let i = 0; i < 3; i++) { const f = crearPersona({ azar: r, ropa: ['#6f6f7a', '#557a85', '#8b6d82'][i] }); f.position.set(-1.5 + i, 0, -2.2); escena.add(f); f.userData.idle = true; }
+// Mampara (cancel) de tres paneles
+const mam = new THREE.Group(); escena.add(mam); mam.position.set(2.9, 0, -1.6);
+const panel = (w, x, z, ry) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, 1.1, .05), M('#c9c2b5')); m.position.set(x, 1.35, z); m.rotation.y = ry; m.castShadow = true; mam.add(m); };
+panel(1.2, 0, -.6, 0); panel(1.2, -.6, 0, Math.PI / 2); panel(1.2, .6, 0, Math.PI / 2);
+const tabla = new THREE.Mesh(new THREE.BoxGeometry(1.1, .05, 1.1), M('#d8d0c2')); tabla.position.set(0, .8, 0); mam.add(tabla);
+for (const [x, z] of [[-.5, -.5], [.5, -.5], [-.5, .5], [.5, .5]]) { const p = new THREE.Mesh(new THREE.CylinderGeometry(.03, .03, .8, 8), M('#8a8070')); p.position.set(x, .4, z); mam.add(p); }
+// Urna transparente sobre base
+caja(.7, .75, .7, '#7a6a58', 1.2, .375, 1.8);
+const urna = new THREE.Mesh(new THREE.BoxGeometry(.9, .9, .9), M('#dfeaf2', { transparent: true, opacity: .35, roughness: .15 })); urna.position.set(1.2, 1.2, 1.8); escena.add(urna);
+caja(.92, .04, .92, '#8E1537', 1.2, 1.67, 1.8); caja(.4, .045, .06, '#222', 1.2, 1.69, 1.8);
+const papeles = []; for (let i = 0; i < 14; i++) { const p = caja(.32, .015, .22, '#fbfaf6', 1.2 + (r() - .5) * .45, .78 + i * .025, 1.8 + (r() - .5) * .45); p.rotation.y = r() * 3; papeles.push(p); }
+// Fila de votantes y la persona protagonista
+const fila = []; for (let i = 0; i < 5; i++) { const p = crearPersona({ azar: r }); p.position.set(-2.8 + (r() - .5) * .15, 0, 1.4 + i * .85); p.rotation.y = Math.PI; escena.add(p); fila.push(p); }
+const yo = fila[0]; colorear(yo, '#8E1537');
+const boleta = new THREE.Mesh(new THREE.BoxGeometry(.3, .012, .2), M('#ffffff')); boleta.castShadow = true; escena.add(boleta); boleta.visible = false;
+// Ruta: [tiempo, x, z]
+const ruta = [[0, -2.8, 1.4], [.6, -2.8, 1.4], [1.6, -.9, .05], [2.8, -.9, .05], [4.1, 2.9, -1.1], [5.9, 2.9, -1.1], [7.1, 1.95, 1.8], [9.5, 1.95, 1.8]];
+const enRuta = t => { for (let i = 0; i < ruta.length - 1; i++) { const [t0, x0, z0] = ruta[i], [t1, x1, z1] = ruta[i + 1]; if (t <= t1) { const k = lim((t - t0) / (t1 - t0)); return { x: x0 + (x1 - x0) * k, z: z0 + (z1 - z0) * k, mov: Math.hypot(x1 - x0, z1 - z0) > .01 && k > 0 && k < 1, dx: x1 - x0, dz: z1 - z0 }; } } const u = ruta.at(-1); return { x: u[1], z: u[2], mov: false, dx: 0, dz: 0 }; };
+let dir = Math.PI;
+window.render = t => {
+  const e = enRuta(t); yo.position.set(e.x, 0, e.z);
+  if (e.mov) dir = Math.atan2(e.dx, e.dz); else if (t > 1.6 && t < 2.8) dir = Math.PI; else if (t > 4.1 && t < 5.9) dir = Math.PI; else if (t > 7.1) dir = -Math.PI / 2;
+  yo.rotation.y = dir; animarPersona(yo, t, e.mov ? 1 : 0);
+  // La fila avanza un lugar cuando sale la protagonista
+  fila.slice(1).forEach((p, i) => { const k = suave(lim((t - 1) / 1.2)); p.position.z = 1.4 + (i + 1) * .85 - k * .85; animarPersona(p, t, k > 0 && k < 1 ? .8 : 0); });
+  escena.children.forEach(o => { if (o.userData.idle) animarPersona(o, t, 0); });
+  // Boleta: la recibe en la mesa, la lleva, la marca y la deposita
+  boleta.visible = t > 2.4 && t < 8.6;
+  if (boleta.visible) {
+    const mano = new THREE.Vector3(); yo.userData.bd.children[1].getWorldPosition(mano);
+    if (t < 4.4) boleta.position.copy(mano); else if (t < 5.9) { boleta.position.set(2.9, .84, -1.6); boleta.rotation.y = 0; }
+    else if (t < 7.6) boleta.position.copy(mano);
+    else { const k = suave(lim((t - 7.6) / .9)); boleta.position.set(1.2, 1.95 - k * .85, 1.8); boleta.rotation.set(Math.PI / 2 * lim(k * 3), 0, 0); }
+  }
+  const llenas = t > 8.5; const extra = caja; // la boleta nueva queda en la pila
+  if (llenas && !window._dep) { window._dep = caja(.32, .015, .22, '#ffffff', 1.2, .78 + 14 * .025, 1.8); }
+  // Cámara: de general a tres cuartos
+  const c = suave(lim(t / 9.5)); cam.position.set(5 - c * 3, 17 - c * 5, 27 - c * 7); cam.lookAt(0, .2 + c * .5, 1.2 - c * .6);
+  document.getElementById('t').style.opacity = lim((t - .2) / .5);
+  const pasos = [[1.4, 3.4], [3.9, 6.2], [6.6, 9.6]]; pasos.forEach(([a, b], i) => document.getElementById('p' + (i + 1)).style.opacity = lim((t - a) / .3) * lim((b - t) / .3));
+  document.getElementById('cifra').style.opacity = lim((t - 7) / .4); document.getElementById('n').textContent = t > 8.5 ? 15 : 14;
+  renderer.render(escena, cam);
+};
+await document.fonts.ready; window.listo = true;
+</script></body></html>
