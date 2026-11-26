@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:NexaB;src:url(nexa-bold.otf)}
+@font-face{font-family:NexaL;src:url(nexa-light.otf)}
+:root{--bg:#0b1830;--card:#12213d;--card2:#172a4c;--gu:#8E1537;--ro:#E4202E;--az:#0075C9;--mo:#6A3D9A;--cr:#f5f1e8;--li:#2a4068}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:NexaB,sans-serif;color:var(--cr)}
+#stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(1200px 900px at 50% 40%,#10234a 0%,#0b1830 60%)}
+.abs{position:absolute}
+/* etiqueta fija */
+#tag{left:30px;top:158px;padding:12px 22px 10px;border-radius:40px;background:rgba(11,24,48,.92);border:3px solid var(--ro);font-size:29px;letter-spacing:.5px;z-index:50;display:flex;align-items:center;gap:12px}
+#tag i{width:14px;height:14px;border-radius:50%;background:var(--ro);display:inline-block}
+/* app */
+#app{left:30px;top:232px;width:1020px;height:1120px;border-radius:30px;background:#0d1b35;border:2px solid #22385f;box-shadow:0 30px 80px rgba(0,0,0,.55);overflow:hidden;transform-origin:50% 50%}
+#top{left:0;top:0;width:1020px;height:86px;border-bottom:2px solid #1d3056;display:flex;align-items:center;padding:0 26px;gap:18px;background:#0f1f3d}
+#top img{height:48px}
+#top .t{font-size:24px;opacity:.85}
+#top .dots{margin-left:auto;display:flex;gap:10px}
+#top .dots b{width:16px;height:16px;border-radius:50%;background:#2a4068}
+#side{left:0;top:86px;width:190px;height:1034px;background:#0b1830;border-right:2px solid #1d3056}
+.it{position:absolute;left:12px;width:166px;height:108px;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:20px;color:#9fb0cc}
+.it svg{width:46px;height:46px}
+.it .bar{position:absolute;left:-12px;top:20px;width:6px;height:68px;border-radius:4px;background:var(--ro);opacity:0}
+#content{left:205px;top:100px;width:800px;height:1005px;overflow:hidden}
+.mod{position:absolute;left:0;top:0;width:800px;height:1005px;opacity:0}
+.card{position:absolute;background:var(--card);border-radius:22px;border:2px solid #1e3359;padding:22px 26px}
+.h{font-size:28px;color:#c9d3e6;margin-bottom:10px}
+.big{font-size:64px}
+.small{font-family:NexaL;font-size:22px;color:#b9c4d8}
+/* subtitulos */
+#subs{left:40px;top:1392px;width:1000px;height:200px;display:flex;align-items:flex-start;justify-content:center;text-align:center;font-size:54px;line-height:1.18;text-shadow:0 4px 14px rgba(0,0,0,.8);z-index:40}
+#subs span{display:inline-block;background:rgba(11,24,48,.75);padding:10px 22px 4px;border-radius:16px}
+#subs em{font-style:normal;color:#ff4a55}
+/* gancho y cierre */
+#gancho,#cierre{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:30}
+#cursor{left:0;top:0;width:60px;height:60px;z-index:60}
+#ripple{width:90px;height:90px;border-radius:50%;border:5px solid #fff;z-index:59;opacity:0}
+.chip{display:inline-block;padding:8px 16px 5px;border-radius:30px;font-size:21px}
+.row{display:flex;align-items:center}
+</style></head><body>
+<div id="stage">
+  <div id="tag" class="abs"><i></i>Demostración · datos simulados</div>
+
+  <div id="gancho" class="abs">
+    <img id="g_logo" src="domo-politico-blanco.png" style="width:440px">
+    <div id="g_q" style="font-size:84px;line-height:1.12;margin-top:80px;width:940px">¿Y si toda tu campaña cupiera en <span style="color:#ff4a55">una sola pantalla</span>?</div>
+  </div>
+
+  <div id="app" class="abs">
+    <div id="top" class="abs"><img src="domo-politico-blanco.png"><div class="t">Plataforma de inteligencia electoral</div><div class="dots"><b></b><b></b><b style="background:var(--gu)"></b></div></div>
+    <div id="side" class="abs"></div>
+    <div id="content" class="abs">
+      <!-- 0 MAPA -->
+      <div class="mod" id="m0">
+        <div class="card" style="left:0;top:0;width:800px;height:1005px;padding:0;overflow:hidden">
+          <svg id="mapa" width="800" height="1005" style="position:absolute;left:0;top:0"><g id="cam"><g id="estados"></g><g id="secs"></g><g id="selg"></g></g></svg>
+          <div id="m0_crumb" class="abs" style="left:24px;top:22px;font-size:26px;padding:10px 18px 6px;border-radius:14px;background:rgba(11,24,48,.85)">México</div>
+          <div id="m0_pop" class="abs" style="left:0;top:0;padding:14px 20px 10px;border-radius:16px;background:var(--cr);color:#0b1830;font-size:26px;opacity:0;white-space:nowrap">Sección S-14<div style="font-family:NexaL;font-size:20px">Ver ficha</div></div>
+        </div>
+      </div>
+      <!-- 1 FICHA -->
+      <div class="mod" id="m1">
+        <div class="abs" style="left:4px;top:0"><div style="font-size:46px">Sección S-14</div><div class="small" style="font-size:24px">Oaxaca de Juárez · ficha de ejemplo</div></div>
+        <div class="card" style="left:0;top:104px;width:800px;height:380px">
+          <div class="h">Historial de resultados</div>
+          <svg id="hist" width="748" height="300" class="abs" style="left:26px;top:66px"></svg>
+        </div>
+        <div class="card row" style="left:0;top:500px;width:800px;height:150px;gap:26px">
+          <svg width="104" height="104" viewBox="0 0 104 104"><circle cx="52" cy="52" r="42" fill="none" stroke="#24406e" stroke-width="14"/><circle id="vd_ring" cx="52" cy="52" r="42" fill="none" stroke="#6A3D9A" stroke-width="14" stroke-linecap="round" transform="rotate(-90 52 52)" stroke-dasharray="263.9" stroke-dashoffset="263.9"/></svg>
+          <div><div class="h" style="margin:0">Voto diferenciado</div><div class="small">votó distinto en ayuntamiento y diputación</div></div>
+          <div id="vd_n" class="big" style="margin-left:auto;color:#b996e6">0%</div>
+        </div>
+        <div class="card" style="left:0;top:666px;width:800px;height:339px">
+          <div class="h">Participación por edad</div>
+          <div id="edad" class="abs" style="left:26px;top:66px;width:748px"></div>
+        </div>
+      </div>
+      <!-- 2 TERRITORIO -->
+      <div class="mod" id="m2">
+        <div class="card" style="left:0;top:0;width:390px;height:170px"><div class="h">Promotores activos</div><div id="prom" class="big">0</div></div>
+        <div class="card" style="left:410px;top:0;width:390px;height:170px"><div class="h">Meta</div><div class="row" style="gap:18px"><div id="meta" class="big">0%</div><div style="flex:1;height:22px;border-radius:12px;background:#24406e;overflow:hidden"><div id="meta_b" style="height:100%;width:0;background:linear-gradient(90deg,#0075C9,#8E1537)"></div></div></div></div>
+        <div class="card" style="left:0;top:188px;width:800px;height:580px;padding:0">
+          <div class="h abs" style="left:26px;top:22px">Avance de meta por sección</div>
+          <svg id="tmap" width="560" height="520" class="abs" style="left:20px;top:56px"></svg>
+          <div class="abs" style="left:640px;top:110px;width:130px;height:420px">
+            <div class="small" style="text-align:center">100%</div>
+            <div style="margin:8px auto;width:34px;height:330px;border-radius:10px;background:linear-gradient(180deg,#8E1537,#6A3D9A,#0075C9)"></div>
+            <div class="small" style="text-align:center">0%</div>
+          </div>
+        </div>
+        <div class="card" style="left:0;top:786px;width:800px;height:219px">
+          <div class="h">Sin cobertura</div>
+          <div id="sincob" class="row" style="gap:16px;flex-wrap:wrap;margin-top:14px"></div>
+        </div>
+      </div>
+      <!-- 3 ESCUCHA -->
+      <div class="mod" id="m3">
+        <div id="alerta" class="abs row" style="left:0;top:0;width:800px;height:96px;border-radius:22px;background:var(--ro);padding:0 26px;gap:18px;font-size:32px;opacity:0">
+          <svg width="46" height="46" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2z" fill="#fff"/><rect x="11" y="9" width="2" height="6" fill="#E4202E"/><rect x="11" y="16.5" width="2" height="2" fill="#E4202E"/></svg>
+          <div>Pico de conversación: Agua (+42%)</div></div>
+        <div class="card" style="left:0;top:114px;width:800px;height:380px">
+          <div class="h">Menciones por día</div>
+          <svg id="linea" width="748" height="290" class="abs" style="left:26px;top:70px"></svg>
+        </div>
+        <div class="card" style="left:0;top:512px;width:330px;height:493px">
+          <div class="h">Sentimiento</div>
+          <svg id="dona" width="278" height="250" class="abs" style="left:26px;top:66px"></svg>
+          <div id="dona_l" class="abs" style="left:26px;top:330px;width:290px"></div>
+        </div>
+        <div class="card" style="left:348px;top:512px;width:452px;height:493px">
+          <div class="h">Temas</div>
+          <div id="temas" class="abs" style="left:26px;top:70px;width:400px"></div>
+        </div>
+      </div>
+      <!-- 4 ACTORES -->
+      <div class="mod" id="m4">
+        <div class="card" style="left:0;top:0;width:800px;height:680px;padding:0">
+          <div class="h abs" style="left:26px;top:22px">Red de actores</div>
+          <svg id="red" width="800" height="680" class="abs" style="left:0;top:0"></svg>
+        </div>
+        <div id="ficha" class="card" style="left:0;top:698px;width:800px;height:307px;border-color:#E4202E">
+          <div class="row" style="gap:20px"><div style="width:74px;height:74px;border-radius:50%;background:#E4202E;display:flex;align-items:center;justify-content:center;font-size:30px">MX</div><div><div style="font-size:40px">Medio local X</div><div class="small">ficha de actor (ficticio)</div></div></div>
+          <div id="ficha_l" style="margin-top:22px;font-size:30px;line-height:1.4"></div>
+        </div>
+      </div>
+      <!-- 5 MEDIOS -->
+      <div class="mod" id="m5">
+        <div class="card" style="left:0;top:0;width:800px;height:400px">
+          <div class="h">Calendario de la semana</div>
+          <div id="cal" class="abs" style="left:26px;top:70px;width:748px;height:310px"></div>
+        </div>
+        <div class="card" style="left:0;top:418px;width:800px;height:330px">
+          <div class="h">Presupuesto por medio</div>
+          <div id="pres" class="abs" style="left:26px;top:70px;width:748px"></div>
+        </div>
+        <div class="card" style="left:0;top:766px;width:330px;height:239px">
+          <div class="h">Alcance estimado</div><div id="alc" class="big" style="font-size:58px">0</div><div class="small">personas</div>
+        </div>
+        <div class="card" style="left:348px;top:766px;width:452px;height:239px">
+          <div class="h">Estado de piezas</div>
+          <div id="est" style="font-size:24px;line-height:1"></div>
+        </div>
+      </div>
+      <!-- 6 IA -->
+      <div class="mod" id="m6">
+        <div class="card" style="left:0;top:0;width:800px;height:1005px;padding:0;background:#0f1e3b">
+          <div class="abs row" style="left:26px;top:24px;gap:14px;padding:12px 22px 8px;border-radius:30px;background:linear-gradient(90deg,#6A3D9A,#0075C9);font-size:28px">
+            <svg width="32" height="32" viewBox="0 0 24 24"><path d="M12 1l2.6 7.4L22 11l-7.4 2.6L12 21l-2.6-7.4L2 11l7.4-2.6z" fill="#fff"/></svg>Asistente IA</div>
+          <div id="q_b" class="abs" style="right:26px;top:120px;max-width:600px;padding:20px 26px 14px;border-radius:26px 26px 6px 26px;background:var(--gu);font-size:34px;line-height:1.25;opacity:0"></div>
+          <div id="ans" class="abs" style="left:26px;top:330px;width:720px;padding:24px 28px;border-radius:26px 26px 26px 6px;background:var(--card2);border:2px solid #2a4570;opacity:0"></div>
+          <div class="abs row" style="left:26px;top:880px;width:748px;height:100px;border-radius:24px;background:#0b1830;border:2px solid #2f4c7c;padding:0 24px;gap:16px">
+            <div id="q_in" style="flex:1;font-size:27px;line-height:1.2;color:#dfe6f3"></div>
+            <div style="width:62px;height:62px;border-radius:50%;background:var(--ro);display:flex;align-items:center;justify-content:center"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M3 20l18-8L3 4v6l12 2-12 2z" fill="#fff"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cierre" class="abs" style="opacity:0">
+    <img id="c_logo" src="domo-politico-blanco.png" style="width:560px">
+    <div id="c_f" style="font-size:50px;line-height:1.2;width:900px;margin-top:60px">Consultoría política e inteligencia jurídico-electoral</div>
+    <div id="c_w" class="row" style="gap:18px;margin-top:70px;font-size:62px;padding:20px 40px 14px;border-radius:60px;background:#1f8f4e">
+      <svg width="60" height="60" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z" fill="none" stroke="#fff" stroke-width="2"/><path d="M8.5 7.5c.3-.6.8-.6 1.1-.1l.9 1.8c.1.4 0 .7-.3 1l-.5.6a7 7 0 003.6 3.5l.6-.6c.3-.3.6-.4 1-.2l1.8.9c.5.3.5.8-.1 1.2-1 .8-2.4 1-3.6.4a11 11 0 01-5-5c-.6-1.2-.4-2.6.5-3.5z" fill="#fff"/></svg>
+      WhatsApp 951 440 2226</div>
+    <div id="c_h" style="font-size:44px;margin-top:44px;color:#ff4a55">#DomoPolítico</div>
+    <div id="c_i" style="font-size:44px;line-height:1.2;margin-top:70px;width:900px;padding:22px 30px 16px;border-radius:24px;border:3px solid #f5f1e8">¿Qué módulo usarías primero? Cuéntanos en comentarios</div>
+  </div>
+
+  <div id="subs" class="abs"></div>
+  <div id="ripple" class="abs"></div>
+  <svg id="cursor" class="abs" viewBox="0 0 24 24"><path d="M4 2l15 11-6.5 1.2 3.8 7.3-3 1.5-3.7-7.4L4 20z" fill="#fff" stroke="#0b1830" stroke-width="1.4" stroke-linejoin="round"/></svg>
+</div>
+<script src="geo.js"></script>
+<script>
+const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=k=>1-Math.pow(1-k,3), eio=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+const back=k=>{const c=1.7;return 1+(c+1)*Math.pow(k-1,3)+c*Math.pow(k-1,2)};
+const fmt=(v,d=0)=>v.toLocaleString('es-MX',{minimumFractionDigits:d,maximumFractionDigits:d});
+const el=(tag,at,par)=>{const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);par&&par.appendChild(e);return e};
+const lerp=(a,b,k)=>a+(b-a)*k;
+const mix=(c1,c2,k)=>{const a=c1.match(/\w\w/g).map(h=>parseInt(h,16)),b=c2.match(/\w\w/g).map(h=>parseInt(h,16));return 'rgb('+a.map((v,i)=>Math.round(v+(b[i]-v)*k)).join(',')+')'};
+const ramp=v=>v<.5?mix('0075C9','6A3D9A',v*2):mix('6A3D9A','8E1537',(v-.5)*2);
+const PA='#7d8ca3',PB='#c8963e',PC='#7a8450';
+
+/* ===== TIEMPOS (voz: +0.5 s; tras 30.85 s de audio, +2.5 s) ===== */
+const S=[3.6,7.9,11.9,16.8,20.6,24.2,27.3,33.35]; // inicio de cada módulo; el último es el cierre
+const END=42.3;
+const SUBS=[
+ [3.83,5.0,'Del <em>mapa de México</em>…'],[5.0,6.75,'…a cada <em>sección electoral</em>,'],[6.75,7.9,'en segundos.'],
+ [8.04,8.8,'<em>Cómo votó</em>,'],[8.8,10.2,'dónde se cruzó el voto'],[10.2,11.9,'y qué <em>edades</em> salieron a votar.'],
+ [12.06,13.4,'Tu <em>estructura territorial</em>:'],[13.4,16.75,'metas, avance y huecos, sección por sección.'],
+ [16.97,17.9,'<em>Escucha social</em>:'],[17.9,20.6,'de qué habla la gente y con qué emoción.'],
+ [20.73,21.95,'<em>Análisis de actores</em>:'],[21.95,24.15,'quién es quién y cómo se conectan.'],
+ [24.3,27.2,'Tu <em>plan de medios</em> y tus piezas, en un solo tablero.'],
+ [27.39,28.95,'Y si tienes una pregunta…'],[28.95,31.4,'…se la haces a la <em>inteligencia artificial</em>.']
+];
+
+/* ===== BARRA LATERAL ===== */
+const ICON={
+ mapa:'<path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 3v15M15 6v15" stroke="currentColor" stroke-width="2"/>',
+ sec:'<rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 17v-4M12 17V8M16 17v-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>',
+ ter:'<circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 22s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z" fill="none" stroke="currentColor" stroke-width="2"/>',
+ esc:'<path d="M3 11v2a2 2 0 002 2h2l5 4V5L7 9H5a2 2 0 00-2 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 8a5 5 0 010 8M19 5a9 9 0 010 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+ act:'<circle cx="6" cy="6" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.7 7.2l6.4.6M7.3 8.7l2.6 6.6M16.4 10.5l-3.8 5" stroke="currentColor" stroke-width="2"/>',
+ med:'<rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+ ia:'<path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>'
+};
+const ITEMS=[['mapa','Mapa'],['sec','Sección'],['ter','Territorio'],['esc','Escucha'],['act','Actores'],['med','Medios'],['ia','Asistente IA']];
+const side=$('side'), itEls=[];
+ITEMS.forEach(([ic,n],i)=>{const d=document.createElement('div');d.className='it';d.style.top=(18+i*134)+'px';
+ d.innerHTML=`<div class="bar"></div><svg viewBox="0 0 24 24">${ICON[ic]}</svg><div>${n}</div>`;side.appendChild(d);itEls.push(d)});
+// coordenadas en escenario del centro de cada ítem
+const itemXY=i=>[30+12+83, 232+86+18+i*134+54];
+
+/* ===== MAPA ===== */
+const gE=$('estados'),gS=$('secs'),gSel=$('selg');
+let oax=null;
+EST.forEach(e=>{const pa=el('path',{d:e.d,fill:'#1d3763',stroke:'#5d7fb8','stroke-width':1.6,'vector-effect':'non-scaling-stroke'},gE);if(e.e===20)oax=pa});
+gE.appendChild(oax);
+const secEls=SECS.map(s=>el('path',{d:s.d,fill:'#1b3a6b',stroke:'#8fb3e6','stroke-width':1.2,'vector-effect':'non-scaling-stroke'},gS));
+const bbOax=oax.getBBox();
+const SB=SBB, sbc=[(SB[0]+SB[2])/2,(SB[1]+SB[3])/2], sbw=SB[2]-SB[0], sbh=SB[3]-SB[1];
+// sección seleccionada: la de mayor área cerca del centro
+let sel=0,best=-1;SECS.forEach((s,i)=>{const b=secEls[i].getBBox();const dd=Math.hypot(s.c[0]-sbc[0],s.c[1]-sbc[1]+1.2);const sc=b.width*b.height/(1+dd*dd);if(sc>best){best=sc;sel=i}});
+const selEl=el('path',{d:SECS[sel].d,fill:'#E4202E',stroke:'#fff','stroke-width':4,'vector-effect':'non-scaling-stroke',opacity:0},gSel);
+const W=800,H=1005;
+const CAMK=[ // t, cx, cy, escala
+ [3.6,1457,900,W*.97/2914],[4.5,1457,900,W*.97/2914],
+ [5.6,bbOax.x+bbOax.width/2,bbOax.y+bbOax.height/2,Math.min(W*.82/bbOax.width,H*.7/bbOax.height)],[6.0,bbOax.x+bbOax.width/2,bbOax.y+bbOax.height/2,Math.min(W*.82/bbOax.width,H*.7/bbOax.height)],
+ [6.95,sbc[0],sbc[1],Math.min(W*.94/sbw,H*.9/sbh)],[7.9,sbc[0],sbc[1],Math.min(W*.94/sbw,H*.9/sbh)*1.08]];
+function cam(t){let i=0;while(i<CAMK.length-2&&t>CAMK[i+1][0])i++;const a=CAMK[i],b=CAMK[i+1];const k=eio(p(t,a[0],b[0]));
+ const la=Math.log(a[3]),lb=Math.log(b[3]),s=Math.exp(lerp(la,lb,k));
+ // centro ponderado por escala para que el zoom se sienta "hacia" el destino
+ const w=(a[3]===b[3])?k:(1/a[3]-1/s)/(1/a[3]-1/b[3]);
+ return [lerp(a[1],b[1],w),lerp(a[2],b[2],w),s]}
+function camApply(t){const [cx,cy,s]=cam(t);$('cam').setAttribute('transform',`translate(${W/2-cx*s},${H/2-cy*s}) scale(${s})`);return [cx,cy,s]}
+const toScreen=(x,y,c)=>[W/2+(x-c[0])*c[2],H/2+(y-c[1])*c[2]];
+
+/* ===== FICHA ===== */
+const hist=$('hist'),HD=[['2018',[38,34,22]],['2021',[31,41,24]],['2024',[29,36,31]]],histBars=[];
+el('line',{x1:0,y1:250,x2:748,y2:250,stroke:'#2f4a78','stroke-width':2},hist);
+HD.forEach(([y,v],g)=>{const gx=30+g*240;v.forEach((val,j)=>{const r=el('rect',{x:gx+j*58,width:48,y:250,height:0,rx:6,fill:[PA,PB,PC][j]},hist);const tx=el('text',{x:gx+j*58+24,y:240,'text-anchor':'middle','font-size':20,fill:'#f5f1e8','font-family':'NexaB'},hist);tx.textContent='';histBars.push([r,tx,val,g])});
+ const lb=el('text',{x:gx+82,y:284,'text-anchor':'middle','font-size':22,fill:'#b9c4d8','font-family':'NexaB'},hist);lb.textContent=y});
+[['Partido A',PA],['Partido B',PB],['Partido C',PC]].forEach(([n,c],j)=>{el('rect',{x:30+j*200,y:0,width:22,height:22,rx:4,fill:c},hist);const t=el('text',{x:62+j*200,y:19,'font-size':20,fill:'#dfe6f3','font-family':'NexaB'},hist);t.textContent=n});
+const ED=[['18–29',41],['30–39',52],['40–49',61],['50–59',68],['60–69',63],['70+',54]];
+const ord=[...ED].map((e,i)=>[e[1],i]).sort((a,b)=>b[0]-a[0]).map(x=>x[1]);
+const SEM=['#2fb36b','#f2c230','#f2c230','#f28a2e','#f28a2e','#e4202e'];
+const edadEls=ED.map(([g,v],i)=>{const d=document.createElement('div');d.className='row';d.style.cssText='height:40px;gap:14px;margin-bottom:5px';
+ const col=SEM[ord.indexOf(i)];d.innerHTML=`<div style="width:86px;font-size:22px">${g}</div><div style="flex:1;height:26px;background:#1d3358;border-radius:8px;overflow:hidden"><div style="height:100%;width:0;background:${col};border-radius:8px"></div></div><div style="width:70px;text-align:right;font-size:24px">0%</div>`;$('edad').appendChild(d);return [d.children[1].firstChild,d.children[2],v]});
+
+/* ===== TERRITORIO ===== */
+const tm=$('tmap'),ts=Math.min(540/sbw,500/sbh),tox=280-sbc[0]*ts,toy=262-sbc[1]*ts;
+const tg=el('g',{transform:`translate(${tox},${toy}) scale(${ts})`},tm);
+const tEls=SECS.map(s=>el('path',{d:s.d,fill:'#1b3a6b',stroke:'#0b1830','stroke-width':1,'vector-effect':'non-scaling-stroke'},tg));
+const lows=SECS.map((s,i)=>[s.av,i]).sort((a,b)=>a[0]-b[0]).slice(0,4).map(x=>x[1]);
+const lowG=el('g',{},tg);const lowEls=lows.map(i=>el('path',{d:SECS[i].d,fill:'none',stroke:'#E4202E','stroke-width':4,'vector-effect':'non-scaling-stroke',opacity:0},lowG));
+const SINC=['S-08','S-21','S-33','S-47'];
+const sincEls=SINC.map(n=>{const c=document.createElement('div');c.className='chip row';c.style.cssText='gap:10px;background:#2a1530;border:2px solid #E4202E;font-size:26px;padding:12px 20px 8px;opacity:0';c.innerHTML=`<span style="width:14px;height:14px;border-radius:50%;background:#E4202E;display:inline-block"></span>Sección ${n}`;$('sincob').appendChild(c);return c});
+
+/* ===== ESCUCHA ===== */
+const LV=[120,135,128,150,142,160,155,170,165,182,176,190,205,291];
+const lin=$('linea'),lx=i=>20+i*(708/13),ly=v=>250-v/300*230;
+[0,1,2,3].forEach(k=>el('line',{x1:0,x2:748,y1:250-k*60,y2:250-k*60,stroke:'#22385f','stroke-width':1.5},lin));
+const lpts=LV.map((v,i)=>[lx(i),ly(v)]);
+const area=el('path',{d:'M'+lpts.map(p=>p.join(',')).join('L')+`L${lx(13)},250L${lx(0)},250Z`,fill:'rgba(0,117,201,.18)'},lin);
+const lpath=el('path',{d:'M'+lpts.map(p=>p.join(',')).join('L'),fill:'none',stroke:'#3aa0ff','stroke-width':5,'stroke-linejoin':'round','stroke-linecap':'round'},lin);
+const L_LEN=lpath.getTotalLength();lpath.setAttribute('stroke-dasharray',L_LEN);
+const peak=el('circle',{cx:lx(13),cy:ly(291),r:12,fill:'#E4202E',stroke:'#fff','stroke-width':4,opacity:0},lin);
+const dia=el('text',{x:0,y:282,'font-size':19,fill:'#9fb0cc','font-family':'NexaL'},lin);dia.textContent='hace 14 días';
+const hoy=el('text',{x:748,y:282,'text-anchor':'end','font-size':19,fill:'#9fb0cc','font-family':'NexaL'},lin);hoy.textContent='hoy';
+const dona=$('dona'),DN=[['Positivo',38,'#0075C9'],['Neutral',41,'#8a93a6'],['Negativo',21,'#E4202E']],R=92,CIR=2*Math.PI*R;
+el('circle',{cx:139,cy:125,r:R,fill:'none',stroke:'#1d3358','stroke-width':40},dona);
+let acc=0;const donaEls=DN.map(([n,v,c])=>{const e=el('circle',{cx:139,cy:125,r:R,fill:'none',stroke:c,'stroke-width':40,transform:`rotate(${-90+acc*3.6} 139 125)`,'stroke-dasharray':`0 ${CIR}`},dona);acc+=v;return [e,v]});
+DN.forEach(([n,v,c])=>{const d=document.createElement('div');d.className='row';d.style.cssText='gap:12px;font-size:23px;margin-bottom:12px';d.innerHTML=`<span style="width:18px;height:18px;border-radius:5px;background:${c};display:inline-block"></span>${n}<span style="margin-left:auto">${v}%</span>`;$('dona_l').appendChild(d)});
+const TM=[['Agua',92,'#E4202E'],['Movilidad',64,'#0075C9'],['Seguridad',58,'#0075C9'],['Basura',41,'#0075C9'],['Obra pública',33,'#0075C9']];
+const temaEls=TM.map(([n,v,c])=>{const d=document.createElement('div');d.style.cssText='margin-bottom:16px';d.innerHTML=`<div class="row" style="font-size:25px;margin-bottom:8px">${n}</div><div style="height:24px;background:#1d3358;border-radius:8px;overflow:hidden"><div style="height:100%;width:0;background:${c};border-radius:8px"></div></div>`;$('temas').appendChild(d);return [d.children[1].firstChild,v]});
+
+/* ===== ACTORES ===== */
+const red=$('red');
+const ND=[['Presidencia municipal',400,330,46,'#0075C9'],['Aspirante 1',190,200,36,'#6A3D9A'],['Aspirante 2',620,200,36,'#6A3D9A'],['Medio local X',610,480,42,'#E4202E'],['Medio local Y',170,500,30,'#8a93a6'],['Colectivo vecinal',400,590,30,'#8a93a6'],['Cámara empresarial',300,130,28,'#8a93a6'],['Comité del agua',700,345,28,'#8a93a6']];
+const ED2=[[0,1],[0,2],[0,3],[0,4],[0,5],[1,6],[2,7],[3,7],[3,5],[3,2],[4,1],[5,7],[6,0],[1,3]];
+const gL=el('g',{},red),gN=el('g',{},red);
+const edgeEls=ED2.map(([a,b])=>{const A=ND[a],B=ND[b];const l=el('line',{x1:A[1],y1:A[2],x2:A[1],y2:A[2],stroke:(a===3||b===3)?'#E4202E':'#4a6ea8','stroke-width':4,opacity:.8},gL);return [l,A,B]});
+const nodeEls=ND.map(([n,x,y,r,c])=>{const g=el('g',{transform:`translate(${x},${y}) scale(0)`},gN);el('circle',{r:r+10,fill:c,opacity:.22},g);el('circle',{r,fill:c,stroke:'#f5f1e8','stroke-width':3},g);
+ const t=el('text',{y:r+36,'text-anchor':'middle','font-size':24,fill:'#f5f1e8','font-family':'NexaB',stroke:'#12213d','stroke-width':7,'paint-order':'stroke'},g);t.textContent=n;return g});
+const pulse=el('circle',{cx:610,cy:480,r:42,fill:'none',stroke:'#E4202E','stroke-width':5,opacity:0},gN);
+const FL=['Influencia alta','Postura: crítica','Temas: agua, seguridad'];
+$('ficha_l').innerHTML=FL.map((f,i)=>`<span style="opacity:0">${i?'<span style="color:#E4202E;font-size:40px"> · </span>':''}${f}</span>`).join('');
+const fichaSp=[...$('ficha_l').children];
+
+/* ===== MEDIOS ===== */
+const DIAS=['L','M','M','J','V','S','D'],CAL={0:['Reel'],1:['Carrusel'],2:['Historia','Reel'],3:['Carrusel'],4:['Reel','Historia'],5:['Historia'],6:['Carrusel']};
+const PCOL={Reel:'#E4202E',Carrusel:'#0075C9',Historia:'#6A3D9A'};
+const calEls=[];
+DIAS.forEach((d,i)=>{const c=document.createElement('div');c.className='abs';c.style.cssText=`left:${i*107}px;top:0;width:98px;height:300px;border-radius:14px;background:#0f1f3d;border:2px solid #22385f`;
+ c.innerHTML=`<div style="text-align:center;font-size:24px;margin:12px 0 10px;color:#c9d3e6">${d}</div>`;
+ CAL[i].forEach(pz=>{const ch=document.createElement('div');ch.style.cssText=`margin:0 6px 10px;padding:12px 0 8px;text-align:center;border-radius:10px;font-size:20px;background:${PCOL[pz]};opacity:0`;ch.textContent=pz;c.appendChild(ch);calEls.push(ch)});
+ $('cal').appendChild(c)});
+const PR=[['Digital',45,'$54,000'],['Radio',25,'$30,000'],['Impresos',10,'$12,000'],['Territorio',20,'$24,000']];
+const presEls=PR.map(([n,v,m])=>{const d=document.createElement('div');d.className='row';d.style.cssText='height:46px;gap:14px;margin-bottom:12px';d.innerHTML=`<div style="width:140px;font-size:24px">${n}</div><div style="flex:1;height:30px;background:#1d3358;border-radius:8px;overflow:hidden"><div style="height:100%;width:0;background:linear-gradient(90deg,#0075C9,#6A3D9A);border-radius:8px"></div></div><div style="width:130px;text-align:right;font-size:24px;opacity:0">${m}</div>`;$('pres').appendChild(d);return [d.children[1].firstChild,d.children[2],v]});
+const ESTD=[['Reel · Agua','En revisión','#c8963e'],['Carrusel · Movilidad','Aprobada','#2fb36b'],['Historia · Basura','Aprobada','#2fb36b']];
+const estEls=ESTD.map(([n,s,c])=>{const d=document.createElement('div');d.className='row';d.style.cssText='gap:10px;margin-top:14px;opacity:0';d.innerHTML=`<div style="flex:1;font-family:NexaL;font-size:22px">${n}</div><div class="chip" style="background:${c};font-size:20px;color:#0b1830">${s}</div>`;$('est').appendChild(d);return d});
+
+/* ===== IA ===== */
+const Q='¿En qué secciones votaron menos los jóvenes de 18 a 29?';
+$('ans').innerHTML=`<div id="a0" style="font-size:31px;line-height:1.3;color:#dfe6f3;opacity:0">Estas son las 3 secciones con menor participación de 18 a 29 años:</div>`+
+ [['S-08',24],['S-21',27],['S-33',29]].map(([s,v],i)=>`<div id="a${i+1}" class="row" style="gap:16px;margin-top:20px;opacity:0"><div style="width:220px;font-size:33px">Sección ${s}</div><div style="flex:1;height:26px;background:#1d3358;border-radius:8px;overflow:hidden"><div style="height:100%;width:${v*2.2}%;background:#e4202e;border-radius:8px"></div></div><div style="width:90px;text-align:right;font-size:33px">${v}%</div></div>`).join('')+
+ `<div id="a4" class="row" style="gap:14px;margin-top:26px;padding:18px 20px 12px;border-radius:16px;background:rgba(0,117,201,.2);border:2px solid #0075C9;font-size:31px;line-height:1.25;opacity:0"><svg width="34" height="34" viewBox="0 0 24 24" style="flex:none"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z" fill="none" stroke="#fff" stroke-width="2"/></svg><div>Prioriza brigadas juveniles en estas 3 secciones.</div></div>`;
+
+/* ===== CURSOR ===== */
+// [t, x, y] en coordenadas del escenario; CL = clics
+const CA=$('content');const cx0=30+205,cy0=232+100; // origen del área de contenido
+const selC=()=>{const c=cam(7.45);const s=toScreen(SECS[sel].c[0],SECS[sel].c[1],c);return [cx0+s[0],cy0+s[1]]};
+const SC=selC();
+const CP=[[3.15,980,1500],[3.5,...itemXY(0)],[3.75,...itemXY(0)],[6.6,560,1180],[7.25,SC[0]+6,SC[1]+6],[7.6,SC[0]+6,SC[1]+6],
+ [11.2,640,1000],[11.65,...itemXY(2)],[12.1,...itemXY(2)],[16.1,700,900],[16.55,...itemXY(3)],[17.0,...itemXY(3)],
+ [19.9,700,800],[20.35,...itemXY(4)],[20.8,...itemXY(4)],[23.5,700,1000],[23.95,...itemXY(5)],[24.4,...itemXY(5)],
+ [26.6,600,1000],[27.05,...itemXY(6)],[27.4,...itemXY(6)],[28.0,760,1220],[33.0,760,1220]];
+const CL=[3.55,7.4,11.7,16.6,20.4,24.0,27.1];
+function cursorPos(t){let i=0;while(i<CP.length-2&&t>CP[i+1][0])i++;const a=CP[i],b=CP[i+1];const k=eio(p(t,a[0],b[0]));return [lerp(a[1],b[1],k),lerp(a[2],b[2],k)]}
+
+/* ===== RENDER ===== */
+function show(e,t,a,d=30,dur=.45){const k=eo(p(t,a,a+dur));e.style.opacity=k;e.style.transform=`translateY(${(1-k)*d}px)`;return k}
+window.render=function(t){
+ // gancho
+ const gOut=1-eio(p(t,3.0,3.5));
+ $('gancho').style.opacity=gOut;
+ const kl=eo(p(t,0.1,0.7));$('g_logo').style.opacity=kl;$('g_logo').style.transform=`scale(${.85+.15*back(p(t,0.1,0.7))})`;
+ const kq=eo(p(t,0.5,1.1));$('g_q').style.opacity=kq;$('g_q').style.transform=`translateY(${(1-kq)*50}px) scale(${1+.25*eio(p(t,3.0,3.5))})`;
+ // app entra y sale
+ const ai=eo(p(t,3.1,3.6)),ao=eio(p(t,S[7]-.15,S[7]+.4));
+ $('app').style.opacity=ai*(1-ao);$('app').style.transform=`scale(${(.82+.18*ai)*(1-.12*ao)})`;
+ // módulo activo
+ let cur=-1;for(let i=0;i<7;i++)if(t>=S[i]-.05)cur=i;
+ itEls.forEach((e,i)=>{const on=i===cur;e.style.background=on?'linear-gradient(135deg,#8E1537,#5e0f26)':'transparent';e.style.color=on?'#fff':'#9fb0cc';e.firstChild.style.opacity=on?1:0});
+ for(let i=0;i<7;i++){const m=$('m'+i),a=S[i],b=S[i+1];
+  if(t<a-.02||t>b+.35){m.style.opacity=0;continue}
+  const ki=eo(p(t,a,a+.38)),ko=eio(p(t,b-.02,b+.3));
+  let tr='';
+  if(i===1){tr=`scale(${.35+.65*ki})`;m.style.transformOrigin=`${SC[0]-cx0}px ${SC[1]-cy0}px`}
+  else if(i%2===0) tr=`translateX(${(1-ki)*110}%)`; else tr=`scale(${1.12-.12*ki})`;
+  if(ko>0) tr+=` translateX(${-ko*40}%) scale(${1-.1*ko})`;
+  m.style.opacity=Math.min(ki*1.4,1)*(1-ko);m.style.transform=tr;
+ }
+ // 0 mapa
+ if(t>3.4&&t<8.4){const c=camApply(t);
+  oax.setAttribute('fill',mix('1d3763','8E1537',eo(p(t,4.7,5.4))*(1-p(t,6.3,6.9)*.7)));
+  gS.setAttribute('opacity',eo(p(t,5.9,6.6)));
+  secEls.forEach((e,i)=>e.setAttribute('fill',mix('1b3a6b','24508f',p(t,6.6+(i%17)*.03,6.9+(i%17)*.03)*((i*37)%5)/5)));
+  selEl.setAttribute('opacity',p(t,7.4,7.55));
+  $('m0_crumb').textContent=t<5.2?'México':t<6.5?'México › Oaxaca':'Oaxaca › Oaxaca de Juárez';
+  const pk=back(p(t,7.45,7.75));const ps=toScreen(SECS[sel].c[0],SECS[sel].c[1],c);
+  const pp=$('m0_pop');pp.style.opacity=p(t,7.45,7.6);pp.style.left=(ps[0]+30)+'px';pp.style.top=(ps[1]-110)+'px';pp.style.transform=`scale(${.6+.4*pk})`;pp.style.transformOrigin='0 100%';}
+ // 1 ficha
+ if(t>7.8&&t<12.4){const a=S[1];
+  histBars.forEach(([r,tx,v,g],j)=>{const k=eo(p(t,a+.3+j*.07,a+.9+j*.07));const h=v*4.6*k;r.setAttribute('y',250-h);r.setAttribute('height',h);tx.setAttribute('y',242-h);tx.textContent=k>.05?Math.round(v*k)+'%':''});
+  const kv=eo(p(t,a+1.0,a+2.0));$('vd_n').textContent=fmt(14.6*kv,1)+'%';$('vd_ring').setAttribute('stroke-dashoffset',263.9*(1-.146*kv));
+  edadEls.forEach(([b,n,v],j)=>{const k=eo(p(t,a+2.1+j*.12,a+2.9+j*.12));b.style.width=(v*1.3*k)+'%';n.textContent=Math.round(v*k)+'%'});}
+ // 2 territorio
+ if(t>11.8&&t<17.2){const a=S[2];
+  $('prom').textContent=fmt(Math.round(1248*eo(p(t,a+.3,a+1.6))));
+  const km=eo(p(t,a+.4,a+1.8));$('meta').textContent=Math.round(68*km)+'%';$('meta_b').style.width=(68*km)+'%';
+  tEls.forEach((e,i)=>{const s=SECS[i];const k=eo(p(t,a+.5+((s.c[0]-SB[0])/sbw)*1.4,a+1.0+((s.c[0]-SB[0])/sbw)*1.4));e.setAttribute('fill',k<.01?'#1b3a6b':ramp(s.av*k))});
+  lowEls.forEach((e,j)=>{const k=p(t,a+2.3+j*.1,a+2.5+j*.1);e.setAttribute('opacity',k*(.65+.35*Math.sin(t*9)))});
+  sincEls.forEach((e,j)=>show(e,t,a+2.4+j*.15,20,.35));}
+ // 3 escucha
+ if(t>16.7&&t<21){const a=S[3];
+  lpath.setAttribute('stroke-dashoffset',L_LEN*(1-eio(p(t,a+.2,a+1.6))));area.setAttribute('opacity',p(t,a+1.0,a+1.6));
+  const kp=p(t,a+1.6,a+1.8);peak.setAttribute('opacity',kp);peak.setAttribute('r',12+6*Math.sin(t*8)*kp);
+  donaEls.forEach(([e,v],j)=>{const k=eo(p(t,a+.5+j*.25,a+1.1+j*.25));e.setAttribute('stroke-dasharray',`${CIR*v/100*k} ${CIR}`)});
+  temaEls.forEach(([b,v],j)=>{b.style.width=(v*eo(p(t,a+.6+j*.12,a+1.3+j*.12)))+'%'});
+  const al=$('alerta'),ka=back(p(t,a+1.8,a+2.15));al.style.opacity=p(t,a+1.8,a+1.9);al.style.transform=`scale(${.7+.3*ka})`;}
+ // 4 actores
+ if(t>20.5&&t<24.6){const a=S[4];
+  nodeEls.forEach((g,j)=>{const k=back(p(t,a+.15+j*.1,a+.5+j*.1));g.setAttribute('transform',`translate(${ND[j][1]},${ND[j][2]}) scale(${Math.max(0,k)})`)});
+  edgeEls.forEach(([l,A,B],j)=>{const k=eo(p(t,a+.6+j*.07,a+1.0+j*.07));l.setAttribute('x2',lerp(A[1],B[1],k));l.setAttribute('y2',lerp(A[2],B[2],k))});
+  const kp=p(t,a+1.6,a+3.6);pulse.setAttribute('opacity',kp>0?(1-(kp*3)%1):0);pulse.setAttribute('r',42+30*((kp*3)%1));
+  show($('ficha'),t,a+1.6,40,.4);fichaSp.forEach((s,j)=>{s.style.opacity=eo(p(t,a+1.9+j*.3,a+2.2+j*.3))});}
+ // 5 medios
+ if(t>24.1&&t<27.7){const a=S[5];
+  calEls.forEach((c,j)=>{const k=back(p(t,a+.2+j*.06,a+.45+j*.06));c.style.opacity=p(t,a+.2+j*.06,a+.3+j*.06);c.style.transform=`scale(${Math.max(0,k)})`});
+  presEls.forEach(([b,m,v],j)=>{const k=eo(p(t,a+.5+j*.12,a+1.2+j*.12));b.style.width=(v*2*k)+'%';m.style.opacity=k});
+  $('alc').textContent=fmt(Math.round(312000*eo(p(t,a+.8,a+2.0))));
+  estEls.forEach((e,j)=>show(e,t,a+1.2+j*.25,16,.3));}
+ // 6 IA
+ if(t>27.2&&t<33.8){const a=S[6];
+  const n=Math.floor(Q.length*p(t,a+.35,a+2.0));const typing=t<a+2.25;
+  $('q_in').innerHTML=typing?(Q.slice(0,n)+(Math.floor(t*3)%2||n<Q.length?'<span style="color:#E4202E">|</span>':'')):'<span style="color:#5f7397">Escribe tu pregunta…</span>';
+  $('q_b').textContent=Q;show($('q_b'),t,a+2.25,30,.3);
+  show($('ans'),t,a+2.6,30,.3);
+  [0,1,2,3,4].forEach(j=>show($('a'+j),t,a+2.7+[0,.4,.75,1.1,1.5][j],14,.3));}
+ // cierre
+ if(t>S[7]-.2){const a=S[7];const kc=p(t,a,a+.35);$('cierre').style.opacity=kc;
+  const lk=back(p(t,a+.1,a+.6));$('c_logo').style.opacity=p(t,a+.1,a+.3);$('c_logo').style.transform=`scale(${.7+.3*lk})`;
+  show($('c_f'),t,34.6,30);show($('c_w'),t,35.8,30);show($('c_h'),t,36.4,20);show($('c_i'),t,38.2,30);} else $('cierre').style.opacity=0;
+ // subtítulos
+ const sb=SUBS.find(s=>t>=s[0]&&t<s[1]);$('subs').innerHTML=sb?`<span style="opacity:${eo(p(t,sb[0],sb[0]+.15))}">${sb[2]}</span>`:'';
+ // cursor
+ const vis=p(t,3.1,3.3)*(1-p(t,32.9,33.2));const [x,y]=cursorPos(t);
+ let pr=1;CL.forEach(c=>{if(t>c-.05&&t<c+.15)pr=.82});
+ $('cursor').style.opacity=vis;$('cursor').style.transform=`translate(${x-8}px,${y-4}px) scale(${pr})`;
+ const rp=$('ripple');let ro=0,rs=0;CL.forEach(c=>{const k=p(t,c,c+.45);if(k>0&&k<1){ro=1-k;rs=.3+k*1.2}});
+ rp.style.opacity=ro*vis;rp.style.transform=`translate(${x-45}px,${y-45}px) scale(${rs})`;
+};
+document.fonts.ready.then(()=>{window.render(0);window.listo=true});
+</script></body></html>
