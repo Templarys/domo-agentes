@@ -9,7 +9,7 @@ export async function crearCiudad(datos, opciones = {}) {
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  document.body.appendChild(renderer.domElement);
+  document.body.prepend(renderer.domElement);
   const escena = new THREE.Scene();
   const fondo = new THREE.Color(opciones.fondo || '#f5f1e8');
   escena.background = fondo; escena.fog = new THREE.Fog(fondo, opciones.nieblaDesde || 2200, opciones.nieblaHasta || 5200);

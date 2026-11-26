@@ -2,7 +2,7 @@
 // Uso: node motor/render.js <ruta_escena/index.html> <segundos> <carpeta_cuadros> [fps] [solo_tiempos_coma]
 const { chromium } = require('playwright'); const http = require('http'); const fs = require('fs'); const path = require('path');
 const raiz = path.resolve(__dirname, '..');
-const tipos = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.glb': 'model/gltf-binary', '.png': 'image/png', '.jpg': 'image/jpeg', '.otf': 'font/otf', '.ttf': 'font/ttf', '.bin': 'application/octet-stream' };
+const tipos = { '.html': 'text/html', '.css': 'text/css', '.svg': 'image/svg+xml', '.js': 'text/javascript', '.json': 'application/json', '.glb': 'model/gltf-binary', '.png': 'image/png', '.jpg': 'image/jpeg', '.otf': 'font/otf', '.ttf': 'font/ttf', '.bin': 'application/octet-stream' };
 (async () => {
   const [, , escena, seg, salida, fpsS, solo] = process.argv; const fps = +(fpsS || 30);
   const srv = http.createServer((q, r) => { const f = path.join(raiz, decodeURIComponent(q.url.split('?')[0])); if (!f.startsWith(raiz) || !fs.existsSync(f)) { r.writeHead(404); return r.end(); } r.writeHead(200, { 'Content-Type': tipos[path.extname(f)] || 'application/octet-stream' }); fs.createReadStream(f).pipe(r); }).listen(0);

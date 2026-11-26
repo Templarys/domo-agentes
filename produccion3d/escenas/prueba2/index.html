@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<img class="logo" src="/assets/marca/domo-politico.png">
+<div class="capa titulo" id="t">Cada sección<br><span>tiene su propia gente</span></div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave, rebote, lim, semilla } from '/motor/estudio.js';
+import { crearPersona, animarPersona } from '/motor/personas.js';
+const { renderer, escena, cam } = crearEstudio({ radio: 14 });
+cam.setViewOffset(1080, 1920, 0, -160, 1080, 1920);
+const r = semilla(11);
+// Kiosco simple al centro y bancas: contexto de plaza
+const mat = c => new THREE.MeshStandardMaterial({ color: c, roughness: .8 });
+const kiosco = new THREE.Group();
+const piso = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.2, .35, 8), mat('#d9cdb8')); piso.position.y = .17; kiosco.add(piso);
+for (let i = 0; i < 8; i++) { const c = new THREE.Mesh(new THREE.CylinderGeometry(.08, .08, 2.4, 8), mat('#fbf8f2')); const a = i / 8 * Math.PI * 2; c.position.set(Math.cos(a) * 1.9, 1.55, Math.sin(a) * 1.9); kiosco.add(c); }
+const techo = new THREE.Mesh(new THREE.ConeGeometry(2.6, 1.3, 8), mat('#8E1537')); techo.position.y = 3.4; kiosco.add(techo);
+kiosco.traverse(o => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; } }); kiosco.position.set(0, 0, -7); escena.add(kiosco);
+for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2 + .3; const t = new THREE.Group();
+  const copa = new THREE.Mesh(new THREE.IcosahedronGeometry(1.1, 1), new THREE.MeshStandardMaterial({ color: '#7fa86a', flatShading: true })); copa.position.y = 2.6;
+  const tr = new THREE.Mesh(new THREE.CylinderGeometry(.12, .16, 2, 8), mat('#8d6e55')); tr.position.y = 1; t.add(copa, tr); t.position.set(Math.cos(a) * 12, 0, Math.sin(a) * 12); if (t.position.z > 5) continue;
+  t.traverse(o => { if (o.isMesh) o.castShadow = true; }); escena.add(t); }
+// Multitud: aparece desde los bordes, camina y se agrupa en tres corrillos
+const grupos = [[-4.2, 2.5], [4.2, 2.8], [0, 6.2]];
+const gente = [];
+for (let i = 0; i < 36; i++) {
+  const p = crearPersona({ azar: r });
+  const a = r() * Math.PI * 2, R0 = 10 + r() * 2.5;
+  const g = grupos[i % 3]; const ang = r() * Math.PI * 2, rr = .7 + r() * 1.5;
+  p.userData.desde = new THREE.Vector3(Math.cos(a) * R0, 0, Math.sin(a) * R0);
+  p.userData.hasta = new THREE.Vector3(g[0] + Math.cos(ang) * rr, 0, g[1] + Math.sin(ang) * rr);
+  p.userData.centro = new THREE.Vector3(g[0], 0, g[1]);
+  p.userData.aparece = .3 + i * .06; p.userData.sale = 1.6 + r() * .8;
+  escena.add(p); gente.push(p);
+}
+const DUR = 9;
+window.render = t => {
+  for (const p of gente) { const u = p.userData;
+    const ap = lim((t - u.aparece) / .45); p.scale.setScalar(rebote(ap) * .95 || .0001);
+    const k = suave(lim((t - u.sale) / 4.2));
+    p.position.lerpVectors(u.desde, u.hasta, k);
+    const mirar = k < 1 ? u.hasta : u.centro; p.lookAt(mirar.x, 0, mirar.z);
+    animarPersona(p, t, k > 0 && k < 1 ? 1 : 0);
+  }
+  const c = suave(lim(t / DUR)); const ang = .55 - c * .55, d = 36 - c * 12, h = 24 - c * 12;
+  cam.position.set(Math.sin(ang) * d, h, Math.cos(ang) * d + 2); cam.lookAt(0, -2 + c * 2.5, 2.5);
+  document.getElementById('t').style.opacity = lim((t - .6) / .6);
+  renderer.render(escena, cam);
+};
+await document.fonts.ready; window.listo = true;
+</script></body></html>
