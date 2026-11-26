@@ -20,3 +20,21 @@
     - Nada de padrones ni datos personales en la nube.
   - **Visión de productos:** DOMO Electoral (Mapeo), DOMO Listening, DOMO Trends (búsquedas y agenda) y DOMO Studio (producción 3D/video), con infraestructura compartida.
   - **Pregunta para la ponencia de Martha Hernández (minería de datos):** ¿qué APIs o proveedores usan para recolectar redes en México, cómo resuelven las restricciones de Meta y cómo validan representatividad y ubicación?
+
+- **Agente de contraste (pedido del Mtro. Joab, 26-nov-2026).** Base: diapositiva de la conferencia de contraste en la Cumbre (`kit/metodologia/referencias/contraste_cumbre_4_ejes.jpg`). Los 4 ejes:
+  1. **Carácter:** la fragilidad de su temperamento.
+  2. **Coherencia:** detectar y explotar inconsistencias.
+  3. **Simbólico:** los códigos (lujos, camionetas, restaurantes).
+  4. **Narrativo:** incumplimientos; una historia donde el adversario es el villano.
+
+  **Esperando las notas del Mtro. Joab** para construirlo. No producir piezas con esto todavía.
+  - **Diseño previsto:** recibe un expediente de fuentes públicas (de `investigacion-datos`) y propone un encuadre por eje, con evidencia fechada para cada afirmación.
+  - **Filtro obligatorio:** todo pasa por `juridico-electoral` y `revision`.
+  - **Candados desde el inicio:**
+    - solo hechos públicos documentados y declaraciones propias;
+    - calumnia: nada sin sentencia;
+    - **violencia política de género** cuando la adversaria es mujer: el eje "carácter/temperamento" es el más riesgoso y no puede apelar a estereotipos;
+    - familiares fuera;
+    - "simbólico" solo con gasto o bienes acreditados;
+    - nada de perfiles falsos, bots ni pauta sin identificar.
+  - **Caso de prueba:** el expediente de Liz Concha (eje coherencia).
