@@ -27,7 +27,7 @@
   3. **Simbólico:** los códigos (lujos, camionetas, restaurantes).
   4. **Narrativo:** incumplimientos; una historia donde el adversario es el villano.
 
-  **Esperando las notas del Mtro. Joab** para construirlo. No producir piezas con esto todavía.
+  **CONSTRUIDO el 26-nov-2026** con las notas del Mtro. Joab: agente `.claude/agents/contraste-estrategico.md` y metodología `kit/metodologia/contraste_estrategico.md`. No producir piezas con esto todavía.
   - **Diseño previsto:** recibe un expediente de fuentes públicas (de `investigacion-datos`) y propone un encuadre por eje, con evidencia fechada para cada afirmación.
   - **Filtro obligatorio:** todo pasa por `juridico-electoral` y `revision`.
   - **Candados desde el inicio:**
