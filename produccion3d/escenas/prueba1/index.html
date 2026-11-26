@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#f5f1e8;font-family:sans-serif}
+#rotulo{position:absolute;left:70px;top:300px;font:800 64px/1.05 sans-serif;color:#0b1830;opacity:0}
+#rotulo span{color:#8E1537}#fuente{position:absolute;left:70px;bottom:440px;font:20px sans-serif;color:#4a5160;opacity:.85;width:940px}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body><div id="rotulo">CENTRO HISTÓRICO<br><span>OAXACA DE JUÁREZ</span></div>
+<div id="fuente">Edificios: Overture Maps (alturas estimadas). Calles: © OpenStreetMap contributors.</div>
+<script type="module">
+import * as THREE from 'three';
+import { crearCiudad, suave, dentro, aMetros } from '/motor/ciudad.js';
+const datos = await (await fetch('ciudad.json')).json();
+const hitos = [[-96.72299981117249, 17.065625868311642], [-96.72508120536804, 17.06149760662271]].map(([lo, la]) => aMetros(datos, lo, la));
+const { renderer, escena, cam } = await crearCiudad(datos, { resaltar: e => hitos.some(h => dentro(h, e.r)) });
+const DUR = 8;
+window.render = t => {
+  const k = suave(Math.min(t / DUR, 1));
+  // Grúa: de vista aérea alta a oblicua baja, con órbita lenta
+  // Grúa: de vista cenital alta al nivel de azotea, mirando del Zócalo hacia Santo Domingo por el Andador
+  const foco = new THREE.Vector3(30 + 90 * k, 0, 60 - 160 * k);
+  const ang = -0.35 + k * 0.25, dist = 900 - k * 280, alt = 1500 - k * 1060;
+  cam.position.set(foco.x + Math.sin(ang) * dist, alt, foco.z + Math.cos(ang) * dist);
+  cam.lookAt(foco);
+  document.getElementById('rotulo').style.opacity = Math.min(1, Math.max(0, (t - 1.2) / .6));
+  renderer.render(escena, cam);
+};
+window.listo = true;
+</script></body></html>
