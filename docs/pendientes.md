@@ -38,3 +38,10 @@
     - "simbólico" solo con gasto o bienes acreditados;
     - nada de perfiles falsos, bots ni pauta sin identificar.
   - **Caso de prueba:** el expediente de Liz Concha (eje coherencia).
+
+- **DOMO Debate · entrenamiento de debate con IA (idea del Mtro. Joab, 26-nov-2026).** Referencia: "Debate Coach" de Pulso 360° / Electoralia, visto en la Cumbre (`kit/metodologia/referencias/debate_coach_ia_cumbre.jpg`): "Ensaya. Mide. Mejora." Tiene dos modos: analizar un debate (transcripción o video → calificación) y simulacro en vivo contra una IA adversaria. El Mtro. Joab tiene experiencia propia en entrenamientos de debate: **su metodología es el diferencial**.
+  - **Versión mínima posible con lo que ya tenemos, a bajo costo:**
+    1. **Análisis:** se sube el video o el audio del ensayo, ElevenLabs lo transcribe y se califica con la rúbrica del Mtro. Joab (mensaje, tiempo, ataques y defensas, cifras, muletillas, cierre). Sale un informe con marca Domo.
+    2. **Simulacro en vivo:** un agente de voz de ElevenLabs hace de rival, alimentado con el expediente público del adversario (sus declaraciones, posturas y flancos), más un moderador con tiempos.
+  - **Falta:** la rúbrica y el formato de entrenamiento del Mtro. Joab; probar costos del agente de voz; reglas (el rival simulado no inventa hechos ni usa datos personales).
+  - **Producto vendible** a candidatos rumbo a 2027, junto con DOMO Electoral, Listening y Studio.
