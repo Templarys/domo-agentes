@@ -13,7 +13,10 @@ const tipos = { '.html': 'text/html', '.css': 'text/css', '.svg': 'image/svg+xml
   await p.goto(`http://127.0.0.1:${port}/${path.relative(raiz, path.resolve(escena))}`);
   await p.waitForFunction(() => window.listo === true, null, { timeout: 180000 });
   fs.mkdirSync(salida, { recursive: true });
-  const tiempos = solo ? solo.split(',').map(Number) : [...Array(Math.round(+seg * fps)).keys()].map(i => i / fps);
+  // LIMPIO=1 oculta títulos y rótulos (para montar secuencias con subtítulos); DESDE=s desplaza el inicio
+  if (process.env.LIMPIO) await p.addStyleTag({ content: '.capa,.titulo,.fuente,.paso,[id=dato],[id=cifra],[id=nota],[id=clave],[id=rotulo]{display:none!important}' });
+  const desde = +(process.env.DESDE || 0);
+  const tiempos = solo ? solo.split(',').map(Number) : [...Array(Math.round(+seg * fps)).keys()].map(i => desde + i / fps);
   let i = 0; const t0 = Date.now();
   for (const t of tiempos) { await p.evaluate(t => window.render(t), t); await p.screenshot({ path: path.join(salida, solo ? `cuadro_${t}s.png` : `f${String(i).padStart(4, '0')}.png`) }); i++; }
   console.log(`${i} cuadros en ${((Date.now() - t0) / 1000).toFixed(1)} s`); await b.close(); srv.close();

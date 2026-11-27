@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#dato{position:absolute;left:70px;right:70px;top:1420px;background:rgba(245,241,232,.92);border-radius:24px;padding:22px 28px;font-weight:800;font-size:46px;opacity:0}
+#dato small{display:block;font-weight:300;font-size:30px;margin-top:6px}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<img class="logo" src="/assets/marca/domo-politico.png">
+<div class="capa titulo" id="t">La brigada<br><span>llega a su sección</span></div>
+<div id="dato"><span id="km">0.0</span> km recorridos<small>ruta sobre calles reales del Centro de Oaxaca · ejemplo</small></div>
+<script type="module">
+import * as THREE from 'three';
+import { crearCiudad, suave } from '/motor/ciudad.js';
+const datos = await (await fetch('ciudad.json')).json();
+const { ruta, largo } = await (await fetch('ruta.json')).json();
+const { renderer, escena, cam } = await crearCiudad(datos, { nieblaDesde: 900, nieblaHasta: 2600 });
+const P = ruta.map(([x, y]) => new THREE.Vector3(x, 1.2, -y));
+const acum = [0]; for (let i = 1; i < P.length; i++) acum.push(acum[i - 1] + P[i].distanceTo(P[i - 1]));
+const L = acum.at(-1);
+const enDist = s => { s = Math.min(Math.max(s, 0), L); let i = 1; while (i < P.length - 1 && acum[i] < s) i++; const k = (s - acum[i - 1]) / (acum[i] - acum[i - 1] || 1); return { p: P[i - 1].clone().lerp(P[i], k), dir: P[i].clone().sub(P[i - 1]).normalize() }; };
+// Vehículo estilizado
+function auto(color, esc = 1) { const g = new THREE.Group(); const M = c => new THREE.MeshStandardMaterial({ color: c, roughness: .5 });
+  const cuerpo = new THREE.Mesh(new THREE.BoxGeometry(4.4, 1.4, 2), M(color)); cuerpo.position.y = 1.1; const cab = new THREE.Mesh(new THREE.BoxGeometry(2.4, 1.1, 1.8), M('#e8eef4')); cab.position.set(-.3, 2.3, 0);
+  g.add(cuerpo, cab); for (const [x, z] of [[1.4, 1], [-1.4, 1], [1.4, -1], [-1.4, -1]]) { const r = new THREE.Mesh(new THREE.CylinderGeometry(.45, .45, .35, 14), M('#222')); r.rotation.x = Math.PI / 2; r.position.set(x, .45, z); g.add(r); }
+  g.traverse(o => { if (o.isMesh) o.castShadow = true; }); g.scale.setScalar(esc); escena.add(g); return g; }
+const heroe = auto('#8E1537', 3.6);
+const faro = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.2, 70, 16, 1, true), new THREE.MeshBasicMaterial({ color: '#E4202E', transparent: true, opacity: .55, depthWrite: false })); escena.add(faro);
+const aro = new THREE.Mesh(new THREE.TorusGeometry(14, 2.2, 10, 40), new THREE.MeshBasicMaterial({ color: '#E4202E' })); aro.rotation.x = Math.PI / 2; escena.add(aro);
+// Tráfico de fondo en calles principales
+const principales = datos.calles.filter(c => ['primary', 'secondary', 'tertiary'].includes(c.c) && c.p.length > 1);
+const colores = ['#5b6b8c', '#a9927a', '#7d8a6a', '#e9e4da', '#6f6f7a', '#557a85'];
+const trafico = []; let s0 = 7;
+const azar = () => ((s0 = (s0 * 16807) % 2147483647) / 2147483647);
+for (let i = 0; i < 60; i++) { const c = principales[Math.floor(azar() * principales.length)]; const pts = c.p.map(([x, y]) => new THREE.Vector3(x, 1, -y));
+  const ac = [0]; for (let j = 1; j < pts.length; j++) ac.push(ac[j - 1] + pts[j].distanceTo(pts[j - 1])); if (ac.at(-1) < 40) continue;
+  trafico.push({ g: auto(colores[i % colores.length], 2.6), pts, ac, v: 8 + azar() * 6, o: azar() * ac.at(-1), sentido: azar() > .5 ? 1 : -1 }); }
+// Cinta de la ruta (se dibuja con el avance)
+const curva = new THREE.CatmullRomCurve3(P, false, 'catmullrom', 0); const tubo = new THREE.Mesh(new THREE.TubeGeometry(curva, 400, 3.2, 8, false), new THREE.MeshBasicMaterial({ color: '#E4202E' }));
+escena.add(tubo); const total = tubo.geometry.index.count;
+// Destino: pin
+const pin = new THREE.Group(); const cono = new THREE.Mesh(new THREE.ConeGeometry(9, 26, 24), new THREE.MeshStandardMaterial({ color: '#0075C9' })); cono.rotation.x = Math.PI; cono.position.y = 30;
+const bola = new THREE.Mesh(new THREE.SphereGeometry(11, 24, 16), new THREE.MeshStandardMaterial({ color: '#0075C9' })); bola.position.y = 46; pin.add(cono, bola); pin.position.copy(P.at(-1)); escena.add(pin);
+const DUR = 12;
+window.render = t => {
+  const k = suave(Math.min(Math.max((t - .8) / (DUR - 2.4), 0), 1)); const s = k * L; const { p, dir } = enDist(s);
+  heroe.position.copy(p); heroe.rotation.y = Math.atan2(-dir.z, dir.x); faro.position.set(p.x, 40, p.z); aro.position.set(p.x, 2, p.z); aro.scale.setScalar(1 + .25 * Math.sin(t * 6));
+  tubo.geometry.setDrawRange(0, Math.floor(total * (s / L) / 3) * 3);
+  for (const a of trafico) { let d = ((a.o + a.sentido * a.v * t) % a.ac.at(-1) + a.ac.at(-1)) % a.ac.at(-1); let j = 1; while (j < a.pts.length - 1 && a.ac[j] < d) j++;
+    const kk = (d - a.ac[j - 1]) / (a.ac[j] - a.ac[j - 1]); a.g.position.copy(a.pts[j - 1].clone().lerp(a.pts[j], kk)); const dd = a.pts[j].clone().sub(a.pts[j - 1]).multiplyScalar(a.sentido); a.g.rotation.y = Math.atan2(-dd.z, dd.x); }
+  pin.position.y = 1 + Math.abs(Math.sin(t * 3)) * 6 * (k > .98 ? 1 : 0);
+  // Cámara: persigue al vehículo desde arriba, y abre al final
+  const abre = suave(Math.min(Math.max((t - 9.5) / 2.5, 0), 1));
+  const alt = 300 + abre * 420, atras = 240 + abre * 380;
+  cam.position.set(p.x - 90, alt, p.z + atras); cam.lookAt(p.x + 40 * abre, 0, p.z - 120 * abre);
+  document.getElementById('t').style.opacity = Math.min(1, t / .6);
+  document.getElementById('dato').style.opacity = Math.min(1, Math.max(0, (t - 1.5) / .5));
+  document.getElementById('km').textContent = (s / 1000 * (largo / L)).toFixed(1);
+  renderer.render(escena, cam);
+};
+window.listo = true;
+</script></body></html>

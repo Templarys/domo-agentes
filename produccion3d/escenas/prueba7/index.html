@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#cifra{position:absolute;left:0;right:0;top:1330px;text-align:center;font-weight:800;font-size:132px;color:var(--guinda);opacity:0;font-variant-numeric:tabular-nums}
+#cifra small{display:block;font-size:40px;color:var(--oscuro);font-weight:300;margin-top:6px}
+#clave{position:absolute;left:70px;top:520px;font-weight:800;font-size:36px;background:var(--oscuro);color:#fff;border-radius:40px;padding:12px 24px;opacity:0}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<img class="logo" src="/assets/marca/domo-politico.png">
+<div class="capa titulo" id="t">¿Cuánto son<br><span>20,000 votos?</span></div>
+<div id="clave">1 figura = 100 votantes</div>
+<div id="cifra"><span id="n">0</span><small>votantes · ejemplo de equivalencia</small></div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave, rebote, lim, semilla } from '/motor/estudio.js';
+import { crearPersona, animarPersona } from '/motor/personas.js';
+const { renderer, escena, cam } = crearEstudio({ radio: 13, fov: 40 });
+// Cancha con gradas
+const cancha = new THREE.Mesh(new THREE.BoxGeometry(14, .1, 9), new THREE.MeshStandardMaterial({ color: '#7d9a5f', roughness: 1 })); cancha.position.y = .05; cancha.receiveShadow = true; escena.add(cancha);
+const lineas = new THREE.Mesh(new THREE.RingGeometry(1.2, 1.32, 40), new THREE.MeshBasicMaterial({ color: '#f5f1e8' })); lineas.rotation.x = -Math.PI / 2; lineas.position.y = .11; escena.add(lineas);
+const medio = new THREE.Mesh(new THREE.PlaneGeometry(.12, 9), new THREE.MeshBasicMaterial({ color: '#f5f1e8' })); medio.rotation.x = -Math.PI / 2; medio.position.y = .11; escena.add(medio);
+// 200 figuras en 4 gradas escalonadas alrededor de la cancha
+const r = semilla(9), gente = []; const N = 200;
+const lugares = [];
+for (let fila = 0; fila < 4; fila++) {
+  const ax = 8 + fila * .8, az = 5.6 + fila * .8, y = fila * .45;
+  const mg = new THREE.MeshStandardMaterial({ color: fila % 2 ? '#cfc4b2' : '#ddd3c2', roughness: 1 });
+  for (const [w, d, px, pz] of [[2 * ax + .8, .8, 0, az], [2 * ax + .8, .8, 0, -az], [.8, 2 * az - .8, ax, 0], [.8, 2 * az - .8, -ax, 0]]) { const g = new THREE.Mesh(new THREE.BoxGeometry(w, y + .45, d), mg); g.position.set(px, (y + .45) / 2 - .22, pz); g.receiveShadow = g.castShadow = true; escena.add(g); }
+  const per = 2 * (2 * ax + 2 * az), n = Math.round(N * per / 120.8);
+  for (let i = 0; i < n && lugares.length < N; i++) { const u = i / n * per; let x, z, rot;
+    if (u < 2 * ax) { x = -ax + u; z = az; rot = Math.PI; } else if (u < 2 * ax + 2 * az) { x = ax; z = az - (u - 2 * ax); rot = -Math.PI / 2; }
+    else if (u < 4 * ax + 2 * az) { x = ax - (u - 2 * ax - 2 * az); z = -az; rot = 0; } else { x = -ax; z = -az + (u - 4 * ax - 2 * az); rot = Math.PI / 2; }
+    lugares.push([x, y, z, rot]); } }
+// Gradas: tapar el interior con el plano de la cancha (ya está). Personas en orden de llegada aleatorio.
+lugares.sort(() => r() - .5);
+for (const [x, y, z, rot] of lugares) { const p = crearPersona({ azar: r, escala: .7 }); p.position.set(x, y, z); p.rotation.y = rot + Math.PI; p.scale.setScalar(.0001); escena.add(p); gente.push(p); }
+const T0 = 1.6, T1 = 8.4;
+window.render = t => {
+  const k = lim((t - T0) / (T1 - T0)); const visibles = Math.floor(suave(k) * gente.length);
+  gente.forEach((p, i) => { const ap = i < visibles ? lim((t - T0 - (i / gente.length) * (T1 - T0) * .98) / .35) : 0; p.scale.setScalar(Math.max(.0001, .7 * rebote(ap))); animarPersona(p, t, 0); });
+  document.getElementById('n').textContent = (visibles * 100).toLocaleString('es-MX');
+  const c = suave(lim(t / 10)); cam.position.set(-4 + c * 2, 32 - c * 4, 32 - c * 3); cam.lookAt(0, -3.5 + c * 1, 0);
+  document.getElementById('t').style.opacity = lim((t - .2) / .5);
+  document.getElementById('clave').style.opacity = lim((t - 1) / .4);
+  document.getElementById('cifra').style.opacity = lim((t - 1.4) / .4);
+  renderer.render(escena, cam);
+};
+await document.fonts.ready; window.listo = true;
+</script></body></html>

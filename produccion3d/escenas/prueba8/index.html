@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#nota{position:absolute;left:70px;right:70px;top:1440px;text-align:center;font-weight:300;font-size:34px;opacity:0}#nota b{font-weight:800;color:var(--guinda)}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<img class="logo" src="/assets/marca/domo-politico.png">
+<div class="capa titulo" id="t">El Estratega<br><span>te explica los datos</span></div>
+<div id="nota"><b>Participación por edad</b> · ejemplo con datos simulados</div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave, rebote, lim } from '/motor/estudio.js';
+const { renderer, escena, cam } = crearEstudio({ radio: 8, fov: 42 });
+// Tarjetas de El Estratega con esquinas redondeadas (textura con máscara)
+async function tarjeta(src) {
+  const img = new Image(); img.src = src; await img.decode();
+  const c = document.createElement('canvas'); c.width = 520; c.height = 768; const x = c.getContext('2d');
+  const R = 46; x.beginPath(); x.roundRect(8, 8, 504, 752, R); x.closePath(); x.fillStyle = '#ffffff'; x.fill();
+  x.save(); x.beginPath(); x.roundRect(20, 20, 480, 728, R - 12); x.clip(); x.drawImage(img, 0, 0, 520, 768); x.restore();
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; return tex;
+}
+const poses = await Promise.all(['saludo', 'idea', 'cintura'].map(p => tarjeta('/assets/mascotas/pose_' + p + '_card.png')));
+const mat = new THREE.MeshStandardMaterial({ map: poses[0], transparent: true, alphaTest: .5, roughness: .6, side: THREE.DoubleSide });
+const carta = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 3.54), mat); carta.castShadow = true;
+const soporte = new THREE.Group(); soporte.add(carta); carta.position.y = 1.95;
+const base = new THREE.Mesh(new THREE.CylinderGeometry(.9, 1, .18, 32), new THREE.MeshStandardMaterial({ color: '#8E1537' })); base.position.y = .09; base.castShadow = true; soporte.add(base);
+soporte.position.set(-2.5, 0, 1.4); escena.add(soporte);
+// Gráfica de barras 3D (simulada)
+const datos = [['18-29', 41, '#E4202E'], ['30-39', 52, '#f08a2e'], ['40-49', 61, '#f2c12e'], ['50-59', 68, '#2fae62'], ['60-69', 63, '#f2c12e'], ['70+', 49, '#f08a2e']];
+const barras = datos.map(([e, v, col], i) => { const m = new THREE.Mesh(new THREE.BoxGeometry(.62, 1, .62), new THREE.MeshStandardMaterial({ color: col, roughness: .55 })); m.castShadow = m.receiveShadow = true; m.position.set(-.8 + i * .85, 0, -1); escena.add(m);
+  const et = document.createElement('div'); et.style.cssText = 'position:absolute;font-weight:800;font-size:30px;color:#0b1830;transform:translate(-50%,-100%);opacity:0;text-align:center;line-height:1.1'; et.innerHTML = v + '%<br><span style="font-weight:300;font-size:22px">' + e + '</span>'; document.body.appendChild(et);
+  return { m, v, et }; });
+const proy = new THREE.Vector3();
+window.render = t => {
+  // Entrada de la tarjeta con rebote y giro; cambia de pose al explicar
+  const e = rebote(lim((t - .5) / .7)); soporte.scale.setScalar(Math.max(.0001, e)); soporte.rotation.y = .3 + (1 - lim((t - .5) / 1)) * 1.2 + Math.sin(t * 1.4) * .05;
+  carta.position.y = 1.95 + Math.sin(t * 2.2) * .06;
+  mat.map = t < 3 ? poses[0] : t < 7.2 ? poses[1] : poses[2];
+  const salto = (a) => Math.max(0, Math.sin(lim((t - a) / .35) * Math.PI)) * .5; carta.position.y += salto(3) + salto(7.2);
+  barras.forEach((b, i) => { const k = suave(lim((t - 3.2 - i * .35) / .8)); const h = Math.max(.01, b.v / 100 * 3.8 * k); b.m.scale.y = h; b.m.position.y = h / 2;
+    proy.set(b.m.position.x, h + .25, b.m.position.z).project(cam); b.et.style.left = ((proy.x + 1) / 2 * 1080) + 'px'; b.et.style.top = ((1 - proy.y) / 2 * 1920) + 'px'; b.et.style.opacity = lim((t - 3.6 - i * .35) / .4); });
+  const c = suave(lim(t / 10)); cam.position.set(0 + c * .8, 6 - c * 1, 21 - c * 2); cam.lookAt(.4, 1.3, 0);
+  document.getElementById('t').style.opacity = lim((t - .2) / .5); document.getElementById('nota').style.opacity = lim((t - 3.4) / .5);
+  renderer.render(escena, cam);
+};
+await document.fonts.ready; window.listo = true;
+</script></body></html>
