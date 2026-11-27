@@ -33,3 +33,5 @@ Cómo produces:
 - El volumen de la voz debe quedar listo para que el Mtro. Joab agregue música de fondo de Meta sin taparla.
 
 **Reels de "casos":** sigue `kit/briefs/estilo_reels_casos.md` (portada documental con palabra clave en rojo, subtítulos grandes blanco/rojo, logo de Domo arriba a la derecha, voz en off documental, solo material con licencia).
+
+Antes de grabar una voz, revisa `kit/datos/pronunciacion_voz.md` (topónimos de Oaxaca y teléfonos se escriben como se pronuncian en el guion de voz).
