@@ -17,7 +17,7 @@ Fuente: diapositiva de Miguel Ángel Mancera en la XXV Cumbre Mundial de Comunic
 ## Distinciones que suelen confundirse
 - **Coalición ≠ candidatura común.** En la candidatura común, cada partido conserva su emblema y los votos se suman a la candidatura. Existe solo si la ley local la prevé (LGPP art. 85.5 deja a los estados otras formas de participación). Para Oaxaca, verificar la ley electoral local vigente.
 - **Coalición ≠ alianza informal o "acuerdo político".** Solo es coalición si hay un convenio registrado ante la autoridad electoral (INE en elección federal; IEEPCO en local de Oaxaca) dentro del plazo legal.
-- **El gobierno de coalición es una opción, no una obligación**, y existe a nivel federal. Para estados y municipios, revisar si la constitución local lo prevé.
+- **El gobierno de coalición es una opción, no una obligación**, y existe a nivel federal. Según Mancera, **12 entidades** lo contemplan en su constitución: Aguascalientes, Baja California, Chiapas, Chihuahua, Ciudad de México, Estado de México, Morelos, **Oaxaca**, Puebla, Quintana Roo, Sonora y Zacatecas. Puebla tiene además una ley secundaria (Ley que establece las Bases de Organización del Gobierno de Coalición del Estado de Puebla) y la CDMX tiene un capítulo en su Ley Orgánica del Poder Ejecutivo. Para Oaxaca, ubicar el artículo exacto de la constitución local antes de citarlo.
 - **Partidos de nuevo registro** no pueden coaligarse en su primera elección (LGPP art. 85.4).
 
 ## Preguntas típicas de clientes (y quién responde)
@@ -34,3 +34,24 @@ Fuente: diapositiva de Miguel Ángel Mancera en la XXV Cumbre Mundial de Comunic
 1. **Convenio de coalición:** plantea un gobierno en el que participen partes de las fuerzas políticas que lo integran.
 2. **Programa de gobierno:** fija los objetivos y las responsabilidades de cada integrante del gobierno de coalición.
 3. **Ratificación del gabinete:** el Presidente propone a los integrantes del gabinete y la Cámara de Senadores los ratifica (art. 76 fr. II).
+
+## Convenio del gobierno de coalición (Mancera, `referencias/mancera_coalicion_1.jpg`)
+Es la figura jurídica que regula:
+- la **forma de participación** de cada fuerza política en el gobierno;
+- las **atribuciones** de sus integrantes;
+- el **tiempo de duración**;
+- la **forma de conclusión** del gobierno coaligado.
+
+## Sobrerrepresentación en la Cámara de Diputados (Mancera, `referencias/mancera_coalicion_2.jpg` y `_3.jpg`)
+- **Constitución, art. 54 fr. V:** ningún partido puede tener un porcentaje de diputados, sumando ambos principios, que **exceda en más de 8 puntos** su porcentaje de votación nacional emitida.
+  - Ejemplo: con 40% de la votación, el tope es 48% de la Cámara.
+  - La misma fracción tiene una excepción: no se aplica cuando el partido rebasa ese tope solo con triunfos de mayoría relativa.
+  - El art. 54 fr. IV pone además un máximo de 300 diputados por ambos principios por partido.
+- **Cifras que presentó Mancera** (medidas por coalición):
+  - 2018: votación de la coalición 45.7%; representación en Diputados 61.6%; sobrerrepresentación de 15.9 puntos.
+  - 2024: votación de la coalición 54.71%; representación 72.8%; sobrerrepresentación de 18.09 puntos.
+- **Ojo al explicarlo:**
+  - El límite de 8 puntos se aplica **por partido**, no por coalición.
+  - Por eso una coalición puede quedar arriba de 8 puntos en conjunto. Los candidatos de mayoría se registran por partido dentro del convenio, y cada partido queda dentro de su propio tope.
+  - Ese es el centro de la discusión de 2024, cuando el INE y la Sala Superior lo validaron por partido.
+  - Las cifras de arriba son del ponente: verificarlas con los cómputos del INE antes de publicarlas.
