@@ -29,3 +29,8 @@ Fuente: diapositiva de Miguel Ángel Mancera en la XXV Cumbre Mundial de Comunic
 - **Convenio y programa:** el gobierno de coalición se regula por el convenio y el programa respectivos, que deben ser **aprobados por mayoría de los miembros presentes de la Cámara de Senadores**.
 - **Disolución:** el propio convenio establece las causas de disolución.
 - **Para explicarlo a un cliente:** desde 2014 existe en la Constitución, pero ningún Presidente lo ha usado. Es una herramienta de gobernabilidad después de la elección, no una alianza para competir.
+
+## Elementos para conformar un gobierno de coalición (diapositiva de Mancera, `referencias/elementos_gobierno_coalicion_mancera.jpg`)
+1. **Convenio de coalición:** plantea un gobierno en el que participen partes de las fuerzas políticas que lo integran.
+2. **Programa de gobierno:** fija los objetivos y las responsabilidades de cada integrante del gobierno de coalición.
+3. **Ratificación del gabinete:** el Presidente propone a los integrantes del gabinete y la Cámara de Senadores los ratifica (art. 76 fr. II).
