@@ -1,16 +1,18 @@
 """Arma los datos de una escena de ciudad en metros locales (origen = centro dado).
 Edificios: Overture Maps (huellas; alturas reales si existen, si no ESTIMADAS y marcadas).
 Calles, parques y agua: OpenStreetMap vía teselas de OpenFreeMap (ODbL).
-Uso: python3 scripts/escena_ciudad.py lon lat radio_m salida.json"""
+Uso: python3 scripts/escena_ciudad.py lon lat radio_m salida.json [edificios.parquet] [osm.json]"""
 import json, math, sys, hashlib
 import duckdb
 lon0, lat0, R, out = float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]), sys.argv[4]
+PARQ = sys.argv[5] if len(sys.argv) > 5 else 'data/overture_centro.parquet'
+OSM = sys.argv[6] if len(sys.argv) > 6 else 'data/osm_centro.json'
 kx = 111320 * math.cos(math.radians(lat0)); ky = 110540
 def m(c): return [round((c[0]-lon0)*kx, 1), round((c[1]-lat0)*ky, 1)]
 def cerca(pts): return any(abs(x) < R and abs(y) < R for x, y in pts)
 con = duckdb.connect(); con.execute("LOAD spatial")
 edif = []; est = 0
-for i, h, nf, cl, g in con.execute("select id,height,num_floors,class,geom from 'data/overture_centro.parquet'").fetchall():
+for i, h, nf, cl, g in con.execute("select id,height,num_floors,class,geom from '" + PARQ + "'").fetchall():
     geo = json.loads(g)
     polys = [geo["coordinates"]] if geo["type"] == "Polygon" else geo["coordinates"]
     for p in polys:
@@ -22,7 +24,7 @@ for i, h, nf, cl, g in con.execute("select id,height,num_floors,class,geom from 
             r = int(hashlib.md5(i.encode()).hexdigest()[:4], 16) / 65535
             alt, fuente = 4.0 + r * 4.5, "estimada"; est += 1
         edif.append({"r": ring, "h": round(alt, 1), "f": fuente})
-osm = json.load(open("data/osm_centro.json"))
+osm = json.load(open(OSM))
 calles = []
 for f in osm["transportation"]:
     g = f["geometry"]; cls = f["properties"].get("class")
