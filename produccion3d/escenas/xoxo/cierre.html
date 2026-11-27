@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>body{background:#0b1830;color:#f5f1e8}
+#inv{position:absolute;left:80px;right:140px;top:280px;text-align:center;font-weight:800;font-size:64px;line-height:1.08;opacity:0}
+#inv span{color:#ff8c96}
+#logo{position:absolute;left:50%;top:230px;width:520px;margin-left:-260px;opacity:0}
+#wa{position:absolute;left:60px;right:100px;top:1160px;text-align:center;opacity:0}
+#wa small{display:block;font-weight:300;font-size:40px}
+#wa b{display:block;font-weight:800;font-size:92px;line-height:1.05;margin-top:6px}
+#frase{position:absolute;left:60px;right:100px;top:1362px;text-align:center;font-weight:300;font-size:38px;line-height:1.25;opacity:0}
+#frase i{display:block;font-style:normal;font-weight:800;font-size:34px;color:#ff8c96;margin-top:10px}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="inv">¿Quieres la radiografía<br><span>de tu municipio?</span></div>
+<img id="logo" src="/assets/marca/domo-politico-blanco.png">
+<div id="wa"><small>Escríbenos por WhatsApp</small><b>951 440 2226</b></div>
+<div id="frase">Consultoría política e inteligencia<br>jurídico-electoral<i>#DomoPolítico</i></div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave, rebote } from '/motor/estudio.js';
+import { lim, fuentesListas } from './comun.js';
+const { renderer, escena, cam } = crearEstudio({ radio: 6, fondo: '#0b1830', base: '#16284a', fov: 34 });
+async function tarjeta(src) {
+  const img = new Image(); img.src = src; await img.decode();
+  const c = document.createElement('canvas'); c.width = 520; c.height = 768; const x = c.getContext('2d');
+  const R = 46; x.beginPath(); x.roundRect(8, 8, 504, 752, R); x.closePath(); x.fillStyle = '#ffffff'; x.fill();
+  x.save(); x.beginPath(); x.roundRect(20, 20, 480, 728, R - 12); x.clip(); x.drawImage(img, 0, 0, 520, 768); x.restore();
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; return tex;
+}
+const tex = await tarjeta('/assets/mascotas/pose_saludo_card.png');
+const mat = new THREE.MeshStandardMaterial({ map: tex, transparent: true, alphaTest: .5, roughness: .6, side: THREE.DoubleSide });
+const carta = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 3.54), mat); carta.castShadow = true;
+const soporte = new THREE.Group(); soporte.add(carta); carta.position.y = 1.95;
+const base = new THREE.Mesh(new THREE.CylinderGeometry(.9, 1, .18, 32), new THREE.MeshStandardMaterial({ color: '#8E1537' })); base.position.y = .09; base.castShadow = true; soporte.add(base);
+escena.add(soporte);
+// Anillo de luz guinda bajo la tarjeta
+const aro = new THREE.Mesh(new THREE.TorusGeometry(1.5, .04, 8, 96), new THREE.MeshBasicMaterial({ color: '#E4202E', transparent: true, opacity: 0 })); aro.rotation.x = -Math.PI / 2; aro.position.y = .05; escena.add(aro);
+const $ = id => document.getElementById(id);
+window.render = t => {
+  const u = t - 47.1;
+  const e = rebote(lim((u - .05) / .7)); soporte.scale.setScalar(Math.max(.0001, e));
+  soporte.rotation.y = (1 - lim(u / 1)) * 1.6 + Math.sin(t * 1.3) * .12;
+  const salto = a => Math.max(0, Math.sin(lim((t - a) / .35) * Math.PI)) * .45;
+  carta.position.y = 1.95 + Math.sin(t * 2.2) * .07 + salto(49.4) + salto(55.1);
+  carta.rotation.z = Math.sin(t * 6) * .03 * lim((u - .8) / .3);
+  aro.material.opacity = .5 + .3 * Math.sin(t * 3); aro.scale.setScalar(1 + .06 * Math.sin(t * 3));
+  const c = suave(lim(u / 12.8)); cam.position.set(Math.sin(u * .12) * 2.5, 3.6, 21 - c * 1.5); cam.lookAt(0, 1.05, 0);
+  $('inv').style.opacity = lim((t - 47.15) / .3) * (1 - lim((t - 54.85) / .3));
+  $('logo').style.opacity = lim((t - 55.1) / .35);
+  $('wa').style.opacity = lim((t - 49.35) / .3);
+  $('frase').style.opacity = lim((t - 56.4) / .35);
+  renderer.render(escena, cam);
+};
+await fuentesListas(); window.listo = true;
+</script></body></html>

@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#tit{position:absolute;left:70px;right:170px;top:250px;background:rgba(245,241,232,.93);border-radius:24px;padding:22px 30px;font-weight:800;font-size:62px;line-height:1.04;color:#0b1830;box-shadow:0 8px 30px rgba(11,24,48,.08)}
+#tit span{color:#8E1537}
+.et{position:absolute;transform:translate(-50%,-100%);text-align:center;font-weight:800;font-size:66px;line-height:1;opacity:0;white-space:nowrap}
+.et small{display:block;font-weight:300;font-size:30px;color:#0b1830;margin-top:6px}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="tit">Las mujeres<br><span>votaron más</span></div>
+<div class="et" id="e0" style="color:#8E1537">72.1%<small>Mujeres</small></div>
+<div class="et" id="e1" style="color:#0075C9">61.0%<small>Hombres</small></div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave, rebote, semilla } from '/motor/estudio.js';
+import { crearPersona, animarPersona } from '/motor/personas.js';
+import { montarComun, capa, lim, fuentesListas } from './comun.js';
+montarComun({ fuente: true });
+const { renderer, escena, cam } = crearEstudio({ radio: 7 });
+const r = semilla(3);
+const vals = [[72.1, '#8E1537', { largo: true, ropa: '#8E1537', pelo: '#2b2118' }], [61.0, '#0075C9', { largo: false, ropa: '#0075C9', pelo: '#1d1a19' }]];
+const H = v => v / 100 * 5.4;
+const items = vals.map(([v, c, op], i) => {
+  const x = i ? 1.7 : -1.7;
+  const m = new THREE.Mesh(new THREE.BoxGeometry(1.8, 1, 1.8), new THREE.MeshStandardMaterial({ color: c, roughness: .5 })); m.castShadow = m.receiveShadow = true; m.position.set(x, 0, -.6); escena.add(m);
+  const p = crearPersona({ azar: r, escala: 1.25, ...op }); p.position.set(x, 0, 1.6); escena.add(p);
+  return { m, v, p, el: document.getElementById('e' + i) }; });
+const pv = new THREE.Vector3(); const T0 = 33.9;
+window.render = t => {
+  const u = t - T0;
+  const c = suave(lim(u / 5.5)); cam.position.set(2.5 - c * 2.5, 6.5, 30 - c * 2); cam.lookAt(0, 1.35, 0); cam.updateMatrixWorld();
+  items.forEach((b, i) => {
+    b.p.scale.setScalar(1.25 * Math.max(.0001, rebote(lim((u - .1 - i * .2) / .45)))); animarPersona(b.p, t, 0); b.p.rotation.y = Math.sin(t * 1.2 + i) * .15;
+    const k = suave(lim((t - 36.4 - i * .3) / .9)); const h = Math.max(.01, H(b.v) * k); b.m.scale.y = h; b.m.position.y = h / 2;
+    pv.set(b.m.position.x, h + .3, b.m.position.z).project(cam); b.el.style.left = ((pv.x + 1) / 2 * 1080) + 'px'; b.el.style.top = ((1 - pv.y) / 2 * 1920) + 'px'; b.el.style.opacity = lim((t - 36.7 - i * .3) / .3); });
+  capa(t); renderer.render(escena, cam);
+};
+await fuentesListas(); window.listo = true;
+</script></body></html>

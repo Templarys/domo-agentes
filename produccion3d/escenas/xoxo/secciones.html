@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#tit{position:absolute;left:70px;right:170px;top:250px;background:rgba(245,241,232,.93);border-radius:24px;padding:22px 30px;font-weight:800;font-size:62px;line-height:1.04;color:#0b1830;box-shadow:0 8px 30px rgba(11,24,48,.08)}
+#tit span{color:#8E1537}
+.pildora{position:absolute;transform:translate(-50%,-100%);background:#fff;border-radius:40px;padding:14px 28px;font-weight:800;font-size:40px;box-shadow:0 10px 30px rgba(11,24,48,.2);white-space:nowrap;opacity:0;text-align:center}
+.pildora small{display:block;font-weight:300;font-size:28px;color:#3d4454}
+.pildora::after{content:'';position:absolute;left:50%;bottom:-14px;margin-left:-14px;border:14px solid transparent;border-top-color:#fff;border-bottom:0}
+#ley{position:absolute;left:90px;top:1160px;background:rgba(255,255,255,.92);border-radius:16px;padding:10px 18px;font-size:22px;font-weight:300;opacity:0;line-height:1.5}
+#ley i{display:inline-block;width:42px;height:14px;border-radius:4px;margin:0 6px -1px 12px}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="tit">No todas las secciones<br><span>votaron igual</span></div>
+<div class="pildora" id="pA" style="color:#8E1537">Sección 2537<small>votó el 76.2% · la más alta</small></div>
+<div class="pildora" id="pB" style="color:#0075C9">Sección 2505<small>votó el 61.7% · la más baja</small></div>
+<div id="ley">Participación 2024 <i style="background:#efe2d6"></i>menor <i style="background:#8E1537"></i>mayor<br>29 secciones con mapa (30 en el conteo)</div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave } from '/motor/estudio.js';
+import { montarComun, capa, lim, fuentesListas } from './comun.js';
+montarComun({ fuente: true });
+const secc = (await (await fetch('secciones.json')).json()).secciones;
+const { renderer, escena, cam, sol } = crearEstudio({ radio: 18, fov: 32 });
+Object.assign(sol.shadow.camera, { left: -30, right: 30, top: 30, bottom: -30 }); sol.shadow.camera.updateProjectionMatrix();
+const S = 1 / 400, CX = -2836, CY = -2178; const P = ([x, y]) => [(x - CX) * S, (y - CY) * S];
+const ps = secc.map(s => s.part), pmin = Math.min(...ps), pmax = Math.max(...ps);
+const cA = new THREE.Color('#efe2d6'), cB = new THREE.Color('#8E1537');
+const altura = p => (p - .45) * 14;
+const piezas = [];
+for (const s of secc) {
+  const col = s.s === 2505 ? new THREE.Color('#0075C9') : cA.clone().lerp(cB, (s.part - pmin) / (pmax - pmin));
+  const mat = new THREE.MeshStandardMaterial({ color: col, roughness: .6 });
+  for (const r of s.rings) {
+    const sh = new THREE.Shape(r.map(q => { const [x, y] = P(q); return new THREE.Vector2(x, y); }));
+    const g = new THREE.ExtrudeGeometry(sh, { depth: 1, bevelEnabled: false }); g.rotateX(-Math.PI / 2);
+    const m = new THREE.Mesh(g, mat); m.castShadow = m.receiveShadow = true; m.position.y = .02; escena.add(m);
+    const e = new THREE.LineSegments(new THREE.EdgesGeometry(g, 70), new THREE.LineBasicMaterial({ color: '#fdfbf7', transparent: true, opacity: .8 })); m.add(e);
+    piezas.push({ m, s, h: altura(s.part) });
+  }
+}
+const A = secc.find(s => s.s === 2537), B = secc.find(s => s.s === 2505);
+const ctr = s => { const [x, y] = P(s.c); return new THREE.Vector3(x, 0, -y); };
+const cAv = ctr(A), cBv = ctr(B), cen = new THREE.Vector3(0, 0, 0);
+const v = new THREE.Vector3();
+const pill = (el, s, c, op) => { v.set(c.x, altura(s.part) + .35, c.z).project(cam); el.style.left = ((v.x + 1) / 2 * 1080) + 'px'; el.style.top = ((1 - v.y) / 2 * 1920) + 'px'; el.style.opacity = op; };
+const T0 = 14.333;
+window.render = t => {
+  const u = t - T0;
+  // Cámara: municipio completo → acercamiento a la zona de 2537 (17.2 s) → encuadre de 2537 y 2505 (21.7 s)
+  const k1 = suave(lim((t - 16.7) / 1.5)), k2 = suave(lim((t - 21.2) / 1.5));
+  const medio = cAv.clone().lerp(cBv, .5);
+  const foco = cen.clone().lerp(cAv, k1).lerp(medio, k2);
+  const ang = -0.2 + u * 0.03, R = 88 - 50 * k1 + 6 * k2, e = 1.0 - .08 * k1 + .14 * k2;
+  cam.position.set(foco.x + Math.sin(ang) * R * Math.cos(e), R * Math.sin(e), foco.z + Math.cos(ang) * R * Math.cos(e)); cam.lookAt(foco.x, 0, foco.z + (2.5 - 1.5 * k1) * (1 + 0 * k2)); cam.updateMatrixWorld();
+  for (const p of piezas) { const k = suave(lim((u - .2 - (p.s.part - pmin) * 6) / 1.1)); let h = Math.max(.01, p.h * k);
+    if (p.s === A || p.s === B) h *= 1 + .06 * Math.sin(t * 5) * lim((t - (p.s === A ? 17.2 : 21.7)) / .3);
+    p.m.scale.y = h; }
+  pill(document.getElementById('pA'), A, cAv, lim((t - 17.2) / .3));
+  pill(document.getElementById('pB'), B, cBv, lim((t - 21.7) / .3));
+  document.getElementById('ley').style.opacity = lim((u - .6) / .4);
+  capa(t); renderer.render(escena, cam);
+};
+await fuentesListas(); window.listo = true;
+</script></body></html>

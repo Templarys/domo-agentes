@@ -1,0 +1,56 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#tit{position:absolute;left:70px;right:170px;top:250px;background:rgba(245,241,232,.93);border-radius:24px;padding:22px 30px 20px;box-shadow:0 8px 30px rgba(11,24,48,.10)}
+#tit small{display:block;font-weight:800;font-size:30px;letter-spacing:6px;color:#E4202E;margin-bottom:8px}
+#tit div{font-weight:800;font-size:72px;line-height:1.02;color:#0b1830}#tit span{color:#8E1537}
+#tit2{position:absolute;left:70px;right:170px;top:250px;background:rgba(245,241,232,.93);border-radius:24px;padding:22px 30px;font-weight:800;font-size:62px;line-height:1.04;color:#0b1830;opacity:0}
+#tit2 span{color:#8E1537}
+#ley{position:absolute;left:90px;top:1170px;background:rgba(255,255,255,.92);border-radius:16px;padding:10px 18px;font-size:22px;font-weight:300;opacity:0}
+#ley i{display:inline-block;width:42px;height:14px;border-radius:4px;margin:0 6px -1px 12px}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="tit"><small>RADIOGRAFÍA TERRITORIAL</small><div>Santa Cruz<br><span>Xoxocotlán</span></div></div>
+<div id="tit2">Sección<br><span>por sección</span></div>
+<div id="ley">Participación 2024 <i style="background:#ecdcd3"></i>menor <i style="background:#8E1537"></i>mayor</div>
+<script type="module">
+import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { crearCiudad, suave } from '/motor/ciudad.js';
+import { montarComun, capa, lim, fuentesListas } from './comun.js';
+montarComun({ alturas: true });
+const datos = await (await fetch('ciudad.json')).json();
+const secc = (await (await fetch('secciones.json')).json()).secciones;
+const { renderer, escena, cam } = await crearCiudad(datos, { nieblaDesde: 1700, nieblaHasta: 4200 });
+// Coropleta de secciones sobre el suelo (solo en la toma final) y contornos
+const ps = secc.map(s => s.part), pmin = Math.min(...ps), pmax = Math.max(...ps);
+const cA = new THREE.Color('#ecdcd3'), cB = new THREE.Color('#8E1537'); const mats = [];
+for (const s of secc) for (const r of s.rings) {
+  if (!r.some(([x, y]) => Math.hypot(x, y) < 2600)) continue;
+  const sh = new THREE.Shape(r.map(([x, y]) => new THREE.Vector2(x, -y)));
+  const g = new THREE.ShapeGeometry(sh); g.rotateX(-Math.PI / 2); g.translate(0, .7, 0);
+  const m = new THREE.MeshStandardMaterial({ color: cA.clone().lerp(cB, (s.part - pmin) / (pmax - pmin)), transparent: true, opacity: 0, roughness: 1, depthWrite: false });
+  const me = new THREE.Mesh(g, m); me.receiveShadow = true; escena.add(me); mats.push(m);
+  const tiras = [];
+  for (let i = 0; i < r.length - 1; i++) { const [x1, y1] = r[i], [x2, y2] = r[i + 1], dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy); if (!L) continue; const w = 3, nx = -dy / L * w, ny = dx / L * w;
+    const t = new THREE.BufferGeometry(); t.setAttribute('position', new THREE.Float32BufferAttribute([x1 + nx, 1.2, -(y1 + ny), x1 - nx, 1.2, -(y1 - ny), x2 + nx, 1.2, -(y2 + ny), x2 - nx, 1.2, -(y2 - ny)], 3)); t.setIndex([0, 2, 1, 1, 2, 3]); tiras.push(t); }
+  const b = new THREE.Mesh(mergeGeometries(tiras), new THREE.MeshBasicMaterial({ color: '#0b1830', transparent: true, opacity: 0, side: THREE.DoubleSide })); escena.add(b); mats.push(b.material);
+}
+const T = document.getElementById('tit'), T2 = document.getElementById('tit2'), L = document.getElementById('ley');
+window.render = t => {
+  if (t < 20) { // Toma 1 (0–3 s): grúa de cenital alta a oblicua sobre la cabecera
+    const k = suave(lim(t / 3.0));
+    const foco = new THREE.Vector3(-40 + 60 * k, 0, 40 - 80 * k);
+    const ang = -0.55 + k * 0.35, dist = 520 + 260 * (1 - k), alt = 1350 - k * 880;
+    cam.position.set(foco.x + Math.sin(ang) * dist, alt, foco.z + Math.cos(ang) * dist); cam.lookAt(foco);
+    T.style.opacity = 1; T2.style.opacity = 0; L.style.opacity = 0; mats.forEach(m => m.opacity = 0);
+  } else { // Toma final (43.8–47.1 s): órbita alta con las secciones sobre la ciudad
+    const u = t - 43.8, k = suave(lim(u / 3.3));
+    const foco = new THREE.Vector3(-250 * k, 0, -40 * k);
+    const ang = 0.5 - k * 0.6, dist = 650 + 500 * k, alt = 600 + 900 * k;
+    cam.position.set(foco.x + Math.sin(ang) * dist, alt, foco.z + Math.cos(ang) * dist); cam.lookAt(foco);
+    const op = lim((u - .2) / .9); mats.forEach(m => m.opacity = m.isMeshBasicMaterial ? .85 * op : .66 * op);
+    T.style.opacity = 0; T2.style.opacity = lim((u - .1) / .4); L.style.opacity = op;
+  }
+  capa(t); renderer.render(escena, cam);
+};
+await fuentesListas(); window.listo = true;
+</script></body></html>

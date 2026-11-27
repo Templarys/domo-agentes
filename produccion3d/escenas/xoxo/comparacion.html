@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#tit{position:absolute;left:70px;right:170px;top:250px;background:rgba(245,241,232,.93);border-radius:24px;padding:22px 30px;font-weight:800;font-size:62px;line-height:1.04;color:#0b1830;box-shadow:0 8px 30px rgba(11,24,48,.08)}
+#tit span{color:#8E1537}
+.et{position:absolute;transform:translate(-50%,-100%);text-align:center;font-weight:800;font-size:64px;line-height:1;color:#0b1830;opacity:0;white-space:nowrap}
+.et small{display:block;font-weight:300;font-size:30px;margin-top:6px}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="tit"><span>+8.4 puntos</span><br>sobre la participación estatal</div>
+<div class="et" id="e0" style="color:#8E1537">67.0%<small>Xoxocotlán</small></div>
+<div class="et" id="e1">58.7%<small>Oaxaca (estatal)</small></div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave, rebote } from '/motor/estudio.js';
+import { montarComun, capa, lim, fuentesListas } from './comun.js';
+montarComun({ fuente: true });
+const { renderer, escena, cam } = crearEstudio({ radio: 7 });
+const vals = [[67.0, '#8E1537'], [58.7, '#8d97a8']];
+const barras = vals.map(([v, c], i) => { const m = new THREE.Mesh(new THREE.BoxGeometry(2, 1, 2), new THREE.MeshStandardMaterial({ color: c, roughness: .5 }));
+  m.castShadow = m.receiveShadow = true; m.position.set(i ? 1.6 : -1.6, 0, 0); escena.add(m); return { m, v, el: document.getElementById('e' + i) }; });
+// Línea de referencia a la altura estatal
+const H = v => v / 100 * 7.6;
+const ref = new THREE.Mesh(new THREE.BoxGeometry(6.2, .04, .04), new THREE.MeshBasicMaterial({ color: '#0b1830', transparent: true, opacity: 0 })); ref.position.set(0, H(58.7), 1.05); escena.add(ref);
+const pv = new THREE.Vector3(); const T0 = 10.733;
+window.render = t => {
+  const u = t - T0;
+  const c = suave(lim(u / 3.6)); cam.position.set(-2.5 + c * 1.5, 6.5, 37 - c * 2); cam.lookAt(0, 2.15, 0);
+  cam.updateMatrixWorld();
+  barras.forEach((b, i) => { const k = suave(lim((u - .15 - i * .25) / 1.0)); const h = Math.max(.01, H(b.v) * k); b.m.scale.y = h; b.m.position.y = h / 2;
+    pv.set(b.m.position.x, h + .3, 0).project(cam); b.el.style.left = ((pv.x + 1) / 2 * 1080) + 'px'; b.el.style.top = ((1 - pv.y) / 2 * 1920) + 'px'; b.el.style.opacity = lim((u - .6 - i * .25) / .3); });
+  ref.material.opacity = .6 * lim((u - 1.5) / .4);
+  capa(t); renderer.render(escena, cam);
+};
+await fuentesListas(); window.listo = true;
+</script></body></html>

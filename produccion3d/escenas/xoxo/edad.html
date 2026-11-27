@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/motor/estilo.css">
+<style>#tit{position:absolute;left:70px;right:170px;top:250px;background:rgba(245,241,232,.93);border-radius:24px;padding:22px 30px;font-weight:800;font-size:62px;line-height:1.04;color:#0b1830;box-shadow:0 8px 30px rgba(11,24,48,.08)}
+#tit span{color:#8E1537}#tit small{display:block;font-weight:300;font-size:30px;margin-top:8px}
+.et{position:absolute;transform:translate(-50%,-100%);text-align:center;font-weight:800;font-size:29px;line-height:1.05;color:#0b1830;opacity:0;white-space:nowrap}
+.et small{display:block;font-weight:300;font-size:24px}
+.eje{position:absolute;transform:translate(-50%,0);font-weight:800;font-size:26px;color:#0b1830;opacity:0;white-space:nowrap}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="tit">La edad<br><span>también pesó</span><small>Participación por grupo de edad</small></div>
+<script type="module">
+import * as THREE from 'three';
+import { crearEstudio, suave, rebote } from '/motor/estudio.js';
+import { montarComun, capa, lim, fuentesListas } from './comun.js';
+montarComun({ fuente: true });
+const { renderer, escena, cam } = crearEstudio({ radio: 9, fov: 34 });
+async function tarjeta(src) {
+  const img = new Image(); img.src = src; await img.decode();
+  const c = document.createElement('canvas'); c.width = 520; c.height = 768; const x = c.getContext('2d');
+  const R = 46; x.beginPath(); x.roundRect(8, 8, 504, 752, R); x.closePath(); x.fillStyle = '#ffffff'; x.fill();
+  x.save(); x.beginPath(); x.roundRect(20, 20, 480, 728, R - 12); x.clip(); x.drawImage(img, 0, 0, 520, 768); x.restore();
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; return tex;
+}
+const poses = await Promise.all(['idea', 'cintura'].map(p => tarjeta('/assets/mascotas/pose_' + p + '_card.png')));
+const mat = new THREE.MeshStandardMaterial({ map: poses[0], transparent: true, alphaTest: .5, roughness: .6, side: THREE.DoubleSide });
+const carta = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 3.54), mat); carta.castShadow = true;
+const soporte = new THREE.Group(); soporte.add(carta); carta.position.y = 1.95;
+const base = new THREE.Mesh(new THREE.CylinderGeometry(.9, 1, .18, 32), new THREE.MeshStandardMaterial({ color: '#8E1537' })); base.position.y = .09; base.castShadow = true; soporte.add(base);
+soporte.position.set(-2.2, 0, 2.6); escena.add(soporte);
+// Semáforo: verde el más alto; amarillo los dos siguientes; naranja los dos siguientes; rojo el más bajo
+const V = '#2fae62', A = '#f2c12e', N = '#f08a2e', R = '#E4202E';
+const datos = [['18-24', 61.2, N], ['25-34', 57.7, R], ['35-44', 66.2, N], ['45-54', 73.6, A], ['55-64', 77.9, V], ['65+', 75.7, A]];
+const barras = datos.map(([e, v, col], i) => { const m = new THREE.Mesh(new THREE.BoxGeometry(.62, 1, .62), new THREE.MeshStandardMaterial({ color: col, roughness: .55, emissive: col, emissiveIntensity: 0 })); m.castShadow = m.receiveShadow = true; m.position.set(-.75 + i * .8, 0, -.8); escena.add(m);
+  const et = document.createElement('div'); et.className = 'et'; et.textContent = v.toFixed(1) + '%'; document.body.appendChild(et);
+  const ej = document.createElement('div'); ej.className = 'eje'; ej.textContent = e; document.body.appendChild(ej);
+  return { m, v, et, ej, e }; });
+const H = v => v / 100 * 5.2;
+const pv = new THREE.Vector3(); const T0 = 24.333;
+const realce = { '55-64': 26.4, '25-34': 30.8 };
+window.render = t => {
+  const u = t - T0;
+  const c = suave(lim(u / 9.6)); cam.position.set(-.1 + c * .25, 6 - c * .6, 25.5 - c * 1.5); cam.lookAt(.5, 1.25, 0); cam.updateMatrixWorld();
+  const e = rebote(lim((u - .1) / .7)); soporte.scale.setScalar(Math.max(.0001, e) * .9); soporte.rotation.y = .35 + (1 - lim((u - .1) / 1)) * 1.2 + Math.sin(t * 1.4) * .05;
+  mat.map = t < 30.8 ? poses[0] : poses[1];
+  const salto = a => Math.max(0, Math.sin(lim((t - a) / .35) * Math.PI)) * .5;
+  carta.position.y = 1.95 + Math.sin(t * 2.2) * .06 + salto(26.4) + salto(30.8);
+  barras.forEach((b, i) => { const k = suave(lim((u - .3 - i * .15) / .8)); const h = Math.max(.01, H(b.v) * k);
+    const r = realce[b.e], pulso = r ? lim((t - r) / .25) * (1 - lim((t - r - 2.6) / .4)) : 0;
+    b.m.scale.set(1 + .18 * pulso, h, 1 + .18 * pulso); b.m.position.y = h / 2; b.m.material.emissiveIntensity = .25 * pulso;
+    const otro = Object.entries(realce).some(([e2, t2]) => e2 !== b.e && t >= t2 && t < t2 + 3) && !pulso;
+    pv.set(b.m.position.x, h + .2, b.m.position.z).project(cam); b.et.style.left = ((pv.x + 1) / 2 * 1080) + 'px'; b.et.style.top = ((1 - pv.y) / 2 * 1920) + 'px';
+    b.et.style.opacity = lim((u - .8 - i * .15) / .3) * (otro ? .45 : 1); b.et.style.fontSize = (29 + 13 * pulso) + 'px';
+    pv.set(b.m.position.x, 0, b.m.position.z + .5).project(cam); b.ej.style.left = ((pv.x + 1) / 2 * 1080) + 'px'; b.ej.style.top = ((1 - pv.y) / 2 * 1920 + 6) + 'px'; b.ej.style.opacity = lim((u - .5) / .4);
+  });
+  capa(t); renderer.render(escena, cam);
+};
+await fuentesListas(); window.listo = true;
+</script></body></html>
