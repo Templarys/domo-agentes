@@ -29,7 +29,7 @@ export function montarComun({ fuente = false, alturas = false, logo = true } = {
   const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
   const s = document.createElement('div'); s.id = 'sub'; s.innerHTML = '<div></div>'; document.body.appendChild(s);
   if (fuente) { const f = document.createElement('div'); f.id = 'fte'; f.textContent = 'Fuente: INE, Conteos Censales 2024'; document.body.appendChild(f); }
-  if (alturas) { const f = document.createElement('div'); f.id = 'alt'; f.innerHTML = 'Alturas de edificios estimadas<br>Edificios: Overture Maps · © OpenStreetMap contributors'; document.body.appendChild(f); }
+  if (alturas && false) { const f = document.createElement('div'); f.id = 'alt'; f.innerHTML = 'Alturas de edificios estimadas<br>Edificios: Overture Maps · © OpenStreetMap contributors'; document.body.appendChild(f); }
   if (logo) { const l = document.createElement('img'); l.className = 'logo'; l.src = '/assets/marca/domo-politico.png'; document.body.appendChild(l); }
 }
 export function capa(t) {
