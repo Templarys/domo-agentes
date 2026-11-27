@@ -23,3 +23,9 @@ Fuente: diapositiva de Miguel Ángel Mancera en la XXV Cumbre Mundial de Comunic
 ## Preguntas típicas de clientes (y quién responde)
 - "¿Nos conviene ir en coalición o en candidatura común?" → `estratega-electoral` (escenarios con votos por partido por sección) y `juridico-electoral` (qué permite la ley local y plazos).
 - "¿Cómo se reparten los votos de la coalición?" → `juridico-electoral`: cada partido conserva su voto según el emblema marcado en la boleta; las reglas de reparto cuando se marcan varios emblemas las fija la ley.
+
+## Texto del art. 89 fr. XVII constitucional (diapositiva de Mancera, `referencias/art89_gobierno_coalicion_mancera.jpg`)
+- **Facultad del Presidente** (fracción adicionada en el DOF del 10-feb-2014, reforma político-electoral): "En cualquier momento, optar por un gobierno de coalición con uno o varios de los partidos políticos representados en el Congreso de la Unión."
+- **Convenio y programa:** el gobierno de coalición se regula por el convenio y el programa respectivos, que deben ser **aprobados por mayoría de los miembros presentes de la Cámara de Senadores**.
+- **Disolución:** el propio convenio establece las causas de disolución.
+- **Para explicarlo a un cliente:** desde 2014 existe en la Constitución, pero ningún Presidente lo ha usado. Es una herramienta de gobernabilidad después de la elección, no una alianza para competir.
