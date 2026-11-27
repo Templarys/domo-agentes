@@ -7,7 +7,7 @@
 </head><body>
 <div id="tit">Las mujeres<br><span>votaron más</span></div>
 <div class="et" id="e0" style="color:#8E1537">72.1%<small>Mujeres</small></div>
-<div class="et" id="e1" style="color:#0075C9">61.0%<small>Hombres</small></div>
+<div class="et" id="e1" style="color:#6A3D9A">61.0%<small>Hombres</small></div>
 <script type="module">
 import * as THREE from 'three';
 import { crearEstudio, suave, rebote, semilla } from '/motor/estudio.js';
@@ -16,7 +16,7 @@ import { montarComun, capa, lim, fuentesListas } from './comun.js';
 montarComun({ fuente: true });
 const { renderer, escena, cam } = crearEstudio({ radio: 7 });
 const r = semilla(3);
-const vals = [[72.1, '#8E1537', { largo: true, ropa: '#8E1537', pelo: '#2b2118' }], [61.0, '#0075C9', { largo: false, ropa: '#0075C9', pelo: '#1d1a19' }]];
+const vals = [[72.1, '#8E1537', { largo: true, ropa: '#8E1537', pelo: '#2b2118' }], [61.0, '#6A3D9A', { largo: false, ropa: '#6A3D9A', pelo: '#1d1a19' }]];
 const H = v => v / 100 * 5.4;
 const items = vals.map(([v, c, op], i) => {
   const x = i ? 1.7 : -1.7;

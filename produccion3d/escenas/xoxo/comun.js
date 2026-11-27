@@ -22,14 +22,14 @@ const css = `
 #sub{position:absolute;left:90px;right:130px;top:1250px;display:flex;justify-content:center;pointer-events:none}
 #sub div{background:rgba(11,24,48,.86);color:#fff;font-weight:800;font-size:50px;line-height:1.16;text-align:center;padding:16px 28px 14px;border-radius:20px;opacity:0}
 #sub b{color:#ff8c96;font-weight:800}
-#fte{position:absolute;left:90px;top:1478px;font-weight:300;font-size:23px;color:#3d4454;background:rgba(245,241,232,.82);padding:5px 12px;border-radius:8px}
-#alt{position:absolute;left:90px;top:1478px;font-weight:300;font-size:21px;color:#3d4454;background:rgba(245,241,232,.82);padding:5px 12px;border-radius:8px;line-height:1.3}
+#fte{position:absolute;left:90px;top:1478px;font-weight:300;font-size:30px;color:#3d4454;background:rgba(245,241,232,.82);padding:5px 12px;border-radius:8px}
+#alt{position:absolute;left:90px;top:1452px;font-weight:300;font-size:30px;color:#3d4454;background:rgba(245,241,232,.82);padding:5px 12px;border-radius:8px;line-height:1.3}
 .logo{position:absolute;top:120px;right:70px;height:70px}`;
 export function montarComun({ fuente = false, alturas = false, logo = true } = {}) {
   const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
   const s = document.createElement('div'); s.id = 'sub'; s.innerHTML = '<div></div>'; document.body.appendChild(s);
   if (fuente) { const f = document.createElement('div'); f.id = 'fte'; f.textContent = 'Fuente: INE, Conteos Censales 2024'; document.body.appendChild(f); }
-  if (alturas) { const f = document.createElement('div'); f.id = 'alt'; f.innerHTML = 'Alturas de edificios estimadas<br>Edificios: Overture Maps · Calles: © OpenStreetMap contributors'; document.body.appendChild(f); }
+  if (alturas) { const f = document.createElement('div'); f.id = 'alt'; f.innerHTML = 'Alturas de edificios estimadas<br>Edificios: Overture Maps · © OpenStreetMap contributors'; document.body.appendChild(f); }
   if (logo) { const l = document.createElement('img'); l.className = 'logo'; l.src = '/assets/marca/domo-politico.png'; document.body.appendChild(l); }
 }
 export function capa(t) {
